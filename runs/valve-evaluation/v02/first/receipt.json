@@ -1,0 +1,20 @@
+{
+  "used": [
+    "brief.md",
+    "process.py",
+    "settings.json",
+    "library/index.json",
+    "library/.agents/skills/design-and-tune-mpc/SKILL.md",
+    "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+    "library/.agents/skills/tune-constrained-mpc/SKILL.md",
+    "library/knowledge/controller-decisions.md",
+    "library/knowledge/mpc.md",
+    "library/knowledge/signals.md"
+  ],
+  "tests": [
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' -c \"import sys, scipy, numpy; print(sys.version,scipy.__version__,numpy.__version__)\"",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' solution.py",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' self_test.py"
+  ],
+  "test_result": "All commands completed successfully. Tested 30 horizon and sample-time combinations, each prediction column, original step and J, KKT stationarity, zero slew, fixed bounds, first-command reachability, and all 40 validation rows."
+}

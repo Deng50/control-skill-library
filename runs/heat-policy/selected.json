@@ -1,0 +1,9 @@
+{
+  "name": "imitation",
+  "validation_score": [
+    0,
+    9901.491939570267
+  ],
+  "sha256": "a55d0fcb5ebc1e293506910356a8c88ba3332a6af7135f5334d0215dd086d1d6",
+  "rule": "fewest bound/motor violations then lowest mean validation J; captured before test"
+}

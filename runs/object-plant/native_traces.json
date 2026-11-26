@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "threshold_source": "independent.json",
+  "source_model": "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\Linear_2nd_order_model4Ident.slx",
+  "results": {
+    "nn": {
+      "weights_sha256": "86a3fb341b3a86fad498db659c52051dacdeafb45a4c1f2aa1dcb4011ec980cb",
+      "trajectories": {
+        "trace1.csv": {
+          "reference_sha256": "19a87c8f3fac245dffa53c3da316f932ffd80c55c61ab132542d8c90c79ff8fc",
+          "initial_state": [
+            0.0,
+            0.0
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            1.8506862188236261e-07,
+            2.7252524786172017e-05
+          ],
+          "free_rmse": [
+            5.821610019678904e-05,
+            0.000266714553041073
+          ],
+          "passed": true
+        },
+        "trace2.csv": {
+          "reference_sha256": "7d8f73ac2bbc3c3e06a852bbcdff0add4410a98a1c67777c81342650b3cb5f07",
+          "initial_state": [
+            0.4,
+            -0.15
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            1.6172369099984872e-07,
+            2.12269549687821e-05
+          ],
+          "free_rmse": [
+            0.0001455730563214385,
+            0.0002580154860481002
+          ],
+          "passed": true
+        },
+        "trace3.csv": {
+          "reference_sha256": "e107937e5b5e8e7d65990cea5040da85eac653f2c2df93acb5f871385d85df4a",
+          "initial_state": [
+            -0.6,
+            0.3
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            2.333460994082536e-07,
+            3.196099908574332e-05
+          ],
+          "free_rmse": [
+            0.00013676792832380014,
+            0.00022601793949360985
+          ],
+          "passed": true
+        }
+      }
+    },
+    "pinn": {
+      "weights_sha256": "9ed0b9e0fb787f07c61a5d7a2c5c2ffddb8a8bf73c22e2836a558849e5586c9f",
+      "trajectories": {
+        "trace1.csv": {
+          "reference_sha256": "19a87c8f3fac245dffa53c3da316f932ffd80c55c61ab132542d8c90c79ff8fc",
+          "initial_state": [
+            0.0,
+            0.0
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            1.880766094999236e-07,
+            3.007347435191737e-05
+          ],
+          "free_rmse": [
+            8.950124364803318e-05,
+            0.00045177654739586554
+          ],
+          "passed": true
+        },
+        "trace2.csv": {
+          "reference_sha256": "7d8f73ac2bbc3c3e06a852bbcdff0add4410a98a1c67777c81342650b3cb5f07",
+          "initial_state": [
+            0.4,
+            -0.15
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            1.5685725334782937e-07,
+            2.5454213041702993e-05
+          ],
+          "free_rmse": [
+            0.00010152093644063878,
+            0.0003527412419349637
+          ],
+          "passed": true
+        },
+        "trace3.csv": {
+          "reference_sha256": "e107937e5b5e8e7d65990cea5040da85eac653f2c2df93acb5f871385d85df4a",
+          "initial_state": [
+            -0.6,
+            0.3
+          ],
+          "steps": 100,
+          "dt": 0.01,
+          "teacher_forced_rmse": [
+            1.4193972936550394e-07,
+            2.4608210318956084e-05
+          ],
+          "free_rmse": [
+            9.97950494963705e-05,
+            0.00029266037854855685
+          ],
+          "passed": true
+        }
+      }
+    }
+  }
+}

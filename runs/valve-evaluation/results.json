@@ -1,0 +1,107 @@
+{
+  "v01": {
+    "group": "absent",
+    "first": {
+      "passed": true,
+      "metrics": {
+        "multiple_periods_objective_bounds": true,
+        "selected": 1,
+        "design": [
+          0.1754540110545386,
+          0.17325117072162283,
+          0.17974846255264346
+        ],
+        "closed_loop_score": 0.16009466620972646,
+        "baseline_score": 0.30099755494156416
+      }
+    },
+    "used": [
+      "brief.md",
+      "process.py",
+      "settings.json"
+    ],
+    "source_sha256": "2ce3060b9a47bc73d5bb81936c3040ab4af3fb6c5adf1744b4e64603d623874a"
+  },
+  "v02": {
+    "group": "explicit",
+    "first": {
+      "passed": true,
+      "metrics": {
+        "multiple_periods_objective_bounds": true,
+        "selected": 1,
+        "design": [
+          0.17545401148042544,
+          0.1732511711589,
+          0.17974846788162666
+        ],
+        "closed_loop_score": 0.16009466555072296,
+        "baseline_score": 0.30099755494156416
+      }
+    },
+    "used": [
+      "brief.md",
+      "process.py",
+      "settings.json",
+      "library/index.json",
+      "library/.agents/skills/design-and-tune-mpc/SKILL.md",
+      "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+      "library/.agents/skills/tune-constrained-mpc/SKILL.md",
+      "library/knowledge/controller-decisions.md",
+      "library/knowledge/mpc.md",
+      "library/knowledge/signals.md"
+    ],
+    "source_sha256": "ee9965b4f9c74882cf0d105b3c393dc09e84fdf93903e25c8f0fac5ca7cbefdf"
+  },
+  "v03": {
+    "group": "explicit",
+    "first": {
+      "passed": true,
+      "metrics": {
+        "multiple_periods_objective_bounds": true,
+        "selected": 1,
+        "design": [
+          0.17545400987501433,
+          0.17325117101743603,
+          0.17974846520990478
+        ],
+        "closed_loop_score": 0.1600946653090836,
+        "baseline_score": 0.30099755494156416
+      }
+    },
+    "used": [
+      "brief.md",
+      "process.py",
+      "settings.json",
+      "library/index.json",
+      "library/.agents/skills/design-and-tune-mpc/SKILL.md",
+      "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+      "library/.agents/skills/tune-constrained-mpc/SKILL.md",
+      "library/knowledge/controller-decisions.md",
+      "library/knowledge/mpc.md"
+    ],
+    "source_sha256": "13c2876734cdeb6db4feff8f12929133e5b2f65873e01c3376bde8b35c254ce5"
+  },
+  "v04": {
+    "group": "absent",
+    "first": {
+      "passed": true,
+      "metrics": {
+        "multiple_periods_objective_bounds": true,
+        "selected": 1,
+        "design": [
+          0.17545400987501433,
+          0.17325117101743603,
+          0.17974846520990478
+        ],
+        "closed_loop_score": 0.1600946653090836,
+        "baseline_score": 0.30099755494156416
+      }
+    },
+    "used": [
+      "brief.md",
+      "process.py",
+      "settings.json"
+    ],
+    "source_sha256": "0a49b3f0eb30b1a6b7acc656808793427e505bf5cd71581b674e46b6e33680bf"
+  }
+}

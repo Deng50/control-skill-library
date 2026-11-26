@@ -1,0 +1,43 @@
+{
+  "dt": 0.2,
+  "N": 8,
+  "M": 3,
+  "lo": -0.65,
+  "hi": 1,
+  "rate": 1.05,
+  "candidates": [
+    {
+      "q": 1,
+      "r_u": 0.08,
+      "s": 0.05
+    },
+    {
+      "q": 2,
+      "r_u": 0.015,
+      "s": 0.02
+    },
+    {
+      "q": 1,
+      "r_u": 0.13,
+      "s": 0.12
+    }
+  ],
+  "design": {
+    "x0": [
+      -0.1,
+      0.18
+    ],
+    "last": 0.24,
+    "steps": 40
+  },
+  "validation": {
+    "x0": [
+      0.18,
+      -0.1
+    ],
+    "last": -0.08,
+    "steps": 40
+  },
+  "preview": "at each k, t=(k+arange(N))*dt with exact scenario values",
+  "time": "t=k*dt and y=step(x,u,d)[1]"
+}

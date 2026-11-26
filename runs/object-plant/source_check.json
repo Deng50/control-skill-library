@@ -1,0 +1,66 @@
+{
+  "source_sha256": {
+    "Linear_2nd_order_model4DataProduction.slx": "dcd2b78165767af0503dfe35e342836d4115a65848d98a45ddb009278ea22a01",
+    "Linear_2nd_order_Sys_Model4Datacollection.m": "87708a3b18f4d2a279d1c5b57edd45a78c7811e90b42d53f7ece451f9cc973f7",
+    "Data4Ident.mat": "a954fa53c95453faf55ba728f77f2ef9e56019de4e478959903f5cf85cb6cbf1"
+  },
+  "solver": "ode3",
+  "fixed_step_variable": "T_sample",
+  "subsystem": "2nd_order_dynamic",
+  "source_connections": {
+    "254#out:1": [
+      "258#in:1"
+    ],
+    "255#out:1": [
+      "254#in:3"
+    ],
+    "252#out:1": [
+      "270#in:1"
+    ],
+    "258#out:1": [
+      "269#in:1",
+      "268#in:1"
+    ],
+    "268#out:1": [
+      "255#in:1",
+      "260#in:1"
+    ],
+    "270#out:1": [
+      "254#in:1"
+    ],
+    "269#out:1": [
+      "254#in:4"
+    ],
+    "271#out:1": [
+      "254#in:2"
+    ]
+  },
+  "original_rows": 2001,
+  "maximum_archive_error_t_u_y": [
+    3.552713678800501e-15,
+    0.0,
+    3.9968028886505635e-15
+  ],
+  "per_case_max_abs_vs_exact_zoh": {
+    "train_00_levels": 1.1170447800634697e-06,
+    "train_01_sines": 1.073212050825556e-06,
+    "train_02_alternating": 7.357245210282137e-07,
+    "train_03_levels": 8.306524344192656e-07,
+    "train_04_sines": 1.2937186499861753e-06,
+    "train_05_alternating": 1.5454765863037734e-06,
+    "train_06_levels": 1.2912104924850398e-06,
+    "train_07_sines": 1.3880467507748628e-06,
+    "train_08_alternating": 1.9279135737640396e-06,
+    "train_09_levels": 1.3337987082029379e-06,
+    "train_10_sines": 1.1676866393806051e-06,
+    "train_11_alternating": 1.7581428835428126e-06,
+    "validation_00_levels": 1.1019515971516514e-06,
+    "validation_01_sines": 1.3046521235224318e-06,
+    "validation_02_alternating": 1.1802655287967978e-06,
+    "test_00_levels": 1.3709850691101533e-06,
+    "test_01_sines": 1.0417143928576067e-06,
+    "test_02_alternating": 9.6630370743922e-07,
+    "test_03_chirp": 1.4632856749213774e-06
+  },
+  "reference": "Each independently reset ODE3 run compared with scipy.linalg.expm at 10 ms"
+}

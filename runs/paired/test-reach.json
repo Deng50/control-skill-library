@@ -1,0 +1,289 @@
+{
+  "design": "Post-hoc mutation analysis of independently submitted tests; clean build must pass first. Each mutant is introduced separately.",
+  "groups": {
+    "absent": {
+      "detected": 18,
+      "opportunities": 18
+    },
+    "available": {
+      "detected": 18,
+      "opportunities": 18
+    },
+    "explicit": {
+      "detected": 18,
+      "opportunities": 18
+    }
+  },
+  "observations": {
+    "r01": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "r02": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "r03": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "r04": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "r05": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "r06": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "s01": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "s02": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    },
+    "s03": {
+      "clean": {
+        "self_test_failed": false,
+        "diagnostic": null
+      },
+      "time_unit": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: Tensor-likes are not close!"
+      },
+      "missing_equation": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "second_increment": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "feedthrough": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "perception_bypass": {
+        "self_test_failed": true,
+        "diagnostic": "AssertionError: "
+      },
+      "actor_detached": {
+        "self_test_failed": true,
+        "diagnostic": "RuntimeError: One of the differentiated Tensors appears to not have been used in the graph. Set allow_unused=True if this is the desired behavior."
+      }
+    }
+  }
+}

@@ -1,0 +1,161 @@
+{
+  "passed": true,
+  "reference": "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\Linear_2nd_order_model4Ident.slx",
+  "source_sha256": "bb2847d54c9cd432865bc7d4579e27424d2d2979d5830c5ea0cc7e837d25f990",
+  "note": "q/v in source model coordinates; second coordinate is q per second",
+  "traces": {
+    "trace1.csv": {
+      "sha256": "19a87c8f3fac245dffa53c3da316f932ffd80c55c61ab132542d8c90c79ff8fc",
+      "aligned": {
+        "one_step": {
+          "passed": true,
+          "maximum_absolute_error": [
+            9.71445146547012e-16,
+            9.325873406851315e-15
+          ],
+          "first_failure": null
+        },
+        "free_rollout": {
+          "passed": true,
+          "maximum_absolute_error": [
+            6.661338147750939e-16,
+            5.10702591327572e-15
+          ],
+          "first_failure": null
+        }
+      },
+      "delayed": {
+        "one_step": {
+          "passed": false,
+          "maximum_absolute_error": [
+            0.00044370000000065746,
+            0.08812295999999996
+          ],
+          "first_failure": {
+            "step": 16,
+            "time": 0.16,
+            "channel": "q",
+            "reference": 0.0106119107570747,
+            "actual": 0.01016821075707475
+          }
+        },
+        "free_rollout": {
+          "passed": false,
+          "maximum_absolute_error": [
+            0.01873860697405677,
+            0.12138031852322773
+          ],
+          "first_failure": {
+            "step": 16,
+            "time": 0.16,
+            "channel": "q",
+            "reference": 0.0106119107570747,
+            "actual": 0.010168210757074749
+          }
+        }
+      }
+    },
+    "trace2.csv": {
+      "sha256": "7d8f73ac2bbc3c3e06a852bbcdff0add4410a98a1c67777c81342650b3cb5f07",
+      "aligned": {
+        "one_step": {
+          "passed": true,
+          "maximum_absolute_error": [
+            8.881784197001252e-16,
+            7.549516567451064e-15
+          ],
+          "first_failure": null
+        },
+        "free_rollout": {
+          "passed": true,
+          "maximum_absolute_error": [
+            6.106226635438361e-16,
+            4.440892098500626e-15
+          ],
+          "first_failure": null
+        }
+      },
+      "delayed": {
+        "one_step": {
+          "passed": false,
+          "maximum_absolute_error": [
+            2.7302799690653856e-05,
+            0.005422590770960634
+          ],
+          "first_failure": {
+            "step": 2,
+            "time": 0.02,
+            "channel": "q",
+            "reference": 0.396993491322365,
+            "actual": 0.3969687105475699
+          }
+        },
+        "free_rollout": {
+          "passed": false,
+          "maximum_absolute_error": [
+            0.013036308266907992,
+            0.0736438172553806
+          ],
+          "first_failure": {
+            "step": 2,
+            "time": 0.02,
+            "channel": "q",
+            "reference": 0.396993491322365,
+            "actual": 0.39696871054756994
+          }
+        }
+      }
+    },
+    "trace3.csv": {
+      "sha256": "e107937e5b5e8e7d65990cea5040da85eac653f2c2df93acb5f871385d85df4a",
+      "aligned": {
+        "one_step": {
+          "passed": true,
+          "maximum_absolute_error": [
+            9.43689570931383e-16,
+            9.547918011776346e-15
+          ],
+          "first_failure": null
+        },
+        "free_rollout": {
+          "passed": true,
+          "maximum_absolute_error": [
+            6.245004513516506e-16,
+            5.995204332975845e-15
+          ],
+          "first_failure": null
+        }
+      },
+      "delayed": {
+        "one_step": {
+          "passed": false,
+          "maximum_absolute_error": [
+            0.0008874000000001492,
+            0.17624592000000305
+          ],
+          "first_failure": {
+            "step": 9,
+            "time": 0.09,
+            "channel": "q",
+            "reference": -0.523800526917276,
+            "actual": -0.522913126917276
+          }
+        },
+        "free_rollout": {
+          "passed": false,
+          "maximum_absolute_error": [
+            0.01680363271614163,
+            0.17624591999999772
+          ],
+          "first_failure": {
+            "step": 9,
+            "time": 0.09,
+            "channel": "q",
+            "reference": -0.523800526917276,
+            "actual": -0.5229131269172762
+          }
+        }
+      }
+    }
+  }
+}

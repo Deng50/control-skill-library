@@ -77,9 +77,33 @@ def matlab():
     execute(["matlab","-batch","addpath(fullfile(pwd,'cases','matlab')); replay_second_order('../素材','runs/matlab')"])
 
 
+def object_case():
+    python("cases/object-plant/collect.py")
+    python("cases/object-plant/train.py","--physics","cases/object-plant/physics.json","--out","runs/object-plant/paired")
+    python("cases/object-plant/train.py","--out","runs/object-plant/data-only")
+    python("cases/object-plant/verify.py")
+
+
+def native_mpc():
+    python("cases/native-mpc/audit_source.py","../素材","runs/native-mpc/source-audit.json")
+    execute(["matlab","-batch","addpath(fullfile(pwd,'cases','native-mpc')); replay_archive_tuning('../素材','runs/native-mpc'); run_native_mpc('../素材','runs/native-mpc'); verify_native_evidence('../素材','runs/native-mpc');"])
+    python("cases/native-mpc/check_prediction.py","runs/native-mpc")
+    python("cases/native-mpc/check_closed_loop.py","runs/native-mpc")
+
+
+def heat_policy():
+    python("cases/heat-policy/train_policy.py","--collect")
+
+
+def transfer():
+    execute(["matlab","-batch","addpath(fullfile(pwd,'cases','plant-transfer')); export_traces('../素材','runs/plant-transfer')"])
+    module("parity")
+
+
 if __name__=="__main__":
     p=argparse.ArgumentParser(description=__doc__)
-    p.add_argument("task",choices=["pinn","mpc","pgac","archive","matlab","all","verify"])
+    field={"object-case":object_case,"native-mpc":native_mpc,"heat-policy":heat_policy,"transfer":transfer}
+    p.add_argument("task",choices=["pinn","mpc","pgac","archive","matlab","all","verify","field","benchmark",*field])
     a=p.parse_args()
     SCRATCH.mkdir(parents=True,exist_ok=True)
     if a.task=="all":
@@ -91,5 +115,17 @@ if __name__=="__main__":
         module("verify")
     elif a.task=="verify":
         module("verify")
+        module("field_verify")
+    elif a.task=="benchmark":
+        python("evaluation/paired/regrade.py")
+        python("evaluation/paired/test_reach.py")
+        python("evaluation/valve/trials.py","score")
+    elif a.task=="field":
+        for replay in field.values():
+            replay()
+        module("native_flow_check")
+        module("field_verify")
+    elif a.task in field:
+        field[a.task]()
     else:
         {"pinn":pinn,"mpc":mpc,"pgac":pgac,"archive":archive,"matlab":matlab}[a.task]()

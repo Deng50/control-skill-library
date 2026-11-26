@@ -1,0 +1,9 @@
+{
+  "stage": "optional host MEX after the four-scenario trial",
+  "matlab": "24.2.0.2712019 (R2024b)",
+  "standalone_C_source_generated": true,
+  "host_MEX_generated": true,
+  "host_MEX_executed": false,
+  "diagnostic": "MEX 文件 native_mpc_step_mex.mexw64 无效：应用程序控制策略已阻止此文件。",
+  "successful_prior_execution": "previous-host-mex-verification.json"
+}

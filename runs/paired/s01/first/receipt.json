@@ -1,0 +1,14 @@
+{
+  "used": [
+    "brief.md",
+    "library/index.json",
+    "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+    "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+    "library/.agents/skills/warmstart-pgac/SKILL.md",
+    "actuator.py",
+    "teacher.py"
+  ],
+  "tests": [
+    "@'\nimport numpy as np\nimport torch\nfrom solution import heat, lift, policy_cost\nfrom teacher import stage, stage_cost\nfrom actuator import Actuator\n\nthermal = dict(C=125., G=6., time_scale_min=2., time_origin_min=22., y_shift_C=15., y_scale_K=8., Ta_C=12.)\nweight = torch.tensor(0.8, dtype=torch.double, requires_grad=True)\nzp = torch.tensor([[.25,.3], [.7,1.1]], dtype=torch.double)\nnet = lambda u: weight * u[:,:1].square() + u[:,1:2]\nz, power = zp[:,:1], zp[:,1:2]\nexpected = 125 * (8*2*weight*z/120) + 6*(3+8*(weight*z.square()+power)) - 1000*power\ngot = heat(net,zp,thermal)\ntorch.testing.assert_close(got, expected)\ntorch.testing.assert_close(torch.autograd.grad(got.sum(),weight)[0],torch.autograd.grad(expected.sum(),weight)[0])\nassert not zp.requires_grad\nfor key in ['C','G']:\n    assert heat(net,zp,{k:v for k,v in thermal.items() if k!=key}) is None\n\nrng = np.random.default_rng(426)\nfor horizon in (1, 2, 5, 11):\n    for _ in range(8):\n        spec = dict(zip(('a','b','c','d','g'),rng.uniform(-1.,1.,5)))\n        initial = rng.normal(size=3)\n        du = rng.normal(size=horizon)\n        plant = Actuator(spec,*initial[:2])\n        expected = [plant.step(u) for u in initial[2]+du.cumsum()]\n        F, P = lift(spec,horizon)\n        np.testing.assert_allclose(F@initial+P@du,expected,atol=1e-12)\n\ncfg = dict(N=6,beta=.32,a=.9,b=.41,limit=2.3,center=-.2,scale=1.3,q=2.1,r=.1,s=.5,discount=.93)\nbatch = torch.tensor([[.9,.6,-.3],[-5.,-.2,1.5],[.2,-.4,-.5]],dtype=torch.double)\nx, ref, last = batch.split(1,dim=1)\nactor_weight = torch.tensor(.42,dtype=torch.double,requires_grad=True)\nfor coupled in (False,True):\n    def scalar(w):\n        costs = []\n        for state, ref_i, prev in batch.tolist():\n            J = 0.\n            for t in range(cfg['N']):\n                nxt, applied = stage(lambda v:w*v[0]-.17*v[1], state, ref_i, prev, cfg)\n                if coupled:\n                    nxt += .11*state-.09*applied\n                J += cfg['discount']**t*stage_cost(nxt,ref_i,applied,prev,cfg)\n                state, prev = nxt, applied\n            costs.append(J)\n        return np.mean(costs)\n    perception = (lambda v:.11*v[:,:1]-.09*v[:,1:2]) if coupled else None\n    got = policy_cost(lambda v:actor_weight*v[:,:1]-.17*v[:,1:2],perception,x,ref,last,cfg,coupled)\n    np.testing.assert_allclose(got.item(),scalar(.42),rtol=1e-12)\n    fd = (scalar(.420001)-scalar(.419999))/2e-6\n    np.testing.assert_allclose(torch.autograd.grad(got,actor_weight)[0].item(),fd,rtol=1e-7)\nprint('All three checks passed.')\n'@ | & 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' -B -"
+  ]
+}

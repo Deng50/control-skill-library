@@ -21,6 +21,14 @@ def build(source, out):
             paths.update(folder.glob("*.json"))
             paths.update(folder.glob("*.npz"))
     links = {
+        "MPC_QP.m":"runs/native-mpc/prediction-probes.json",
+        "Run_MPC_For_2nd_order_Plant_auto_tuning.m":"runs/native-mpc/archived-fmincon.json",
+        "LMPC_2nd_order_Kang_2.slx":"runs/native-mpc/source-audit.json",
+        "55-系统辨识MPC-ADRC-PID/LMPC_2nd_order_Kang_2.slx":"runs/native-mpc/report.json",
+        "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_model4Ident.slx":"runs/plant-transfer/parity.json",
+        "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model4Datacollection.m":"runs/object-plant/source_check.json",
+        "pgac/nmpc_casadi_align_5s_fix_torque.py":"runs/heat-policy/report.json",
+        "pgac/system_test_align_delay.py":"runs/heat-policy/data.json",
         "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_model4DataProduction.slx":"runs/matlab/report.json",
         "55-系统辨识MPC-ADRC-PID/Data4Ident.mat":"runs/identification/report.json",
         "55-系统辨识MPC-ADRC-PID/model_param.mat":"runs/matlab/report.json",

@@ -1,0 +1,280 @@
+{
+  "protocol_sha256": "0b8308fc57a39faf74052a5e295b716abc28ece34a3e17d6f69d4edb4b6776a2",
+  "activation_sha256": "b3bcc60858be843116c3354713f9e776514b6c526caaf3a83b7a2762764b96ae",
+  "snapshot_sha256": "1a03aef7eaf16b1559ab9f2bca1641b6a5346be795fa3d52d5d7b8dcf2a3dd8e",
+  "session_setup": "fresh no-history agents; same inherited model and tools, instructed working directory",
+  "budget": "6 minutes and 12 top-level calls per session; internal self-tests allowed before first submission",
+  "unit": "three task outcomes clustered within each independent session; prompts repeated across sessions",
+  "groups": {
+    "absent": {
+      "sessions": 3,
+      "successes": 9,
+      "tasks": 9,
+      "all_three": 3,
+      "passed_by_role": {
+        "model": 3,
+        "mpc": 3,
+        "pgac": 3
+      }
+    },
+    "available": {
+      "sessions": 3,
+      "successes": 9,
+      "tasks": 9,
+      "all_three": 3,
+      "passed_by_role": {
+        "model": 3,
+        "mpc": 3,
+        "pgac": 3
+      }
+    },
+    "explicit": {
+      "sessions": 3,
+      "successes": 9,
+      "tasks": 9,
+      "all_three": 3,
+      "passed_by_role": {
+        "model": 3,
+        "mpc": 3,
+        "pgac": 3
+      }
+    }
+  },
+  "trials": {
+    "r01": {
+      "group": "absent",
+      "source_sha256": "bb4733ea5bfd3f93df1067078f06ee1bbf946a178da5cec24d986243832343da",
+      "read_skills": [],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "r02": {
+      "group": "available",
+      "source_sha256": "972c7623e57dc3ff417dbda090d6d8a03db7df62a8dd2100a1761ef940b99da6",
+      "read_skills": [],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py",
+        "library/knowledge/physics.md",
+        "library/knowledge/mpc.md",
+        "library/knowledge/pgac.md"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "r03": {
+      "group": "available",
+      "source_sha256": "da2765e772225675ebeec55e50505dcb38b78500aab7a08132f360eb18c0f83f",
+      "read_skills": [],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py",
+        "library/knowledge/physics.md",
+        "library/knowledge/mpc.md",
+        "library/knowledge/pgac.md"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "r04": {
+      "group": "absent",
+      "source_sha256": "4a4b1bc35efa4bd6f1a4f6dc7fa9d607df242a3a92e648e0e5bd36b9b8054d21",
+      "read_skills": [],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "r05": {
+      "group": "absent",
+      "source_sha256": "0ef024d49242448d25a8f83a80337dd303c3c428b7d8630f530165501658e5c3",
+      "read_skills": [],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "r06": {
+      "group": "available",
+      "source_sha256": "44290b1622720a309bacb8c8dc4062a208a53f99811e5452b65372433574a51a",
+      "read_skills": [
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md"
+      ],
+      "used": [
+        "brief.md",
+        "actuator.py",
+        "teacher.py",
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "s01": {
+      "group": "explicit",
+      "source_sha256": "596626671e85f0cbc87ebc00fff365332f620c23cca418fed70c8f5b04ffaa43",
+      "read_skills": [
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md"
+      ],
+      "used": [
+        "brief.md",
+        "library/index.json",
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "s02": {
+      "group": "explicit",
+      "source_sha256": "761e66ee5a91d390f2775abdd10fa6fb48c805686a67ebed138ac3a69555e243",
+      "read_skills": [
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md"
+      ],
+      "used": [
+        "brief.md",
+        "library/index.json",
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/warmstart-pgac/SKILL.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    },
+    "s03": {
+      "group": "explicit",
+      "source_sha256": "3f2a41d22bf2ef744f341518102c34edbe74987e9dfac3d43f0b79c014392aff",
+      "read_skills": [
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/distill-thermal-expert/SKILL.md"
+      ],
+      "used": [
+        "brief.md",
+        "library/index.json",
+        "library/.agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+        "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+        "library/.agents/skills/distill-thermal-expert/SKILL.md",
+        "actuator.py",
+        "teacher.py"
+      ],
+      "first_submission": {
+        "model": {
+          "pass": true
+        },
+        "mpc": {
+          "pass": true
+        },
+        "pgac": {
+          "pass": true
+        }
+      },
+      "repair_rounds": 0
+    }
+  }
+}

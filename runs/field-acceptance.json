@@ -1,0 +1,51 @@
+{
+  "passed": true,
+  "checks": {
+    "object_source_replay": true,
+    "object_same_data_and_fallback": true,
+    "nn_changing_input": true,
+    "pinn_changing_input": true,
+    "object_derivative_independent": true,
+    "slx_state_and_delay": true,
+    "native_source_pair": true,
+    "native_qp_validation": true,
+    "native_closed_loop_constraints": true,
+    "native_deployable": true,
+    "mpc_frozen_selection": true,
+    "neural_on_native_traces": true,
+    "heat_expert_archive": true,
+    "heat_warmstarts_and_updates": true,
+    "heat_perception_gradient": true,
+    "heat_cost_expert_parity": true,
+    "heat_policy_ship": true
+  },
+  "source_reports": {
+    "object-plant/source_check.json": "095305f2f42bc4f7ef7fd45784ea364138f9bdc6a8a7ac9c581d01694eaaab8c",
+    "object-plant/paired/report.json": "152bf3d6ce16a48c737d562a5a0eef9a75b9bbe1e6452c4ae517833945b1bbce",
+    "object-plant/independent.json": "3cf4056fdf34929f1326fbe5c81bc52afd13af6a575df979197ff9b9ef62f1e9",
+    "object-plant/data-only/report.json": "01e6f4a013ff4e9cb0963f1875e03bb1bff7b51fcfe3fd536ff13baeb5db1eeb",
+    "plant-transfer/parity.json": "7285f26a213ce5486a9a1ab8b8eebd450834999ad15cbcbd80441b5f5fdf6675",
+    "native-mpc/report.json": "593ec5ce72b3fe5c0a322502dc531f0c0e92fadd21108539a3dbabbd6e00419f",
+    "native-mpc/source-audit.json": "23f2be857f60b2c41e1747f3cb78a9ece433594619b5951bec6c3dfea2744a7c",
+    "native-mpc/acceptance.json": "7222314fd789e00b22a03befdc84c3580f9fe2f831777031bf72926050aa75f6",
+    "object-plant/native_traces.json": "9ba20d1be58e5e77c029d947350399bad3f3c23818cbed20038783390cc8f18f",
+    "heat-policy/data.json": "01c5de0e1be01b05c0e9bd235d44b4c5ddd849a96cbc1494c7d2056f5cb78134",
+    "heat-policy/report.json": "9719f4f3eb0ae611c10af79a75baa5bb525c66e4302a65c130a333b8bf7b5fc0",
+    "heat-policy/selected.json": "942df9484deee18d383b52843ee1ef13ddc765941af2597e062a6082ee4cb728"
+  },
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\field_verify.py"
+    ],
+    "evidence": "executed"
+  }
+}

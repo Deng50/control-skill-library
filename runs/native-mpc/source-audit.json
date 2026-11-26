@@ -1,0 +1,462 @@
+{
+  "scoped": {
+    "model_sha256": "0cd314a44272bfbfc53bd98f549407a2851e19c0f457301b47789f37af56bb35",
+    "source": "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\LMPC_2nd_order_Kang_2.slx",
+    "chart_path": "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL",
+    "chart_type": "EML_CHART",
+    "chart_equals_external_MPC_QP": true,
+    "chart_sha256_normalized": "5fa14a89629120a6290a24ecdd31299b037d7a74f4f43af244390ab6a1c035b7",
+    "config": {
+      "StartTime": "0.0",
+      "StopTime": "10.0",
+      "FixedStep": "T_sample",
+      "SolverName": "FixedStepAuto",
+      "SignalLogging": "on"
+    },
+    "selected_block_parameters": {
+      "LMPC_2nd_order_Kang_2/Constant40": {
+        "Value": "10"
+      },
+      "LMPC_2nd_order_Kang_2/Constant41": {
+        "Value": "[Q1 0;0 Q2]"
+      },
+      "LMPC_2nd_order_Kang_2/Constant42": {
+        "Value": "R1"
+      },
+      "LMPC_2nd_order_Kang_2/Step6": {
+        "Time": "5",
+        "Before": "[0; 0]",
+        "After": "[1; 0]",
+        "SampleTime": "0"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant1": {
+        "Value": "T_sample"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant2": {
+        "Value": "[0,1; c, a]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant3": {
+        "Value": "[0; b]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant4": {
+        "Value": "[0;1]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay": {
+        "DelayLength": "1"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant6": {
+        "Value": "T_sample"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Gain": {
+        "Gain": "1/4"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Constant": {
+        "Value": "f0"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain": {
+        "Gain": "c"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain1": {
+        "Gain": "a"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain2": {
+        "Gain": "b"
+      },
+      "LMPC_2nd_order_Kang_2/Constant": {
+        "Value": "0"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL/ SFunction ": {
+        "FunctionName": "sf_sfun"
+      }
+    },
+    "workspace_exports": [],
+    "s_functions": [
+      {
+        "path": "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL/ SFunction ",
+        "name": "sf_sfun"
+      }
+    ],
+    "linked_library_references": [],
+    "selected_connections": [
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delta_u#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:4"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/R_InputNumxInputNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Mux1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:8"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Mux2#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:9"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Disturbance_InputNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:11"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Q_StateNumxStateNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/N_pred_Horizon#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant2#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:5"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant3#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:6"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant4#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:7"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant6#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#out:2",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Terminator#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Gain#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/y_r#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:10"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#out:2",
+        "LMPC_2nd_order_Kang_2/plant model/x2#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/u#out:1",
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#out:1",
+        "LMPC_2nd_order_Kang_2/plant model/x1#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant41#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/Scope6#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/Display#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/plant model#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Step6#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant42#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:4"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant40#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:2",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:7"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:5"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:6"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:1",
+        "LMPC_2nd_order_Kang_2/Mux#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:2",
+        "LMPC_2nd_order_Kang_2/Goto1#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:8"
+      ]
+    ]
+  },
+  "top_level": {
+    "model_sha256": "10372966e1e4c5c5dfacf166d396715882c4df093a88aa9049f4fe107f97e9f0",
+    "source": "D:\\projects\\素材\\LMPC_2nd_order_Kang_2.slx",
+    "chart_path": "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL",
+    "chart_type": "EML_CHART",
+    "chart_equals_external_MPC_QP": true,
+    "chart_sha256_normalized": "5fa14a89629120a6290a24ecdd31299b037d7a74f4f43af244390ab6a1c035b7",
+    "config": {
+      "StartTime": "0.0",
+      "StopTime": "10.0",
+      "FixedStep": "T_sample",
+      "SolverName": "FixedStepAuto",
+      "SignalLogging": "on"
+    },
+    "selected_block_parameters": {
+      "LMPC_2nd_order_Kang_2/Constant40": {
+        "Value": "10"
+      },
+      "LMPC_2nd_order_Kang_2/Constant41": {
+        "Value": "[Q1 0;0 Q2]"
+      },
+      "LMPC_2nd_order_Kang_2/Constant42": {
+        "Value": "R"
+      },
+      "LMPC_2nd_order_Kang_2/Step6": {
+        "Time": "5",
+        "Before": "[0; 0]",
+        "After": "[1; 0]",
+        "SampleTime": "0"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant1": {
+        "Value": "T_sample"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant2": {
+        "Value": "[0,1; c, a]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant3": {
+        "Value": "[0; b]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant4": {
+        "Value": "[0;1]"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay": {
+        "DelayLength": "1"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant6": {
+        "Value": "T_sample"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/Gain": {
+        "Gain": "1/4"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Constant": {
+        "Value": "f0"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain": {
+        "Gain": "c"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain1": {
+        "Gain": "a"
+      },
+      "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic/Gain2": {
+        "Gain": "b"
+      },
+      "LMPC_2nd_order_Kang_2/Constant": {
+        "Value": "0"
+      },
+      "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL/ SFunction ": {
+        "FunctionName": "sf_sfun"
+      }
+    },
+    "workspace_exports": [
+      "y",
+      "r",
+      "u"
+    ],
+    "s_functions": [
+      {
+        "path": "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL/ SFunction ",
+        "name": "sf_sfun"
+      }
+    ],
+    "linked_library_references": [],
+    "selected_connections": [
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delta_u#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:4"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Delay#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Add#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/R_InputNumxInputNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Mux1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:8"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Mux2#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:9"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Disturbance_InputNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:11"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Q_StateNumxStateNum#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/N_pred_Horizon#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant2#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:5"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant3#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:6"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant4#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:7"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Constant6#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#out:2",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Terminator#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/Gain#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/y_r#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/TD#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant/tuixiangzi_ZL#in:10"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#out:2",
+        "LMPC_2nd_order_Kang_2/plant model/x2#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/u#out:1",
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model/2nd_order_dynamic#out:1",
+        "LMPC_2nd_order_Kang_2/plant model/x1#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant41#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:3"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/To Workspace2#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/Scope6#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/Display#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:1",
+        "LMPC_2nd_order_Kang_2/plant model#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Step6#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant42#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:4"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant40#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:2",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:7"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant1#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:5"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:1",
+        "LMPC_2nd_order_Kang_2/To Workspace#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:6"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/plant model#out:1",
+        "LMPC_2nd_order_Kang_2/Mux#in:2"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#out:2",
+        "LMPC_2nd_order_Kang_2/Goto1#in:1"
+      ],
+      [
+        "LMPC_2nd_order_Kang_2/Constant#out:1",
+        "LMPC_2nd_order_Kang_2/linear MPC without constrant#in:8"
+      ]
+    ]
+  },
+  "input_files": {
+    "D:\\projects\\素材\\MPC_QP.m": "53cd3c9314a2af5b5d8d5985051c3cf05029a3bb61ba425195c04f9f43acae6c",
+    "D:\\projects\\素材\\Run_MPC_For_2nd_order_Plant_auto_tuning.m": "df8cdaab185feb20713c7d399ac0efe37c738c702c3faa7b75935d6b8313ba34",
+    "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\model_param.mat": "50f494f8cfa4140927a6351a18eeca8b6fbb0333ca81a84967cd1f5e31d9fb9e",
+    "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\Run_MPC_For_2nd_order_Plant.m": "fc57c801f8f8081b332718e9deeb8448a83d3f6157886e13ab55e7abd60b487b"
+  }
+}

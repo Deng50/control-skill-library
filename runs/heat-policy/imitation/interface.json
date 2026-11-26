@@ -1,0 +1,59 @@
+{
+  "observations": [
+    "Tb_K",
+    "Tm_K",
+    "SOC",
+    "Tb_ref_K"
+  ],
+  "actions": [
+    "pump_rpm",
+    "heater_W",
+    "bypass_fraction"
+  ],
+  "dt_s": 5.0,
+  "lower": [
+    200.0,
+    0.0,
+    0.0
+  ],
+  "upper": [
+    1000.0,
+    4000.0,
+    1.0
+  ],
+  "actor_arch": {
+    "x_dim": 3,
+    "r_dim": 1,
+    "hidden1": 48,
+    "hidden2": 32,
+    "action_dim": 3
+  },
+  "plant": "SystemTestPlantAlign",
+  "kernel_sha256": "2db9a8af9e240a9fff3230fc268da9f8450ce1258381374028d737c15db946f4",
+  "raw_feature_mean": [
+    281.947265625,
+    295.1294860839844,
+    0.9324208498001099,
+    289.8166198730469
+  ],
+  "raw_feature_scale": [
+    11.111982345581055,
+    10.313146591186523,
+    0.059755440801382065,
+    5.528037071228027
+  ],
+  "actor_weights_sha256": "63717293491914f2ef6eae4fbdbba880f537c1b4670e98254deaabc21ad149bd",
+  "inference_sha256": "a55d0fcb5ebc1e293506910356a8c88ba3332a6af7135f5334d0215dd086d1d6",
+  "inference": "torch.jit.load(inference.ts)(x[B,3], ref[B,1]) returns physical [B,3]",
+  "training_archive_sha256": "f390ce36768eee6a2b24e7427b06856ceccbfe6736ec259adf1c8d4035ab5783",
+  "plant_sha256": {
+    "nmpc_casadi_align_5s_fix_torque.py": "df5799087a3e8c14ce61276cdb18be6c5ac2a9e42a8d5bc9865db75c4541c65c",
+    "system_test_align_delay.py": "5cc3cdd97d91d0f44b0b0a2ea8d7ffc5215af38ebffbc0c9788e5c8a07c1a3bb",
+    "thermal-management-model.py": "afbca2aecdfb43eb41e4a7317efa24749671776652cd01bba3d278c9c7f11529"
+  },
+  "actor_fraction_range": [
+    0.005,
+    0.995
+  ],
+  "history": "current state and scalar reference only"
+}

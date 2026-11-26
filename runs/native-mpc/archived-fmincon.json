@@ -1,0 +1,15 @@
+{
+  "weights_Q2_R": [
+    0.0060091832569370337,
+    0.093474772963370339
+  ],
+  "archived_objective": 59.8801385781635,
+  "elapsed_s": 34.3884043,
+  "model_revision": "materials root",
+  "matlab": "24.2.0.2712019 (R2024b)",
+  "initial_weights": [
+    1,
+    1
+  ],
+  "tuning_period_assumed_s": 0.1
+}

@@ -1,0 +1,99 @@
+{
+  "results": {
+    "nn": {
+      "arbitrary_hold_sequences": {
+        "per_10ms": {
+          "samples": 800,
+          "dt_s": 0.01,
+          "u_min": -0.9995854448549208,
+          "u_max": 0.9979597797042099,
+          "y_rmse": 0.00011520739726463578,
+          "v_rmse": 0.00010939997882676305,
+          "y_max_abs": 0.0001666549724866212
+        },
+        "per_50ms": {
+          "samples": 160,
+          "dt_s": 0.05,
+          "u_min": -0.9893070450303678,
+          "u_max": 0.9989593371172651,
+          "y_rmse": 9.542404375440169e-05,
+          "v_rmse": 0.0001698496661565235,
+          "y_max_abs": 0.00020616309281354384
+        },
+        "per_100ms": {
+          "samples": 80,
+          "dt_s": 0.1,
+          "u_min": -0.9959114811774268,
+          "u_max": 0.9992219272822953,
+          "y_rmse": 0.0005635642583678764,
+          "v_rmse": 0.001357079184201783,
+          "y_max_abs": 0.0012381358890149186
+        }
+      },
+      "residual": {
+        "points": 96,
+        "finite_difference_increment_s": 5e-05,
+        "ode_rmse_Y_per_s2": 0.017729708035614578,
+        "max_difference_analytic_vs_finite": 9.759695274169644e-08,
+        "max_abs_exact_solution_finite_defect": 1.6815217485088851e-07
+      },
+      "changed_u_first_affected_step": 3,
+      "changed_u_first_delta_y": 0.06634497109022605
+    },
+    "pinn": {
+      "arbitrary_hold_sequences": {
+        "per_10ms": {
+          "samples": 800,
+          "dt_s": 0.01,
+          "u_min": -0.9995854448549208,
+          "u_max": 0.9979597797042099,
+          "y_rmse": 0.00010028621599561658,
+          "v_rmse": 0.00013060927337667122,
+          "y_max_abs": 0.00018419885956336146
+        },
+        "per_50ms": {
+          "samples": 160,
+          "dt_s": 0.05,
+          "u_min": -0.9893070450303678,
+          "u_max": 0.9989593371172651,
+          "y_rmse": 4.7014262554837186e-05,
+          "v_rmse": 7.961744580228402e-05,
+          "y_max_abs": 9.83930339987435e-05
+        },
+        "per_100ms": {
+          "samples": 80,
+          "dt_s": 0.1,
+          "u_min": -0.9959114811774268,
+          "u_max": 0.9992219272822953,
+          "y_rmse": 6.505082952259315e-05,
+          "v_rmse": 6.01436493847126e-05,
+          "y_max_abs": 0.00010471412915320777
+        }
+      },
+      "residual": {
+        "points": 96,
+        "finite_difference_increment_s": 5e-05,
+        "ode_rmse_Y_per_s2": 0.002125150328364075,
+        "max_difference_analytic_vs_finite": 1.095029427133909e-07,
+        "max_abs_exact_solution_finite_defect": 1.6815217485088851e-07
+      },
+      "changed_u_first_affected_step": 3,
+      "changed_u_first_delta_y": 0.06634639090226449
+    }
+  },
+  "identical_supervised_weights_without_equation": true,
+  "same_split": true,
+  "thresholds": {
+    "finite_difference_abs": 3e-06,
+    "arbitrary_y_rmse": 0.005,
+    "arbitrary_v_rmse": 0.05
+  },
+  "independent_rollout_columns": [
+    "left_t_s",
+    "held_u",
+    "right_y_exact",
+    "right_v_exact",
+    "right_y_model",
+    "right_v_model"
+  ]
+}

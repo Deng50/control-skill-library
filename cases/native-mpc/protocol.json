@@ -1,0 +1,13 @@
+{
+  "frozen_utc": "2026-11-26T12:33:46Z",
+  "design": {"label":"design","step_s":5,"amplitude":1,"stop_s":10},
+  "validation": {"label":"validation","step_s":1.8,"amplitude":1.35,"stop_s":7.5},
+  "previously_seen_regression": {"label":"independent_step","step_s":2.75,"amplitude":-0.8,"stop_s":8},
+  "fresh_test": {"label":"fresh_test","step_s":3.35,"amplitude":0.55,"stop_s":7},
+  "weights_Q2_R": [[0.015,0.1],[0.002,0.01],[0.006,0.03],[0.03,0.015],[0.06,0.03],[0.01,0.003]],
+  "shortlist_size": 3,
+  "acceptance_bounds": {"abs_u":2,"abs_du_per_s":20},
+  "selection_rule": "Screen six candidates on design by ascending score, then rank only the three best on validation. Tie break by original 1-based candidate order. Write selection.json before simulating the historical regression and the fresh test.",
+  "score": "RMSE(x1-r) + .01*RMS(u)/2 + .01*RMS(du)/.2",
+  "historical_exposure": "The design and negative regression trace were seen in the earlier two-scenario trial. The validation and fresh test were frozen before their first simulation."
+}

@@ -1,0 +1,18 @@
+{
+  "used": [
+    "brief.md",
+    "process.py",
+    "settings.json",
+    "library/index.json",
+    "library/.agents/skills/design-and-tune-mpc/SKILL.md",
+    "library/.agents/skills/verify-mpc-prediction/SKILL.md",
+    "library/.agents/skills/tune-constrained-mpc/SKILL.md",
+    "library/knowledge/controller-decisions.md",
+    "library/knowledge/mpc.md"
+  ],
+  "tests": [
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' -c 'import numpy, scipy; print(numpy.__version__, scipy.__version__)'",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' solution.py",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' self_check.py"
+  ]
+}

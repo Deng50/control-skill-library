@@ -99,7 +99,8 @@
       "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_model4Ident.slx",
       "sha256": "bb2847d54c9cd432865bc7d4579e27424d2d2979d5830c5ea0cc7e837d25f990",
       "bytes": 33447,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/plant-transfer/parity.json"
     },
     {
       "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model.m",
@@ -111,13 +112,15 @@
       "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model4Datacollection.m",
       "sha256": "87708a3b18f4d2a279d1c5b57edd45a78c7811e90b42d53f7ece451f9cc973f7",
       "bytes": 589,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/object-plant/source_check.json"
     },
     {
       "path": "55-系统辨识MPC-ADRC-PID/LMPC_2nd_order_Kang_2.slx",
       "sha256": "0cd314a44272bfbfc53bd98f549407a2851e19c0f457301b47789f37af56bb35",
       "bytes": 54459,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/native-mpc/report.json"
     },
     {
       "path": "55-系统辨识MPC-ADRC-PID/model_param.mat",
@@ -340,7 +343,8 @@
       "path": "LMPC_2nd_order_Kang_2.slx",
       "sha256": "10372966e1e4c5c5dfacf166d396715882c4df093a88aa9049f4fe107f97e9f0",
       "bytes": 60509,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/native-mpc/source-audit.json"
     },
     {
       "path": "Model_parameters_Ident.m",
@@ -352,7 +356,8 @@
       "path": "MPC_QP.m",
       "sha256": "53cd3c9314a2af5b5d8d5985051c3cf05029a3bb61ba425195c04f9f43acae6c",
       "bytes": 4174,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/native-mpc/prediction-probes.json"
     },
     {
       "path": "MPC_QP_1st.m",
@@ -370,7 +375,8 @@
       "path": "pgac/nmpc_casadi_align_5s_fix_torque.py",
       "sha256": "df5799087a3e8c14ce61276cdb18be6c5ac2a9e42a8d5bc9865db75c4541c65c",
       "bytes": 19222,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/heat-policy/report.json"
     },
     {
       "path": "pgac/pgac_auto_train_agent_v1/app/__init__.py",
@@ -1007,7 +1013,8 @@
       "path": "pgac/system_test_align_delay.py",
       "sha256": "5cc3cdd97d91d0f44b0b0a2ea8d7ffc5215af38ebffbc0c9788e5c8a07c1a3bb",
       "bytes": 9234,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/heat-policy/data.json"
     },
     {
       "path": "pgac/thermal-management-model.py",
@@ -1056,7 +1063,8 @@
       "path": "Run_MPC_For_2nd_order_Plant_auto_tuning.m",
       "sha256": "df8cdaab185feb20713c7d399ac0efe37c738c702c3faa7b75935d6b8313ba34",
       "bytes": 1584,
-      "status": "historical source or archive; fingerprint only"
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/native-mpc/archived-fmincon.json"
     },
     {
       "path": "Run_PID_For_2nd_order_Plant_auto_tuning.m",

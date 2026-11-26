@@ -1,0 +1,425 @@
+{
+  "dt_s": 5.0,
+  "expert_horizon_steps": 50,
+  "weights": [
+    0.0625,
+    6.25e-10,
+    300000000.0
+  ],
+  "C0_Ah": 143.776,
+  "teacher": "archived executed actions",
+  "source_sha256": {
+    "nmpc_casadi_align_5s_fix_torque.py": "df5799087a3e8c14ce61276cdb18be6c5ac2a9e42a8d5bc9865db75c4541c65c",
+    "system_test_align_delay.py": "5cc3cdd97d91d0f44b0b0a2ea8d7ffc5215af38ebffbc0c9788e5c8a07c1a3bb",
+    "thermal-management-model.py": "afbca2aecdfb43eb41e4a7317efa24749671776652cd01bba3d278c9c7f11529"
+  },
+  "kernel_sha256": "2db9a8af9e240a9fff3230fc268da9f8450ce1258381374028d737c15db946f4",
+  "collector_sha256": "d038852c4ebf909007e66d11729fe1f537c823324b6604db7c8601c506e1a79b",
+  "npz_sha256": "f390ce36768eee6a2b24e7427b06856ceccbfe6736ec259adf1c8d4035ab5783",
+  "episodes": [
+    {
+      "id": 0,
+      "split": "train",
+      "name": "speed_30_Tamb253_Tb0253_Tm0263_Tbref_283",
+      "speed": "30",
+      "rows": 700,
+      "archive_sha256": "38b6b3a3c9ea1f4d6ffb93d8679261e269faec7f31685422d2b1d4e92d25127f",
+      "speed_sha256": "675308a3c459c1ffc40c7a7531e0f60bc9778551ed5a1aaf0eb887ef116a2eb9",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        658,
+        94,
+        54
+      ],
+      "near_high_2pct": [
+        13,
+        286,
+        645
+      ]
+    },
+    {
+      "id": 1,
+      "split": "train",
+      "name": "speed_60_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "speed": "60",
+      "rows": 700,
+      "archive_sha256": "7ea2defde693a5dae480cb2c5f4a80d4b98dddcc7fd32815e14cb0bc86bcad44",
+      "speed_sha256": "ab41d980c5f3356f8ca4c7eb8396fe7041ef88da6d2f91c4357b5bb8c40fd5dd",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        555,
+        208,
+        44
+      ],
+      "near_high_2pct": [
+        12,
+        327,
+        656
+      ]
+    },
+    {
+      "id": 2,
+      "split": "train",
+      "name": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_293",
+      "speed": "90",
+      "rows": 700,
+      "archive_sha256": "5b5fe7e43b1035743e2e986d78bca0686e9376deec23842ee4d07bc2a3849004",
+      "speed_sha256": "26084adc65838405cdbfe57454af4fabb469a3a1cd5c416a1356803369d3d27d",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        455,
+        319,
+        36
+      ],
+      "near_high_2pct": [
+        13,
+        344,
+        663
+      ]
+    },
+    {
+      "id": 3,
+      "split": "train",
+      "name": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "speed": "udds",
+      "rows": 700,
+      "archive_sha256": "c468790921e01b636981a1a55a639b536b85b9fae9b81cb21ad348a50507eb06",
+      "speed_sha256": "9b892e12e2c7535cf318d779387a52651c54a851cc71dda9ffa73a696e7e3c6f",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        608,
+        139,
+        42
+      ],
+      "near_high_2pct": [
+        33,
+        493,
+        650
+      ]
+    },
+    {
+      "id": 4,
+      "split": "train",
+      "name": "speed_nedc_Tamb253_Tb0253_Tm0263_Tbref_283",
+      "speed": "nedc",
+      "rows": 700,
+      "archive_sha256": "6a3e9b641b8d3490212fb8f75f2c13200dcf7b1734d099f05c39fa1d6708e221",
+      "speed_sha256": "72ae3bf0be64468f56857e083fdb7ee67d3a2339f6c1f5df86d29968626978cf",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        511,
+        312,
+        95
+      ],
+      "near_high_2pct": [
+        49,
+        332,
+        595
+      ]
+    },
+    {
+      "id": 5,
+      "split": "train",
+      "name": "speed_120_Tamb253_Tb0253_Tm0263_Tbref_293",
+      "speed": "120",
+      "rows": 700,
+      "archive_sha256": "a0ce7a1c9d348d26df4ad73cc845693d16133cf5e3311825cc495d8151a86a9e",
+      "speed_sha256": "5d11f18bf5a69babc4ec1404d9506c5e29a90215527f724eec571ebfe7a0849e",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        497,
+        414,
+        46
+      ],
+      "near_high_2pct": [
+        16,
+        286,
+        560
+      ]
+    },
+    {
+      "id": 6,
+      "split": "train",
+      "name": "speed_30_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "speed": "30",
+      "rows": 700,
+      "archive_sha256": "d5bdd862fe81aef55399bee33780e1dd27d347334b26c3169f5510271e19fdae",
+      "speed_sha256": "675308a3c459c1ffc40c7a7531e0f60bc9778551ed5a1aaf0eb887ef116a2eb9",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        658,
+        89,
+        41
+      ],
+      "near_high_2pct": [
+        13,
+        339,
+        659
+      ]
+    },
+    {
+      "id": 7,
+      "split": "train",
+      "name": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_293",
+      "speed": "60",
+      "rows": 700,
+      "archive_sha256": "1f82ec4ee5733d3e40a2ba1d8d79b05e4f5e381f57b2f883c48a64410d01671f",
+      "speed_sha256": "ab41d980c5f3356f8ca4c7eb8396fe7041ef88da6d2f91c4357b5bb8c40fd5dd",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        510,
+        271,
+        54
+      ],
+      "near_high_2pct": [
+        11,
+        276,
+        645
+      ]
+    },
+    {
+      "id": 8,
+      "split": "train",
+      "name": "speed_90_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "speed": "90",
+      "rows": 700,
+      "archive_sha256": "f0c9734dd4cae2b4c27ca1c3777316e0c89ce0a6d555bb40c777f428e71441bc",
+      "speed_sha256": "26084adc65838405cdbfe57454af4fabb469a3a1cd5c416a1356803369d3d27d",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        316,
+        489,
+        80
+      ],
+      "near_high_2pct": [
+        12,
+        207,
+        620
+      ]
+    },
+    {
+      "id": 9,
+      "split": "train",
+      "name": "speed_udds_Tamb263_Tb0263_Tm0273_Tbref_283",
+      "speed": "udds",
+      "rows": 700,
+      "archive_sha256": "8757d49777d04a4425c35d65e4193cb3eefd3de53a2da63496205911632f34af",
+      "speed_sha256": "9b892e12e2c7535cf318d779387a52651c54a851cc71dda9ffa73a696e7e3c6f",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        504,
+        333,
+        213
+      ],
+      "near_high_2pct": [
+        89,
+        271,
+        417
+      ]
+    },
+    {
+      "id": 10,
+      "split": "train",
+      "name": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_293",
+      "speed": "nedc",
+      "rows": 700,
+      "archive_sha256": "3d512ab325a0987cf13223b04168d3340d1b05d10f7ac676493cf96534f74b02",
+      "speed_sha256": "72ae3bf0be64468f56857e083fdb7ee67d3a2339f6c1f5df86d29968626978cf",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        530,
+        309,
+        92
+      ],
+      "near_high_2pct": [
+        48,
+        335,
+        586
+      ]
+    },
+    {
+      "id": 11,
+      "split": "train",
+      "name": "speed_120_Tamb263_Tb0263_Tm0273_Tbref_283",
+      "speed": "120",
+      "rows": 700,
+      "archive_sha256": "7821712c8cbc041393db42784081734629fd574d52c1c413d795548add41e80a",
+      "speed_sha256": "5d11f18bf5a69babc4ec1404d9506c5e29a90215527f724eec571ebfe7a0849e",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        595,
+        570,
+        130
+      ],
+      "near_high_2pct": [
+        18,
+        130,
+        265
+      ]
+    },
+    {
+      "id": 12,
+      "split": "validation",
+      "name": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "speed": "udds",
+      "rows": 700,
+      "archive_sha256": "dea2802dee30723c6b64d6eaf53c6bf821c32795368330680c1873d22ab000c5",
+      "speed_sha256": "9b892e12e2c7535cf318d779387a52651c54a851cc71dda9ffa73a696e7e3c6f",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        566,
+        229,
+        76
+      ],
+      "near_high_2pct": [
+        63,
+        398,
+        610
+      ]
+    },
+    {
+      "id": 13,
+      "split": "validation",
+      "name": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "speed": "60",
+      "rows": 700,
+      "archive_sha256": "b6025a15616eceb1255836a7a31f13808e594d4fdbefe56676128755f9e96c94",
+      "speed_sha256": "ab41d980c5f3356f8ca4c7eb8396fe7041ef88da6d2f91c4357b5bb8c40fd5dd",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        547,
+        232,
+        40
+      ],
+      "near_high_2pct": [
+        11,
+        326,
+        659
+      ]
+    },
+    {
+      "id": 14,
+      "split": "test",
+      "name": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "speed": "nedc",
+      "rows": 700,
+      "archive_sha256": "5b02cb5c868115efce09b3f95b8fbb8fdfcd2b4f1bfbfb078b0d8a520515a392",
+      "speed_sha256": "72ae3bf0be64468f56857e083fdb7ee67d3a2339f6c1f5df86d29968626978cf",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        551,
+        354,
+        120
+      ],
+      "near_high_2pct": [
+        55,
+        284,
+        562
+      ]
+    },
+    {
+      "id": 15,
+      "split": "test",
+      "name": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "speed": "90",
+      "rows": 700,
+      "archive_sha256": "e3acabef074f02e8a8d83f1418601d4f14836041c77bb0165d9bfc9b16e38111",
+      "speed_sha256": "26084adc65838405cdbfe57454af4fabb469a3a1cd5c416a1356803369d3d27d",
+      "max_state_replay_abs": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "exact_repeats": 0,
+      "near_low_2pct": [
+        488,
+        276,
+        25
+      ],
+      "near_high_2pct": [
+        14,
+        391,
+        674
+      ]
+    }
+  ],
+  "solver_status": "unrecorded; collector repeats last successful u on failure",
+  "per_solve_latency_ms": null,
+  "source_root": "D:\\projects\\素材\\pgac",
+  "archive_root": "D:\\projects\\备份2026.5.15"
+}

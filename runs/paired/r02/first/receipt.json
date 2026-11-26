@@ -1,0 +1,13 @@
+{
+  "used": [
+    "brief.md",
+    "actuator.py",
+    "teacher.py",
+    "library/knowledge/physics.md",
+    "library/knowledge/mpc.md",
+    "library/knowledge/pgac.md"
+  ],
+  "tests": [
+    "@'\nimport numpy as np\nimport torch\nfrom solution import heat, lift, policy_cost\nfrom teacher import stage, stage_cost\nfrom actuator import Actuator\ntorch.set_default_dtype(torch.float64)\nw = torch.tensor(0.7, requires_grad=True)\nzp = torch.tensor([[0.2,0.6],[0.8,-0.1]])\nspec = dict(C=17.,G=1.5,time_scale_min=2.2,time_origin_min=-9.,y_shift_C=18.,y_scale_K=4.,Ta_C=20.)\nnet = lambda v: w * v[:, :1]**2 + v[:, 1:2]\nres = heat(net,zp,spec)\nz,p=zp[:, :1],zp[:, 1:2]\nexpected=17*4*2*w*z/132+1.5*(18+4*(w*z**2+p)-20)-1000*p\ntorch.testing.assert_close(res,expected)\ntorch.testing.assert_close(torch.autograd.grad(res.sum(),w)[0], torch.autograd.grad(expected.sum(),w)[0])\nassert not zp.requires_grad and heat(net,zp,{}) is None\nrng=np.random.default_rng(187)\nfor horizon in (1,2,6,12):\n    for g in (0.,0.4,1.):\n        params=dict(a=.87,b=-.31,c=1.2,d=-.7,g=g)\n        F,P=lift(params,horizon)\n        initial=rng.normal(size=3)\n        changes=rng.normal(size=horizon)\n        plant=Actuator(params,*initial[:2])\n        outputs=[plant.step(u) for u in initial[2]+np.cumsum(changes)]\n        np.testing.assert_allclose(F@initial+P@changes,outputs,atol=1e-12)\ncfg=dict(N=4,beta=.6,a=.9,b=.25,limit=2.,center=.3,scale=.8,q=.7,r=.1,s=.08,discount=.87)\nx=torch.tensor([[-1.1],[.9],[4.]])\nref=torch.tensor([[.5],[-.1],[.7]])\nlast=torch.tensor([[.2],[.6],[-.2]])\ndef scalar(k, coupled):\n    costs=[]\n    for v,r,h in zip(x.flatten().tolist(),ref.flatten().tolist(),last.flatten().tolist()):\n        J=0\n        for j in range(cfg[\"N\"]):\n            vn,u=stage(lambda f:k*f[0]+.22*f[1],v,r,h,cfg)\n            if coupled:\n                vn+=.07*v-.33*u\n            J+=cfg[\"discount\"]**j*stage_cost(vn,r,u,h,cfg)\n            v,h=vn,u\n        costs.append(J)\n    return np.mean(costs)\nfor coupled in (False,True):\n    k=torch.tensor(.42,requires_grad=True)\n    fn=lambda f:k*f[:,:1]+.22*f[:,1:2]\n    per=lambda f:.07*f[:,:1]-.33*f[:,1:2]\n    J=policy_cost(fn,per,x,ref,last,cfg,coupled)\n    np.testing.assert_allclose(J.item(),scalar(.42,coupled),rtol=1e-10)\n    derivative=(scalar(.420001,coupled)-scalar(.419999,coupled))/2e-6\n    np.testing.assert_allclose(torch.autograd.grad(J,k)[0].item(),derivative,rtol=1e-7)\nprint(\"thermal units and gradient, lifted predictions, policy values and gradients passed\")\n'@ | & 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' -B -"
+  ]
+}

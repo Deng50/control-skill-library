@@ -1,0 +1,32 @@
+{
+  "model": "D:\\projects\\素材\\55-系统辨识MPC-ADRC-PID\\Linear_2nd_order_model4Ident.slx",
+  "solver": "ode3",
+  "dt": 0.01,
+  "MATLAB": "24.2.0.2712019 (R2024b)",
+  "input_hold": "zero-order; override From Workspace Interpolate off",
+  "velocity_block": "2nd_order_dynamic/Integrator",
+  "position_block": "2nd_order_dynamic/Integrator1",
+  "trajectories": [
+    {
+      "x0": [
+        0,
+        0
+      ],
+      "samples": 101
+    },
+    {
+      "x0": [
+        0.4,
+        -0.15
+      ],
+      "samples": 101
+    },
+    {
+      "x0": [
+        -0.6,
+        0.3
+      ],
+      "samples": 101
+    }
+  ]
+}

@@ -4,8 +4,8 @@
 |---|---|---|
 | 二阶 MPC_QP.m、同名顶层与子目录对象 | 增量矩阵错误机制反例、四参数辨识、六参数误用防护 | 新实现与独立递推、原 SLX 数据回放均已运行 |
 | 恒功率热过程的旧 Skill 和训练约定 | 用显式 C/G/Ta 自编解析采样与 PINN/NN，暴露导数缩放和初值误差 | 仿真与导出重载已运行 |
-| pgac/thermal-management-model.py、nmpc_casadi_align_5s_fix_torque.py、system_test_align_delay.py | 热对象与热惯性/延迟、NMPC 作专家的工程参考 | 原对象局部一步线性化已运行；完整 NMPC 闭环未在本轮回放 |
-| pgac_auto_train_agent_v1/kernels/pgac_core.py | 读取 Actor、Perception、ReferenceBank、MPCCritic.rollout_J 的连接 | 实跑热内核三步代价和梯度，测量感知层调用数；热管理历史权重保留原位。弹簧对象的模仿到 PGAC 两分支另行实跑 |
+| pgac/thermal-management-model.py、nmpc_casadi_align_5s_fix_torque.py、system_test_align_delay.py | 热对象与热流延迟、NMPC 专家代价、原对象闭环评分 | 已执行局部线性化及 11,200 个归档专家动作的原对象回放，新策略各自闭环；本机 CasADi 在线重新求解受应用控制限制。[热管理工程案例](../heat-policy/README.md) |
+| pgac_auto_train_agent_v1/kernels/pgac_core.py | 重放原感知与滚动路径，再按专家公式实现修订分支 | 实跑热内核三步代价与梯度，并分别在弹簧和原热对象执行模仿权重交接、两分支更新、独立闭环选型 |
 | spring-damper-ppt-20261030 | 复用模型、控制工况、专家工况及划分，新生成闭环数据；另直接导入存档 expert.npz 模仿训练 | 新数据与存档数据各有独立报告，历史优化策略数值未作为本次训练结果 |
 | 电池等效电路辨识、DEKF 热状态、EGR、转速、PID/ADRC/LQR | 选择估计器、基线及发现信息泄漏的知识条目 | 仅存档和方法参考，缺面向同对象的独立闭环复验 |
 | 遗传算法热模型参数辨识 | 学习参数估计与热模型表达 | 原目录附名为“版权声明.txt”的再分发限制；此库仅含来源指纹。第三方源码、模型和历史权重仍在原处 |

@@ -1,0 +1,16 @@
+{
+  "native_trajectories_checked": 12,
+  "design_candidate_count": 6,
+  "validation_candidate_ids": [
+    2,
+    3,
+    6
+  ],
+  "selected_id": 2,
+  "selected_utc": "2026-11-26T12:35:19.078Z",
+  "fresh_test_started_utc": "2026-11-26T12:35:29.848Z",
+  "fresh_test_started_after_selection": true,
+  "historical_controls_rechecked": true,
+  "reported_metrics_match_exported_timeseries": true,
+  "corrected_bounds_pass_all_four_cases": true
+}

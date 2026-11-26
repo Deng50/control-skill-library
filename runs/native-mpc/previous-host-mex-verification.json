@@ -1,0 +1,148 @@
+{
+  "archived_compiled": [
+    {
+      "path": "native_mpc_clock_probe/Step6",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/linear MPC without constrant",
+      "compiled_sample_time": [
+        [
+          0,
+          0
+        ],
+        [
+          0.01,
+          0
+        ],
+        [
+          null,
+          0
+        ]
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/linear MPC without constrant/Delay",
+      "compiled_sample_time": [
+        0.01,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/linear MPC without constrant/tuixiangzi_ZL",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/plant model",
+      "compiled_sample_time": [
+        [
+          0,
+          0
+        ],
+        [
+          null,
+          0
+        ]
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/plant model/2nd_order_dynamic/Integrator",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_clock_probe/plant model/2nd_order_dynamic/Integrator1",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    }
+  ],
+  "corrected_compiled": [
+    {
+      "path": "native_mpc_corrected/Step6",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/linear MPC without constrant",
+      "compiled_sample_time": [
+        [
+          0,
+          0
+        ],
+        [
+          0.01,
+          0
+        ],
+        [
+          null,
+          0
+        ]
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/linear MPC without constrant/Delay",
+      "compiled_sample_time": [
+        0.01,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/linear MPC without constrant/tuixiangzi_ZL",
+      "compiled_sample_time": [
+        0.01,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/plant model",
+      "compiled_sample_time": [
+        [
+          0,
+          0
+        ],
+        [
+          0.01,
+          0
+        ],
+        [
+          null,
+          0
+        ]
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/plant model/2nd_order_dynamic/Integrator",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    },
+    {
+      "path": "native_mpc_corrected/plant model/2nd_order_dynamic/Integrator1",
+      "compiled_sample_time": [
+        0,
+        0
+      ]
+    }
+  ],
+  "saved_model_replay_max_abs": 4.6629367034256575E-15,
+  "matlab": "24.2.0.2712019 (R2024b)",
+  "coder_license": true,
+  "codegen_c_source_generated": true,
+  "selected_host_C_compiler": false,
+  "host_mex_built": true,
+  "mex_max_abs": 0,
+  "mex_status": 1
+}

@@ -1,0 +1,36 @@
+{
+  "schema": "second-order-interval-flow-v1",
+  "model": "pinn",
+  "input": [
+    "y [Y]",
+    "v [Y/s]",
+    "u [U]"
+  ],
+  "outputs": [
+    "y_next [Y]",
+    "v_next [Y/s]"
+  ],
+  "min_step_s": 0.01,
+  "max_hold_s": 0.1,
+  "hold": "ZOH on [k,k+1)",
+  "hidden_width": 24,
+  "activation": "tanh",
+  "feature_support_train": [
+    [
+      -0.7578893348008667,
+      -2.707939991651211,
+      -1.2972147411670225
+    ],
+    [
+      1.1619610117702834,
+      2.683454807211632,
+      1.279891826359943
+    ]
+  ],
+  "reset": "Known reset y and v, or estimated initial v; propagate both outputs afterwards",
+  "input_policy": "finite commands; training ranges documented; extrapolation is unchecked",
+  "data_sha256": "2bb302dfa17c05c11a66cdfa2aae27599513f8e2ba94e5dccf38fe408db4b5a2",
+  "physics_sha256": "64b1e666e8ccaec27a5a560514195474dcc3de2f706fa7559fd119ee456396b2",
+  "weights_sha256": "9ed0b9e0fb787f07c61a5d7a2c5c2ffddb8a8bf73c22e2836a558849e5586c9f",
+  "scaler_sha256": "e355af50b5faddd93e4881368a4da6e7fd11c7d56cdb79280e4c734b8725bf31"
+}

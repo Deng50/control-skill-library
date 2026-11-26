@@ -1,0 +1,29 @@
+初始点 X0 不在边界 LB 和 UB 之间；
+FMINCON 对 X0 进行了偏移以严格满足边界条件。
+
+                                            First-order      Norm of
+ Iter F-count            f(x)  Feasibility   optimality         step
+    0       3    3.214991e+02    0.000e+00    2.430e+01
+    1       6    6.181013e+01    0.000e+00    1.128e+03    1.025e+00
+    2      10    6.167579e+01    0.000e+00    4.237e+02    1.515e-01
+    3      14    6.138790e+01    0.000e+00    4.033e+02    7.604e-02
+    4      18    5.989000e+01    0.000e+00    3.799e+01    1.955e-02
+    5      22    5.988334e+01    0.000e+00    2.129e+01    3.897e-03
+    6      25    5.988511e+01    0.000e+00    1.100e+00    8.745e-04
+    7      28    5.988357e+01    0.000e+00    6.673e-01    1.297e-03
+    8      31    5.988025e+01    0.000e+00    1.037e+00    4.717e-03
+    9      34    5.988029e+01    0.000e+00    5.919e-02    1.708e-04
+   10      37    5.988014e+01    0.000e+00    3.817e-01    1.253e-03
+   11      40    5.988014e+01    0.000e+00    9.814e-02    6.422e-05
+   12      43    5.988014e+01    0.000e+00    7.462e-04    6.725e-06
+
+<a href = "matlab: helpview('optim','local_min_poss_with_constr','CSHelpWindow');">可能存在局部最小值。满足约束</a>。
+
+fmincon 已停止，因为<a href = "matlab: helpview('optim','norm_curr_step_simple_fminconip','CSHelpWindow');">当前步长</a>小于
+<a href = "matlab: helpview('optim','step_size_tol','CSHelpWindow');">步长容差</a>值并且在<a href = "matlab: helpview('optim','constraint_tolerance','CSHelpWindow');">约束容差</a>值范围内满足约束。
+
+<<a href = "matlab: createExitMsg({'optimlib:sqpLineSearch:Exit2basic','fmincon'},{'optimlib:sqpLineSearch:Exit2detailed','1.000000e-10','0.000000e+00','1.000000e-06'},true,true);;">停止条件详细信息</a>>
+优化完成！
+最优Q2: 0.0060
+最优R: 0.0935
+

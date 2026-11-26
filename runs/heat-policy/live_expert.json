@@ -1,0 +1,6 @@
+{
+  "status": "dependency_unavailable",
+  "casadi_version": "3.8.1",
+  "error": "DLL load failed while importing _casadi: 应用程序控制策略已阻止此文件。",
+  "solve_latency_ms": null
+}

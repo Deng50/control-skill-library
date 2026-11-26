@@ -1,0 +1,11 @@
+{
+  "schema": "second-order-zoh-v1",
+  "equation": "y_ddot = a*y_dot + c*y + b*u + f0",
+  "a": -4.2,
+  "c": -9.0,
+  "b": 9.0,
+  "f0": 1.0,
+  "native_step_s": 0.01,
+  "source": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model4Datacollection.m and Linear_2nd_order_model4DataProduction.slx",
+  "units": {"time": "s", "y": "archive output unit Y", "u": "archive input unit U", "a": "1/s", "c": "1/s^2", "b": "Y/(U s^2)", "f0": "Y/s^2"}
+}

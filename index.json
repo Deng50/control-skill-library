@@ -8,10 +8,10 @@
       "对象训练智能体"
     ],
     "instructions": ".agents/skills/train-object-model/SKILL.md",
-    "knowledge": "knowledge/physics.md",
-    "case": "cases/thermal/README.md",
+    "knowledge": "knowledge/model-decisions.md",
+    "case": "cases/object-plant/README.md",
     "code": "replay.py",
-    "evidence": "runs/thermal/paired/report.json"
+    "evidence": "runs/object-plant/paired/report.json"
   },
   {
     "role": "design-and-tune-mpc",
@@ -22,10 +22,10 @@
       "MPC设计调优"
     ],
     "instructions": ".agents/skills/design-and-tune-mpc/SKILL.md",
-    "knowledge": "knowledge/mpc.md",
-    "case": "cases/spring/README.md",
+    "knowledge": "knowledge/controller-decisions.md",
+    "case": "cases/native-mpc/README.md",
     "code": "replay.py",
-    "evidence": "runs/mpc/report.json"
+    "evidence": "runs/native-mpc/report.json"
   },
   {
     "role": "distill-controller",
@@ -36,10 +36,10 @@
       "专家模仿到PGAC"
     ],
     "instructions": ".agents/skills/distill-controller/SKILL.md",
-    "knowledge": "knowledge/pgac.md",
-    "case": "cases/spring/README.md",
+    "knowledge": "knowledge/distillation-decisions.md",
+    "case": "cases/heat-policy/README.md",
     "code": "replay.py",
-    "evidence": "runs/pgac/report.json"
+    "evidence": "runs/heat-policy/report.json"
   },
   {
     "role": "train-object-model",
@@ -201,5 +201,73 @@
     "case": "cases/spring/README.md",
     "code": "controlkit/policy.py",
     "evidence": "runs/pgac/report.json"
+  },
+  {
+    "role": "train-object-model",
+    "skill": "fit-state-flow",
+    "terms": [
+      "变输入",
+      "二阶PINN",
+      "动态递推训练",
+      "状态转移训练",
+      "二阶物理残差",
+      "分段保持"
+    ],
+    "instructions": ".agents/skills/fit-state-flow/SKILL.md",
+    "knowledge": "knowledge/model-decisions.md",
+    "case": "cases/object-plant/README.md",
+    "code": "cases/object-plant/train.py",
+    "evidence": "runs/object-plant/paired/report.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "port-dynamic-plant",
+    "terms": [
+      "移植",
+      "Simulink转Python",
+      "隐藏状态",
+      "复位核对",
+      "多步对齐",
+      "延迟状态"
+    ],
+    "instructions": ".agents/skills/port-dynamic-plant/SKILL.md",
+    "knowledge": "knowledge/controller-decisions.md",
+    "case": "cases/plant-transfer/README.md",
+    "code": "controlkit/parity.py",
+    "evidence": "runs/plant-transfer/parity.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "build-native-mpc",
+    "terms": [
+      "MATLAB Function",
+      "原生MPC",
+      "Simulink控制器",
+      "权重接线",
+      "S-function",
+      "闭环整定"
+    ],
+    "instructions": ".agents/skills/build-native-mpc/SKILL.md",
+    "knowledge": "knowledge/controller-decisions.md",
+    "case": "cases/native-mpc/README.md",
+    "code": "cases/native-mpc/run_native_mpc.m",
+    "evidence": "runs/native-mpc/report.json"
+  },
+  {
+    "role": "distill-controller",
+    "skill": "distill-thermal-expert",
+    "terms": [
+      "热管理轻量化",
+      "热管理专家",
+      "NMPC模仿",
+      "感知耦合训练",
+      "功率代价",
+      "热管理PGAC"
+    ],
+    "instructions": ".agents/skills/distill-thermal-expert/SKILL.md",
+    "knowledge": "knowledge/distillation-decisions.md",
+    "case": "cases/heat-policy/README.md",
+    "code": "cases/heat-policy/train_policy.py",
+    "evidence": "runs/heat-policy/report.json"
   }
 ]

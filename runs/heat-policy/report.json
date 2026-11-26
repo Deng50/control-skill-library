@@ -1,0 +1,1039 @@
+{
+  "seed": 714,
+  "dt_s": 5.0,
+  "expert_horizon": 50,
+  "pgac_horizon": 12,
+  "pgac_updates": 14,
+  "torch_version": "2.7.1+cu128",
+  "python_version": "3.10.22",
+  "numpy_version": "2.2.6",
+  "imitation": {
+    "selected_update": 450,
+    "best_validation": 0.06602219492197037,
+    "history": [
+      {
+        "update": 50,
+        "validation_loss": 0.0745977908372879
+      },
+      {
+        "update": 100,
+        "validation_loss": 0.06928303837776184
+      },
+      {
+        "update": 150,
+        "validation_loss": 0.06748718023300171
+      },
+      {
+        "update": 200,
+        "validation_loss": 0.06664867699146271
+      },
+      {
+        "update": 250,
+        "validation_loss": 0.06723272055387497
+      },
+      {
+        "update": 300,
+        "validation_loss": 0.06654495745897293
+      },
+      {
+        "update": 350,
+        "validation_loss": 0.06674868613481522
+      },
+      {
+        "update": 400,
+        "validation_loss": 0.06968191266059875
+      },
+      {
+        "update": 450,
+        "validation_loss": 0.06602219492197037
+      },
+      {
+        "update": 500,
+        "validation_loss": 0.06955772638320923
+      },
+      {
+        "update": 550,
+        "validation_loss": 0.06750988215208054
+      },
+      {
+        "update": 600,
+        "validation_loss": 0.06883237510919571
+      },
+      {
+        "update": 650,
+        "validation_loss": 0.06826376914978027
+      },
+      {
+        "update": 700,
+        "validation_loss": 0.0701376274228096
+      },
+      {
+        "update": 750,
+        "validation_loss": 0.07065144926309586
+      },
+      {
+        "update": 800,
+        "validation_loss": 0.0663471668958664
+      },
+      {
+        "update": 850,
+        "validation_loss": 0.0692230612039566
+      },
+      {
+        "update": 900,
+        "validation_loss": 0.06789896637201309
+      },
+      {
+        "update": 950,
+        "validation_loss": 0.07010604441165924
+      },
+      {
+        "update": 1000,
+        "validation_loss": 0.07090819627046585
+      },
+      {
+        "update": 1050,
+        "validation_loss": 0.06999886780977249
+      },
+      {
+        "update": 1100,
+        "validation_loss": 0.07745612412691116
+      },
+      {
+        "update": 1150,
+        "validation_loss": 0.07412323355674744
+      },
+      {
+        "update": 1200,
+        "validation_loss": 0.07026191055774689
+      },
+      {
+        "update": 1250,
+        "validation_loss": 0.07172586768865585
+      },
+      {
+        "update": 1300,
+        "validation_loss": 0.07836905121803284
+      },
+      {
+        "update": 1350,
+        "validation_loss": 0.08013881742954254
+      },
+      {
+        "update": 1400,
+        "validation_loss": 0.07600079476833344
+      },
+      {
+        "update": 1450,
+        "validation_loss": 0.08912371844053268
+      },
+      {
+        "update": 1500,
+        "validation_loss": 0.08074981719255447
+      },
+      {
+        "update": 1550,
+        "validation_loss": 0.08569212257862091
+      },
+      {
+        "update": 1600,
+        "validation_loss": 0.0760916993021965
+      },
+      {
+        "update": 1650,
+        "validation_loss": 0.08785078674554825
+      },
+      {
+        "update": 1700,
+        "validation_loss": 0.08588498085737228
+      },
+      {
+        "update": 1750,
+        "validation_loss": 0.0839376226067543
+      },
+      {
+        "update": 1800,
+        "validation_loss": 0.0894882082939148
+      }
+    ]
+  },
+  "perception": {
+    "selected_update": 1800,
+    "best_validation": 0.031191358342766762,
+    "history": [
+      {
+        "update": 50,
+        "validation_loss": 0.4423307180404663
+      },
+      {
+        "update": 100,
+        "validation_loss": 0.33843743801116943
+      },
+      {
+        "update": 150,
+        "validation_loss": 0.2556438446044922
+      },
+      {
+        "update": 200,
+        "validation_loss": 0.20649529993534088
+      },
+      {
+        "update": 250,
+        "validation_loss": 0.17313726246356964
+      },
+      {
+        "update": 300,
+        "validation_loss": 0.16536282002925873
+      },
+      {
+        "update": 350,
+        "validation_loss": 0.14498460292816162
+      },
+      {
+        "update": 400,
+        "validation_loss": 0.1360711306333542
+      },
+      {
+        "update": 450,
+        "validation_loss": 0.12587487697601318
+      },
+      {
+        "update": 500,
+        "validation_loss": 0.117622010409832
+      },
+      {
+        "update": 550,
+        "validation_loss": 0.11140409857034683
+      },
+      {
+        "update": 600,
+        "validation_loss": 0.1089070588350296
+      },
+      {
+        "update": 650,
+        "validation_loss": 0.1015193834900856
+      },
+      {
+        "update": 700,
+        "validation_loss": 0.10110773146152496
+      },
+      {
+        "update": 750,
+        "validation_loss": 0.08867214620113373
+      },
+      {
+        "update": 800,
+        "validation_loss": 0.0828884169459343
+      },
+      {
+        "update": 850,
+        "validation_loss": 0.07887808978557587
+      },
+      {
+        "update": 900,
+        "validation_loss": 0.07395879179239273
+      },
+      {
+        "update": 950,
+        "validation_loss": 0.06987060606479645
+      },
+      {
+        "update": 1000,
+        "validation_loss": 0.06693914532661438
+      },
+      {
+        "update": 1050,
+        "validation_loss": 0.06372497230768204
+      },
+      {
+        "update": 1100,
+        "validation_loss": 0.05892302095890045
+      },
+      {
+        "update": 1150,
+        "validation_loss": 0.05581539869308472
+      },
+      {
+        "update": 1200,
+        "validation_loss": 0.05193623900413513
+      },
+      {
+        "update": 1250,
+        "validation_loss": 0.05187688767910004
+      },
+      {
+        "update": 1300,
+        "validation_loss": 0.04675069823861122
+      },
+      {
+        "update": 1350,
+        "validation_loss": 0.0464010052382946
+      },
+      {
+        "update": 1400,
+        "validation_loss": 0.043729472905397415
+      },
+      {
+        "update": 1450,
+        "validation_loss": 0.04105541482567787
+      },
+      {
+        "update": 1500,
+        "validation_loss": 0.04174009710550308
+      },
+      {
+        "update": 1550,
+        "validation_loss": 0.038339853286743164
+      },
+      {
+        "update": 1600,
+        "validation_loss": 0.03705565258860588
+      },
+      {
+        "update": 1650,
+        "validation_loss": 0.03565369173884392
+      },
+      {
+        "update": 1700,
+        "validation_loss": 0.03352055326104164
+      },
+      {
+        "update": 1750,
+        "validation_loss": 0.03121795691549778
+      },
+      {
+        "update": 1800,
+        "validation_loss": 0.031191358342766762
+      }
+    ],
+    "validation_nominal_RMSE": [
+      0.0003684193070512265,
+      0.027016501873731613,
+      3.98586671508383e-05
+    ],
+    "validation_corrected_RMSE": [
+      0.000111896384623833,
+      0.0027611348778009415,
+      1.0782722483781981e-06
+    ],
+    "state_order": [
+      "Tb_K",
+      "Tm_K",
+      "SOC"
+    ],
+    "context": [
+      "Tb",
+      "Tm",
+      "SOC",
+      "pump_rpm",
+      "heater_W",
+      "bypass_fraction",
+      "Tamb",
+      "Vk",
+      "Vkp1"
+    ]
+  },
+  "gradient_probe": {
+    "nominal_J": 133.21214294433594,
+    "coupled_J": 133.24514770507812,
+    "actor_gradient_delta_L2": 0.006202411837875843,
+    "coupled_perception_calls": 12,
+    "horizon": 12
+  },
+  "pgac": {
+    "nominal": {
+      "preupdate_max_abs_physical": 0.0,
+      "updates": [
+        {
+          "update": 1,
+          "J": 131.81300354003906,
+          "gradient_norm": 0.5196486115455627
+        },
+        {
+          "update": 2,
+          "J": 101.2936019897461,
+          "gradient_norm": 0.4292837381362915
+        },
+        {
+          "update": 3,
+          "J": 121.5587158203125,
+          "gradient_norm": 0.4587276875972748
+        },
+        {
+          "update": 4,
+          "J": 97.58381652832031,
+          "gradient_norm": 0.3116731643676758
+        },
+        {
+          "update": 5,
+          "J": 140.63702392578125,
+          "gradient_norm": 0.30285653471946716
+        },
+        {
+          "update": 6,
+          "J": 154.66241455078125,
+          "gradient_norm": 0.3744088113307953
+        },
+        {
+          "update": 7,
+          "J": 165.25563049316406,
+          "gradient_norm": 0.32207128405570984
+        },
+        {
+          "update": 8,
+          "J": 164.3970184326172,
+          "gradient_norm": 0.3104056119918823
+        },
+        {
+          "update": 9,
+          "J": 132.69802856445312,
+          "gradient_norm": 0.4341180920600891
+        },
+        {
+          "update": 10,
+          "J": 167.19781494140625,
+          "gradient_norm": 0.2025953084230423
+        },
+        {
+          "update": 11,
+          "J": 179.2655487060547,
+          "gradient_norm": 0.39950865507125854
+        },
+        {
+          "update": 12,
+          "J": 177.15554809570312,
+          "gradient_norm": 0.20497027039527893
+        },
+        {
+          "update": 13,
+          "J": 170.91552734375,
+          "gradient_norm": 0.16930148005485535
+        },
+        {
+          "update": 14,
+          "J": 108.8193359375,
+          "gradient_norm": 0.396949827671051
+        }
+      ],
+      "max_parameter_change": 0.0016871988773345947
+    },
+    "coupled": {
+      "preupdate_max_abs_physical": 0.0,
+      "updates": [
+        {
+          "update": 1,
+          "J": 131.85914611816406,
+          "gradient_norm": 0.5149414539337158
+        },
+        {
+          "update": 2,
+          "J": 101.33163452148438,
+          "gradient_norm": 0.42646998167037964
+        },
+        {
+          "update": 3,
+          "J": 121.59986877441406,
+          "gradient_norm": 0.44285547733306885
+        },
+        {
+          "update": 4,
+          "J": 97.6134033203125,
+          "gradient_norm": 0.3066751956939697
+        },
+        {
+          "update": 5,
+          "J": 140.68739318847656,
+          "gradient_norm": 0.2969408333301544
+        },
+        {
+          "update": 6,
+          "J": 154.7115936279297,
+          "gradient_norm": 0.36974385380744934
+        },
+        {
+          "update": 7,
+          "J": 165.31109619140625,
+          "gradient_norm": 0.3214667737483978
+        },
+        {
+          "update": 8,
+          "J": 164.451171875,
+          "gradient_norm": 0.3081069588661194
+        },
+        {
+          "update": 9,
+          "J": 132.74073791503906,
+          "gradient_norm": 0.4279400706291199
+        },
+        {
+          "update": 10,
+          "J": 167.24720764160156,
+          "gradient_norm": 0.20111870765686035
+        },
+        {
+          "update": 11,
+          "J": 179.339599609375,
+          "gradient_norm": 0.39088451862335205
+        },
+        {
+          "update": 12,
+          "J": 177.20669555664062,
+          "gradient_norm": 0.20279546082019806
+        },
+        {
+          "update": 13,
+          "J": 170.9669952392578,
+          "gradient_norm": 0.1688024252653122
+        },
+        {
+          "update": 14,
+          "J": 108.84782409667969,
+          "gradient_norm": 0.3931484818458557
+        }
+      ],
+      "max_parameter_change": 0.001692548394203186
+    }
+  },
+  "fault_checks": {
+    "one_step_action_shift": "Previous executed action misaligned",
+    "wrong_dt": "Wrong sample time",
+    "rpm_heater_swapped": "Action mapping/bounds mismatch",
+    "lost_delay": "Original state/delay replay mismatch",
+    "source_stage_vs_torch_terms_max_abs": [
+      8.742112501636257e-05,
+      7.590658015338425e-10,
+      1.8100410354993102e-06
+    ],
+    "reset_history_delta_J": -0.3983612060546875,
+    "frozen_speed_time_delta_J": -0.269622802734375,
+    "stock_minus_expert_power_max_abs_W": 4315.802892110426,
+    "imitation_pack_reload_max_abs": 0.0,
+    "original_MPCCritic": {
+      "original_J_before": 166.88754272460938,
+      "original_J_after_perception_mutation": 166.88754272460938,
+      "actual_perception_calls": 0,
+      "original_velocity_pairs_mps": [
+        [
+          2.2049999237060547,
+          4.454999923706055
+        ],
+        [
+          2.2049999237060547,
+          4.454999923706055
+        ],
+        [
+          2.2049999237060547,
+          4.454999923706055
+        ]
+      ],
+      "advancing_velocity_pairs_mps": [
+        [
+          2.205,
+          4.455
+        ],
+        [
+          4.455,
+          6.705
+        ],
+        [
+          6.705,
+          8.333333333333334
+        ]
+      ]
+    }
+  },
+  "selected": {
+    "name": "imitation",
+    "validation_score": [
+      0,
+      9901.491939570267
+    ],
+    "sha256": "a55d0fcb5ebc1e293506910356a8c88ba3332a6af7135f5334d0215dd086d1d6",
+    "rule": "fewest bound/motor violations then lowest mean validation J; captured before test"
+  },
+  "heldout_action_RMSE_on_teacher_state": {
+    "imitation": [
+      214.27291870117188,
+      912.5120849609375,
+      0.2635837197303772
+    ],
+    "nominal": [
+      207.16819763183594,
+      910.589111328125,
+      0.26372116804122925
+    ],
+    "coupled": [
+      207.9927520751953,
+      910.587158203125,
+      0.263719379901886
+    ]
+  },
+  "validation": [
+    {
+      "eid": 12,
+      "scenario": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "split": "validation",
+      "policy": "expert",
+      "steps": 700,
+      "J": 9692.526392323634,
+      "tracking_J": 9552.717397398093,
+      "power_J": 4.162765062351335,
+      "aging_J": 135.64622986319108,
+      "battery_MAE_K": 9.309185935624045,
+      "battery_RMSE_K": 14.77659724788634,
+      "btm_Wh": 2376.466697020363,
+      "motor_max_K": 308.73585702445473,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        3.535787129749224e-07,
+        3.151330611217418e-05,
+        7.508901278541202e-09
+      ],
+      "inference_p50_ms": null,
+      "inference_p95_ms": null,
+      "expert_action_RMSE": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "eid": 13,
+      "scenario": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "split": "validation",
+      "policy": "expert",
+      "steps": 700,
+      "J": 9697.309474829106,
+      "tracking_J": 9630.966132435182,
+      "power_J": 3.3726546094243477,
+      "aging_J": 62.97068778449895,
+      "battery_MAE_K": 9.516176259350013,
+      "battery_RMSE_K": 14.836993251375953,
+      "btm_Wh": 2025.3209933881183,
+      "motor_max_K": 320.82629610271647,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        1.8768275822367286e-06,
+        3.9252016904356424e-05,
+        9.642231235673648e-09
+      ],
+      "inference_p50_ms": null,
+      "inference_p95_ms": null,
+      "expert_action_RMSE": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "eid": 12,
+      "scenario": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "split": "validation",
+      "policy": "imitation",
+      "steps": 700,
+      "J": 9931.206216386245,
+      "tracking_J": 9779.169068147125,
+      "power_J": 3.6215769704984173,
+      "aging_J": 148.4155712686228,
+      "battery_MAE_K": 10.173064802785975,
+      "battery_RMSE_K": 14.950714511848302,
+      "btm_Wh": 2379.8279453063824,
+      "motor_max_K": 309.96888360728684,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.0967,
+      "inference_p95_ms": 0.17881499999999997,
+      "expert_action_RMSE": [
+        254.54532674918522,
+        1290.257411867808,
+        0.4074106769772388
+      ]
+    },
+    {
+      "eid": 13,
+      "scenario": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "split": "validation",
+      "policy": "imitation",
+      "steps": 700,
+      "J": 9871.777662754288,
+      "tracking_J": 9805.126910348557,
+      "power_J": 3.253931905313707,
+      "aging_J": 63.39682050041594,
+      "battery_MAE_K": 9.879622959924866,
+      "battery_RMSE_K": 14.970543962136205,
+      "btm_Wh": 2048.377233542796,
+      "motor_max_K": 319.8367615822139,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.08975,
+      "inference_p95_ms": 0.16047499999999992,
+      "expert_action_RMSE": [
+        223.8646782031823,
+        522.9459127013698,
+        0.24349461320755306
+      ]
+    },
+    {
+      "eid": 12,
+      "scenario": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "split": "validation",
+      "policy": "nominal",
+      "steps": 700,
+      "J": 9941.198088585774,
+      "tracking_J": 9789.23788753599,
+      "power_J": 3.581705848624991,
+      "aging_J": 148.37849520115847,
+      "battery_MAE_K": 10.215178566370163,
+      "battery_RMSE_K": 14.958409302394607,
+      "btm_Wh": 2360.5060033214595,
+      "motor_max_K": 309.7932288511245,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.0931,
+      "inference_p95_ms": 0.17786499999999994,
+      "expert_action_RMSE": [
+        253.6924679527253,
+        1292.2114189227364,
+        0.40634836835470944
+      ]
+    },
+    {
+      "eid": 13,
+      "scenario": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "split": "validation",
+      "policy": "nominal",
+      "steps": 700,
+      "J": 9869.959351271616,
+      "tracking_J": 9804.082791760995,
+      "power_J": 3.213343933192504,
+      "aging_J": 62.663215577429035,
+      "battery_MAE_K": 9.88845289339462,
+      "battery_RMSE_K": 14.96974685672864,
+      "btm_Wh": 2026.6017917475224,
+      "motor_max_K": 319.38964925833807,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09334999999999999,
+      "inference_p95_ms": 0.17852999999999997,
+      "expert_action_RMSE": [
+        224.46615741469307,
+        497.65087101875133,
+        0.24544330575656853
+      ]
+    },
+    {
+      "eid": 12,
+      "scenario": "speed_udds_Tamb253_Tb0253_Tm0263_Tbref_288",
+      "split": "validation",
+      "policy": "coupled",
+      "steps": 700,
+      "J": 9941.318364499786,
+      "tracking_J": 9789.353757230221,
+      "power_J": 3.58230988698275,
+      "aging_J": 148.3822973825831,
+      "battery_MAE_K": 10.215974916084347,
+      "battery_RMSE_K": 14.958497829264786,
+      "btm_Wh": 2360.6848431468234,
+      "motor_max_K": 309.77658356623147,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09509999999999999,
+      "inference_p95_ms": 0.17894499999999997,
+      "expert_action_RMSE": [
+        253.7243015652432,
+        1292.4428789958483,
+        0.40650548209810433
+      ]
+    },
+    {
+      "eid": 13,
+      "scenario": "speed_60_Tamb263_Tb0263_Tm0273_Tbref_298",
+      "split": "validation",
+      "policy": "coupled",
+      "steps": 700,
+      "J": 9869.811783878336,
+      "tracking_J": 9803.935701295883,
+      "power_J": 3.2134476925227555,
+      "aging_J": 62.66263488993324,
+      "battery_MAE_K": 9.888300914886159,
+      "battery_RMSE_K": 14.9696345608957,
+      "btm_Wh": 2026.4637847772876,
+      "motor_max_K": 319.3547472455214,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09759999999999999,
+      "inference_p95_ms": 0.17383499999999996,
+      "expert_action_RMSE": [
+        224.81561764003783,
+        497.6837615318564,
+        0.2454240830966083
+      ]
+    }
+  ],
+  "test": [
+    {
+      "eid": 14,
+      "scenario": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "split": "test",
+      "policy": "expert",
+      "steps": 700,
+      "J": 3762.117803870073,
+      "tracking_J": 3666.973702590099,
+      "power_J": 2.9704907996888172,
+      "aging_J": 92.17361048028516,
+      "battery_MAE_K": 5.0111435615753255,
+      "battery_RMSE_K": 9.155137452462851,
+      "btm_Wh": 1703.5538478616213,
+      "motor_max_K": 311.04867784388045,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        1.3345473064418911e-06,
+        3.584636124287499e-05,
+        7.909844779163677e-09
+      ],
+      "inference_p50_ms": null,
+      "inference_p95_ms": null,
+      "expert_action_RMSE": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "eid": 15,
+      "scenario": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "split": "test",
+      "policy": "expert",
+      "steps": 700,
+      "J": 18824.859440796077,
+      "tracking_J": 18583.320256082377,
+      "power_J": 3.980298890871974,
+      "aging_J": 237.5588858228233,
+      "battery_MAE_K": 14.33503130258974,
+      "battery_RMSE_K": 20.609745409716044,
+      "btm_Wh": 2258.5558454612296,
+      "motor_max_K": 323.6291865806831,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        1.8633350578056707e-06,
+        3.9291610846703406e-05,
+        9.612603601993897e-09
+      ],
+      "inference_p50_ms": null,
+      "inference_p95_ms": null,
+      "expert_action_RMSE": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "eid": 14,
+      "scenario": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "split": "test",
+      "policy": "imitation",
+      "steps": 700,
+      "J": 3890.999374375757,
+      "tracking_J": 3781.2602290873015,
+      "power_J": 2.5058599968507256,
+      "aging_J": 107.23328529160474,
+      "battery_MAE_K": 5.779677765577053,
+      "battery_RMSE_K": 9.296709376778495,
+      "btm_Wh": 1771.1695419410264,
+      "motor_max_K": 312.5544939940686,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.0934,
+      "inference_p95_ms": 0.169605,
+      "expert_action_RMSE": [
+        247.5514126259496,
+        1231.1581007320888,
+        0.4483878142403869
+      ]
+    },
+    {
+      "eid": 15,
+      "scenario": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "split": "test",
+      "policy": "imitation",
+      "steps": 700,
+      "J": 19118.290392167284,
+      "tracking_J": 18873.388758461166,
+      "power_J": 3.855339783594058,
+      "aging_J": 241.04629392251758,
+      "battery_MAE_K": 14.546174678171846,
+      "battery_RMSE_K": 20.769972148525884,
+      "btm_Wh": 2284.119490611477,
+      "motor_max_K": 322.01768349131385,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09419999999999999,
+      "inference_p95_ms": 0.16654499999999994,
+      "expert_action_RMSE": [
+        197.95339621840319,
+        536.6278279864268,
+        0.18722956955309336
+      ]
+    },
+    {
+      "eid": 14,
+      "scenario": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "split": "test",
+      "policy": "nominal",
+      "steps": 700,
+      "J": 3890.025639445153,
+      "tracking_J": 3781.404701828841,
+      "power_J": 2.4678046414000323,
+      "aging_J": 106.15313297491191,
+      "battery_MAE_K": 5.81731479981583,
+      "battery_RMSE_K": 9.296886977390523,
+      "btm_Wh": 1749.0870440134258,
+      "motor_max_K": 312.4979283330844,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09675,
+      "inference_p95_ms": 0.169405,
+      "expert_action_RMSE": [
+        245.7240905483875,
+        1224.001873914754,
+        0.44188522601874947
+      ]
+    },
+    {
+      "eid": 15,
+      "scenario": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "split": "test",
+      "policy": "nominal",
+      "steps": 700,
+      "J": 19106.265467697292,
+      "tracking_J": 18863.70761816005,
+      "power_J": 3.8024061070010133,
+      "aging_J": 238.75544343024234,
+      "battery_MAE_K": 14.473604962150034,
+      "battery_RMSE_K": 20.764644467066088,
+      "btm_Wh": 2248.308000749174,
+      "motor_max_K": 321.5108262236136,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.0973,
+      "inference_p95_ms": 0.1729,
+      "expert_action_RMSE": [
+        198.2703738505956,
+        495.11079601727795,
+        0.1872298865893201
+      ]
+    },
+    {
+      "eid": 14,
+      "scenario": "speed_nedc_Tamb263_Tb0263_Tm0273_Tbref_288",
+      "split": "test",
+      "policy": "coupled",
+      "steps": 700,
+      "J": 3890.077186282379,
+      "tracking_J": 3781.4633405692266,
+      "power_J": 2.467943221113063,
+      "aging_J": 106.14590249203889,
+      "battery_MAE_K": 5.818120607432885,
+      "battery_RMSE_K": 9.296959061136038,
+      "btm_Wh": 1749.0380803840312,
+      "motor_max_K": 312.48290161311206,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.09775,
+      "inference_p95_ms": 0.18183499999999997,
+      "expert_action_RMSE": [
+        245.32030401644923,
+        1224.081961685883,
+        0.4419893212151094
+      ]
+    },
+    {
+      "eid": 15,
+      "scenario": "speed_90_Tamb253_Tb0253_Tm0263_Tbref_298",
+      "split": "test",
+      "policy": "coupled",
+      "steps": 700,
+      "J": 19106.08482549506,
+      "tracking_J": 18863.517582597236,
+      "power_J": 3.8026341619559854,
+      "aging_J": 238.76460873586524,
+      "battery_MAE_K": 14.473407614286579,
+      "battery_RMSE_K": 20.764539873872746,
+      "btm_Wh": 2248.3305545165467,
+      "motor_max_K": 321.48107186284255,
+      "motor_violation_steps": 0,
+      "bound_violation_steps": 0,
+      "max_physical_bound_excess": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "inference_p50_ms": 0.0935,
+      "inference_p95_ms": 0.17874499999999985,
+      "expert_action_RMSE": [
+        199.04921557324118,
+        495.225131314289,
+        0.18722004213591895
+      ]
+    }
+  ]
+}

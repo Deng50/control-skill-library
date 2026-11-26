@@ -1,0 +1,17 @@
+{
+  "used": [
+    "brief.md",
+    "process.py",
+    "settings.json"
+  ],
+  "tests": [
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' -c \"import numpy, scipy; print(numpy.__version__,scipy.__version__)\"",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' solution.py",
+    "& 'D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe' verify.py"
+  ],
+  "results": {
+    "runtime": "NumPy 2.2.6, SciPy 1.15.3",
+    "solution": "Executed once. All public design and validation closed-loop runs completed without a fallback.",
+    "verification": "Passed 18 process-based feasibility, prediction, cost and optimality checks, infeasibility and fallback handling, and a 40-sample validation replay."
+  }
+}
