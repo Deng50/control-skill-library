@@ -1,0 +1,37 @@
+{
+  "features": [
+    "q_m",
+    "v_mps",
+    "reference_m",
+    "disturbance_N"
+  ],
+  "target": "force_N",
+  "force_limit": 4.0,
+  "sample_time_s": 0.2,
+  "dataset_sha256": "846c64a033d74daf0e53792da97e886117bfcb64ec85b7e1de346e012a0cd054",
+  "initial_previous_N": 0.0,
+  "splits": {
+    "train": [
+      3,
+      10,
+      11,
+      5,
+      8,
+      4,
+      2,
+      9
+    ],
+    "validation": [
+      0,
+      7
+    ],
+    "test": [
+      6,
+      1
+    ]
+  },
+  "provenance": "user-supplied existing expert trajectories",
+  "rows": 432,
+  "has_timestamps": false,
+  "has_next_states": false
+}

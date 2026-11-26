@@ -1,0 +1,1434 @@
+{
+  "materials": "D:\\projects\\素材",
+  "scope": "selected engineering sources, role instructions, data and archived case artifacts",
+  "attribution": "自编 Python 算法、MATLAB 回放包装及检查器；弹簧配置取自课题组存档。第三方再分发权需按具体来源确认。",
+  "files": [
+    {
+      "path": "06 - Nonlinear LS_EGR mass flow rate model/HpEGR_MassFlow.m",
+      "sha256": "74f9986b7da9fcdec2799b8c850f7599d2611a3ee0a65b517fb82cabbe68daf3",
+      "bytes": 444,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "06 - Nonlinear LS_EGR mass flow rate model/NLS.m",
+      "sha256": "0d377ec0a1d288e73bfdd8450b640a3872233e9d9b7c8cf61fb5161ee434672a",
+      "bytes": 1745,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "06 - Nonlinear LS_EGR mass flow rate model/Understand_Newtons_Law.m",
+      "sha256": "5551cac50f1503b3774191fc970a0fcdec719d48659227dfb8c7cd96e8d528ff",
+      "bytes": 864,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/data_ident.mat",
+      "sha256": "d24eda7226616185dbcfb23091f280d4133b0c15c04d6f30a4c4d9fce2819d51",
+      "bytes": 458,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/demo_ident.slx",
+      "sha256": "e3755c0dfd9765287a7ec312f4287b748c97fc17d112b1e753036779e1c7fd5b",
+      "bytes": 29409,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/LS_demo_ident.m",
+      "sha256": "ce35c773fd580fde022b0010e377861a2ade4acc6ab1262ad658c8a4199e6548",
+      "bytes": 389,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/P_ident.m",
+      "sha256": "77a09db8a6785dc4043a75d4676ddc5baaf89d88f90c10f5006ef9464543c69b",
+      "bytes": 786,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/plant_model_with_dither_input.slx",
+      "sha256": "b6019eeb61797fbe66d004d86ee03200d5ba1be2461e37e84e03aa1457ba046a",
+      "bytes": 30246,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/slprj/sim/varcache/demo_ident/checksumOfCache.mat",
+      "sha256": "a4fd63d37c4aded4643e4c4f8a755649f451a88b7bbb35efc797e9b82b35f22a",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/slprj/sim/varcache/demo_ident/varInfo.mat",
+      "sha256": "dc040ceca9941e5272e9e7d5eb6be7734c4b46a0b3335ff9264e24e5eb0ea565",
+      "bytes": 3120,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/slprj/sim/varcache/plant_model_with_dither_input/checksumOfCache.mat",
+      "sha256": "ccb0acc7e7dc56313bd7730d0eeabc7cb1a3fa1f0ce60d2b356d8f830bf2200a",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "07 - Dyamic_model - engine speed model/slprj/sim/varcache/plant_model_with_dither_input/varInfo.mat",
+      "sha256": "f331a2e9a45f68f2723f88105c97fe5948a7fc07b6fec2d23bc301e5a145aa9d",
+      "bytes": 672,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/ADRC_2nd_Order_Kang.slx",
+      "sha256": "d692d09be5f80d398f04a5f72d02832e1be52a46b1a86b48f0c3112b3b2c660d",
+      "bytes": 47522,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Data4Ident.mat",
+      "sha256": "a954fa53c95453faf55ba728f77f2ef9e56019de4e478959903f5cf85cb6cbf1",
+      "bytes": 18680,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/identification/report.json"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_model4DataProduction.slx",
+      "sha256": "dcd2b78165767af0503dfe35e342836d4115a65848d98a45ddb009278ea22a01",
+      "bytes": 32297,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/matlab/report.json"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_model4Ident.slx",
+      "sha256": "bb2847d54c9cd432865bc7d4579e27424d2d2979d5830c5ea0cc7e837d25f990",
+      "bytes": 33447,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model.m",
+      "sha256": "ba37ddd02a6f70280eaff41d8531f604432715ede9200c0e6069d277125c453c",
+      "bytes": 391,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Linear_2nd_order_Sys_Model4Datacollection.m",
+      "sha256": "87708a3b18f4d2a279d1c5b57edd45a78c7811e90b42d53f7ece451f9cc973f7",
+      "bytes": 589,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/LMPC_2nd_order_Kang_2.slx",
+      "sha256": "0cd314a44272bfbfc53bd98f549407a2851e19c0f457301b47789f37af56bb35",
+      "bytes": 54459,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/model_param.mat",
+      "sha256": "50f494f8cfa4140927a6351a18eeca8b6fbb0333ca81a84967cd1f5e31d9fb9e",
+      "bytes": 215,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/matlab/report.json"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/model_param2.mat",
+      "sha256": "7722843f87f88607184740d640b2f1069c2319c34f251a448ee0e2527b891bf8",
+      "bytes": 208,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/model_param7.mat",
+      "sha256": "4485a9c18b1b805b5772b07c1d40de1ec5d5b08753be927cd6b8f592d73a50b9",
+      "bytes": 205,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Model_parameters_Ident.m",
+      "sha256": "da846f40496691e7191c7d6dc1ca3d86229da68239bd3f670aaf3eb76bbaee35",
+      "bytes": 1207,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/Run_MPC_For_2nd_order_Plant.m",
+      "sha256": "fc57c801f8f8081b332718e9deeb8448a83d3f6157886e13ab55e7abd60b487b",
+      "bytes": 143,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_jitprj/jitEngineAccessInfo.mat",
+      "sha256": "5c083df2a53161d5f023ee734e944adc3ea764707a0637a77e8ceb4a8a03153e",
+      "bytes": 743,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_jitprj/sN3KBBnI3MoXF4GeL13r2hH.mat",
+      "sha256": "16af9ed5c9a32cb738d4b5b91a7798546721a9616950dbdedbfd2637e79af16c",
+      "bytes": 1306,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/EMLReport/emlReportAccessInfo.mat",
+      "sha256": "da3177de177a61d29cc27c4aa28a01899bde188a53e1da04ac419413029f4ac4",
+      "bytes": 742,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/EMLReport/sN3KBBnI3MoXF4GeL13r2hH.mat",
+      "sha256": "d9345a2b628c5cdbcb5a330400a85532b0ea665f1bbe912d3c1ea62e149eecff",
+      "bytes": 421390,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/LMPC_2nd_order_Kang_2/_self/sfun/info/binfo.mat",
+      "sha256": "ab5353025372877a280119d40b4b97fe81d9dd2e9c59b61252a5e2d5993448c8",
+      "bytes": 767,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/LMPC_2nd_order_Kang_2/amsi_serial.mat",
+      "sha256": "c661e2c094353588ff57ee41e95abc431352fb6726d75f6e0f17d68d6051ec31",
+      "bytes": 245,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/precompile/autoInferAccessInfo.mat",
+      "sha256": "18ecb1b6a6828ccb958e684a0a28cf8089d1bf0ac25d4063470407413057ac3c",
+      "bytes": 1121,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/_sfprj/precompile/h1I5C8iCpK3Dl2cQ8b27QB.mat",
+      "sha256": "2a7a42bdd361f830897bd52fc84e43739c5f167e29c28d8a7d72da8fa4aa7fe0",
+      "bytes": 1014,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/ADRC_2nd_Order_Kang/checksumOfCache.mat",
+      "sha256": "82e87f55ae2560d4ad7bc1ff30e9f0862dfaa60f82f8625733d3d394aeab83c2",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/ADRC_2nd_Order_Kang/varInfo.mat",
+      "sha256": "ad26b6ce7747977ac9e313e2cfcf7bd31620f52edf410b892bbb753de14351a1",
+      "bytes": 2048,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/eTurbo_spd2pim_model/checksumOfCache.mat",
+      "sha256": "660df267fff12b8986c7f23f4a2d4e3cbbad9cad10ddd76db3a95cf99b37b060",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/eTurbo_spd2pim_model/varInfo.mat",
+      "sha256": "a13bb794c46473b8d35662ec534d8f8e48ee0641f3c7a26dd2c35df9a91a6255",
+      "bytes": 3120,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/Linear_2nd_order_model4DataProduction/checksumOfCache.mat",
+      "sha256": "66072b68c431f1f4420c5b155be45e7af6cc15e776473841fcf487ada1790bed",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/Linear_2nd_order_model4DataProduction/varInfo.mat",
+      "sha256": "2127b1dd702fb7be44b097c3c36a5e1b7ee9074d708eb362cfc4ca2663e2e563",
+      "bytes": 3120,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/Linear_2nd_order_model4Ident/checksumOfCache.mat",
+      "sha256": "53cf73cb54c763e33c4ededbb49d2e66035258de465b83f990de797215a7f550",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/Linear_2nd_order_model4Ident/varInfo.mat",
+      "sha256": "f46e27a113d9f633e6aa68d5deeb5d617cc140f3814a8ff532ad4c18be6a0d95",
+      "bytes": 3080,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/LMPC_2nd_order_Kang_2/checksumOfCache.mat",
+      "sha256": "d8cdef4b4d68254b1060464a14cf5d9144c8a6a0dacddb1274050e8437e0bf36",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "55-系统辨识MPC-ADRC-PID/slprj/sim/varcache/LMPC_2nd_order_Kang_2/varInfo.mat",
+      "sha256": "802fc5c58c4493966d6ad15b0cb3163152570d37781e3d5c5c2e5722edcf9f01",
+      "bytes": 3080,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "ADRC_2nd_Order_Kang.slx",
+      "sha256": "d692d09be5f80d398f04a5f72d02832e1be52a46b1a86b48f0c3112b3b2c660d",
+      "bytes": 47522,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "CoSim_with_Controller_bicycle_Model_5DoF_v40_2.py",
+      "sha256": "190c36a814ac1cc38275adb122eeebd31e917171010b42f68368379cdcb34138",
+      "bytes": 24687,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/data/dUdT.mat",
+      "sha256": "f70de69501c4ac9859273ac2b886120bb33b131bf457dcc35efb069ced3bfd85",
+      "bytes": 411,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/data/OCV_SOC.mat",
+      "sha256": "4c8c0630f14392c417dea16ee48c54538a7946ae6e75e3ea8ebf43843dcefce1",
+      "bytes": 9906,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/data/Temperature_data.mat",
+      "sha256": "2e2d650d0426ecb780cd3941884885dc4d55a389cd3e77adfae8f3e96b90d7df",
+      "bytes": 224361,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/data/tempParameters.mat",
+      "sha256": "e8c893445a5ef41bcb442391056ea69c8922de462e1cc1a156dad3f278b710d2",
+      "bytes": 332,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/data/Voltage_current_data.mat",
+      "sha256": "5f83c6b4fb7e498e2abb9c508d3839ece049ff84a2895eea44742b2d9c1e44af",
+      "bytes": 132352,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "DEKF电池热状态参数在线估计/DEKF_Rs_1_10_20.m",
+      "sha256": "ac05571f62b778eb40284a011ae873cadbb4be43030e089cdac73e41d2a0d0fa",
+      "bytes": 7498,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Linear_2nd_order_model4DataProduction.slx",
+      "sha256": "979df6d352725d5e527456b4239d2b87f36297ea55d1ccf8d17044ea84a389c4",
+      "bytes": 34844,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Linear_2nd_order_model4Ident.slx",
+      "sha256": "bb2847d54c9cd432865bc7d4579e27424d2d2979d5830c5ea0cc7e837d25f990",
+      "bytes": 33447,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Linear_2nd_order_Sys_Model.m",
+      "sha256": "144ffb3e0ee3217ea3a4e3304d3867eb32911573d3f278d494af1fcb57f2b94d",
+      "bytes": 430,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Linear_2nd_order_Sys_Model4Datacollection.m",
+      "sha256": "98c945f216388c7e26b9ffd482ea137e8bf73f092269225c6a9382c42e580d78",
+      "bytes": 593,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "LMPC_1st_order_Kang_2.slx",
+      "sha256": "3588d5f833305c01900372a0c2f5e0a17f437a845068e6c7ff2261317129190b",
+      "bytes": 48692,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "LMPC_2nd_order_Kang_2.slx",
+      "sha256": "10372966e1e4c5c5dfacf166d396715882c4df093a88aa9049f4fe107f97e9f0",
+      "bytes": 60509,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Model_parameters_Ident.m",
+      "sha256": "da846f40496691e7191c7d6dc1ca3d86229da68239bd3f670aaf3eb76bbaee35",
+      "bytes": 1207,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "MPC_QP.m",
+      "sha256": "53cd3c9314a2af5b5d8d5985051c3cf05029a3bb61ba425195c04f9f43acae6c",
+      "bytes": 4174,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "MPC_QP_1st.m",
+      "sha256": "c3a0d580c211971c9e252b30ff7a828bb18c3995d4066e6d117b7fe4b868f9a8",
+      "bytes": 5483,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "my_controller_for_CoSIm_V40_KangS_20250826_2.py",
+      "sha256": "e987797688defb84970a0f2a77984f85cea9a4fa892bb4cdb2841a98989394c0",
+      "bytes": 79872,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/nmpc_casadi_align_5s_fix_torque.py",
+      "sha256": "df5799087a3e8c14ce61276cdb18be6c5ac2a9e42a8d5bc9865db75c4541c65c",
+      "bytes": 19222,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/__init__.py",
+      "sha256": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+      "bytes": 2,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/agent.py",
+      "sha256": "d0f1e2f9fd34113e89d82af1b968cb0731b9cef13f1261fc9073de04e3c899ea",
+      "bytes": 51106,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/api.py",
+      "sha256": "2946cd11b7468e366e58b39f5da7dec0d67a4a90e8759c0316cd399f7929c0b6",
+      "bytes": 21317,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/config.py",
+      "sha256": "988ebc970af3926036c4f04aaf31ede9c42fcc351f4551e48df9e795aec389fd",
+      "bytes": 3362,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/doc_rag.py",
+      "sha256": "49c44a8f868c527701b5d7bf50a8451353558d95c7d01d9fbec6efa31116a2af",
+      "bytes": 3305,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/env_plugin.py",
+      "sha256": "3dd4910df519f2da0db3f8d67b02160851356c9d45443205e01f021e24154729",
+      "bytes": 9311,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/error_recovery.py",
+      "sha256": "031b2a6b191043ad46acdc6bbf6346c08a13b4737efdc034034cd0099cd3929e",
+      "bytes": 24915,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/experiment.py",
+      "sha256": "769ba497f132ea9f01e6eb9c92e356b7e6561604787ffaa16d01fdcfb42f5134",
+      "bytes": 9854,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/input_assets.py",
+      "sha256": "06a1c43e374fdaba9438992286d8ecd9815d72bfbd77344eedecfda5c5b21559",
+      "bytes": 22824,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/json_utils.py",
+      "sha256": "493980bc6d9a8ed67b6951b375e8c42d63f1465c09fc76b056384e6aef8eb029",
+      "bytes": 5040,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/kernel_patch.py",
+      "sha256": "e3de6eaebc57e42cc0f6e36f94b9ac100f3154d6e13a425af1731ff8a5a2b679",
+      "bytes": 10552,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/llm_client.py",
+      "sha256": "393aecd2dadca3866c28392d2d5e6cbbeacac68776d5a32c73154288a075f6ab",
+      "bytes": 21365,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/llm_prompt.py",
+      "sha256": "14c716a525303605ba9938e2e381861e9edf113b0c491581ab6e6b51df86666a",
+      "bytes": 4571,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/llm_response_cache.py",
+      "sha256": "372ec709637342c0950c2b6b5f3547ddf02860347424cdb3e7739a72932bff7e",
+      "bytes": 2312,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/mcp/__init__.py",
+      "sha256": "b9f9ffa9656d5208151d2ec6e2fd38cde6a1be64c5a086b50a64307d0120b39a",
+      "bytes": 240,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/mcp/executor.py",
+      "sha256": "e59a4a034834304397c5f68d28fda00bb1df8aefbee4b7e302bed4362ea51bb4",
+      "bytes": 12581,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/mcp/schemas.py",
+      "sha256": "938474a9755c9615332e4ae2b48ada71921bb3ba57d4d44783961e148d400bde",
+      "bytes": 5386,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/mcp/server.py",
+      "sha256": "524e7e9c17d159b1b4158fa2ce4210aefc988887769a949061782145e6f2f1a7",
+      "bytes": 2353,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/mcp/tool_loop.py",
+      "sha256": "1f7fd0b565cdfc2adc22700da0fd0dc4e6d829d4b73bffef9ba3efe2eb70e6d0",
+      "bytes": 8442,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/memory.py",
+      "sha256": "51d1fc5c7997145b9135d3d2232cd3f09383c4c3b9d3020abf0070bd7c1db203",
+      "bytes": 10845,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/metrics_utils.py",
+      "sha256": "5cec64b1151af22875ef2f3e02da9feb2f41131cf9dc9e7d33338cb0cc262895",
+      "bytes": 962,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/nl_router.py",
+      "sha256": "05fb241c28ac03db49f974ea16d2f5fa349c3c7523661d4b5f14be0af60403e2",
+      "bytes": 18590,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/pgac_runner.py",
+      "sha256": "62955e515e219733b37edaf22a0312760758ff9931d69072e63804beddcacc61",
+      "bytes": 7496,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/records.py",
+      "sha256": "97d133b34b3a18e7dfc0e906bc541be36cf23790c213bdef731087f35a79e48c",
+      "bytes": 20772,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/__init__.py",
+      "sha256": "bdccb02e3bf7d3a346c1558b8454a15882235b386328ac4dfad8a81ceb148c1a",
+      "bytes": 1043,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/artifact_register_skill.py",
+      "sha256": "56fa907f32ab1b9e57ab5090156ebb57a7a49522e26061d9813d6c688cb15721",
+      "bytes": 4751,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/base.py",
+      "sha256": "5388bf507f2268fca4b9b5571020e53919819ea8397ad76cc5a71dd7c2851c14",
+      "bytes": 1533,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/env_adaptive_skills.py",
+      "sha256": "1c963029648134b50956f0cadb245dc2fb09e348732d908aa0fecd8b8eeeeded",
+      "bytes": 20016,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/error_recovery_skill.py",
+      "sha256": "f2d9e8eefb8345ff9f7eb74cebc8e0d832291535c28aa83922b62c23dcd75a2a",
+      "bytes": 3566,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/input_assets_skill.py",
+      "sha256": "ee38b9b32b2ecdb883b15cfcb565794652cbf28828eae1fc367e4382bc4a7832",
+      "bytes": 1532,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/kernel_patch_skill.py",
+      "sha256": "fabac8bf1b7752eeda6407d1761621422236bdaa95b8f958e40893947b6f8330",
+      "bytes": 2102,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/pgac_report_skills.py",
+      "sha256": "195f34ab935e24846cfe082e31d9a6e7d8ff0d98d3f9cb9f7b00142842785021",
+      "bytes": 7735,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/pgac_skills.py",
+      "sha256": "b0c7701382e250489f14af2a08a9c3ce8e37c09b59c90cb2223c3db4b033d705",
+      "bytes": 4672,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/train_diagnosis_skill.py",
+      "sha256": "ec45d7b1e54f6647c19ca64fc795cd574f44ead25b905a7d69198b14f2256085",
+      "bytes": 14270,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/skills/train_verdict_skill.py",
+      "sha256": "bb7961947b26d3c6e6b82f69d319616e81d286b8d56b781a0b9502a83c3edc55",
+      "bytes": 2768,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/text_format.py",
+      "sha256": "8054ad5c1e643e245bd96f6841092b6c4646039829295689008e9af408b552de",
+      "bytes": 2523,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/training_session.py",
+      "sha256": "0914c19da66bb04c0b3da79a18820b256c4c8ea24e5921d1d18fff124eb1cce0",
+      "bytes": 2579,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/app/training_verdict.py",
+      "sha256": "46c2650c350eaf2baddf390a078098da43b67e376273199559c2430aa42b2dbf",
+      "bytes": 16465,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/dynamic_import.py",
+      "sha256": "7a1f96e5334ae93c51238edeafacd12541598d72a5d95ef3bd41d28c900d6583",
+      "bytes": 752,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/env_plugin_loader.py",
+      "sha256": "96ff06a5aafa8da3633c5347f2d9aa3551acbec50024db3e8eb29313dd2e52d4",
+      "bytes": 5870,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/pgac_core.py",
+      "sha256": "2db9a8af9e240a9fff3230fc268da9f8450ce1258381374028d737c15db946f4",
+      "bytes": 47815,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/thermal-critic/report.json"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/system_test_align_delay.py",
+      "sha256": "5cc3cdd97d91d0f44b0b0a2ea8d7ffc5215af38ebffbc0c9788e5c8a07c1a3bb",
+      "bytes": 9234,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/templates/env_interface_template.py",
+      "sha256": "1a3e9f4f3a38bc797d13bac87d06a4963c03decc87f8bbc6efc9607ae51db807",
+      "bytes": 3343,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/pgac_auto_train_agent_v1/kernels/thermal-management-model.py",
+      "sha256": "c2cbbc44af5d28fbdbc1dbedc08b25a1191651150a94f8e5a7f1cdc7ed5817f6",
+      "bytes": 27136,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/thermal-critic/report.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/controller-651132eee577/artifact.json",
+      "sha256": "c6d59a2b7bcea3b1af792aad1fa8c593dac472f46b1b11159462a83328019390",
+      "bytes": 6121,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/controller-651132eee577/config.json",
+      "sha256": "bf4e27c287e0b665f7f38be2f405b92979061e3f8c32d22a34d087d29bcef88c",
+      "bytes": 1003,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/controller-651132eee577/controller.json",
+      "sha256": "c565196a7b110521c6368071fa2374403081ce32a160d346b0aaee404cb5f796",
+      "bytes": 3565,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/controller-651132eee577/report.json",
+      "sha256": "40a807ea21857d72189055249476b7a01ed6246c94eaff12ae68d8191d4c0996",
+      "bytes": 129262,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/controller-651132eee577/stage.intent.json",
+      "sha256": "fcfac0d7db12c15b4e38c610f30079813624daecd2ab9413216fce31f31e3a48",
+      "bytes": 2265,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/artifact.json",
+      "sha256": "a7c95a5e3360224739500e6c8a5f4b0726026ac6b5a1b83150668c632a594c23",
+      "bytes": 3768,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/config.json",
+      "sha256": "14f87488db07f562b2ad45fccea00dc30a31c08916e0136235af7e2ac70ef5e7",
+      "bytes": 200,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/latest.checkpoint.json",
+      "sha256": "084f75dd4a43d74ce191c44b815c57000762d31cf9c3882c2f3054994aa17db6",
+      "bytes": 362,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/network.json",
+      "sha256": "6098cb861871216d2aa5187577769e847164b89ec818ccf19b7551fb9ff6b513",
+      "bytes": 141,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/nominal.json",
+      "sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44",
+      "bytes": 1298,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/report.json",
+      "sha256": "019671e1ff0cc0a031e07f95f0dd560c148a303de5142053823582d0fefe4a8d",
+      "bytes": 40512,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/scalers.json",
+      "sha256": "1de08d5f95124e04b1fbab24a67b562ee38b52f76bcd05315cc97db4d80c66f8",
+      "bytes": 324,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/corrected_model-ad3723a04df8/stage.intent.json",
+      "sha256": "6405c82e8583dc60a12605062fd207e8a9fe8fee0864a39230f453616c404acb",
+      "bytes": 2720,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/artifact.json",
+      "sha256": "9427c6ed7ce1cb2d8bd8450ddf5fa553406dd61e506952068ea50a41a4b7da05",
+      "bytes": 2675,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/collection.json",
+      "sha256": "9dde7ab6c95c438a9540b7abcd087ddb27639e700642b92f0c8906f17df84fa4",
+      "bytes": 11493,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/config.json",
+      "sha256": "c6deabc22a93bd9bd42f118a7b17dee31400617a2f5c158d9b2e04b54c3151e3",
+      "bytes": 2578,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/expert.npz",
+      "sha256": "846c64a033d74daf0e53792da97e886117bfcb64ec85b7e1de346e012a0cd054",
+      "bytes": 13276,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/archive-import/imitation/report.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/split.json",
+      "sha256": "20d23fdb3b55be686e799930824687b9157b3abe2f7d6faf8419fbbd3f1d00d6",
+      "bytes": 144,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/expert_dataset-506f49fac84b/stage.intent.json",
+      "sha256": "1b4ba6d64dd0c2ab060d412df5bd2011a617758a86ef558ab6604f73e8c46a55",
+      "bytes": 4054,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/artifact.json",
+      "sha256": "70a0b02ba34c784c52542360fa7703a85322ed5b1f6449ac3003a3b585c8a642",
+      "bytes": 3172,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/config.json",
+      "sha256": "850f957bc25326695871acb28396dfd4f71bb5fcd04032bdf4b71f75247312af",
+      "bytes": 216,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/latest.checkpoint.json",
+      "sha256": "73a1bed0761174a5ffee48059049ce39c20adf27312df57fc1e02a48a0b5f095",
+      "bytes": 360,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/network.json",
+      "sha256": "520cf2336a2f4afe0233013742d7591fb100d566992be7f07aeedba6f5c98612",
+      "bytes": 450,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/policy.json",
+      "sha256": "979c119bb215bbb1e1febfd27e6e1231d3016b80f92eea4858d682a9814618b7",
+      "bytes": 419,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/report.json",
+      "sha256": "1262834a7be8c85448da5406b4ed6e4d53ca90b5099a7abf92425a1033356f23",
+      "bytes": 106576,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/scalers.json",
+      "sha256": "6ee9345e2e31e62d656c2a23be10d335a51bbc81a317173157336d60ff359266",
+      "bytes": 332,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/imitation_policy-be2e3e760148/stage.intent.json",
+      "sha256": "72ea5028e2e4ef521991628dc770bfe2e41845ba23eea8da6d4e71990768d559",
+      "bytes": 2894,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/nominal_model-8f9ce1d068b4/artifact.json",
+      "sha256": "93ea2f1abd740974c01fdc3128039b1e8abfe7146f1cb24c2b0133f5cfa88761",
+      "bytes": 5281,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/nominal_model-8f9ce1d068b4/config.json",
+      "sha256": "d325776e8f04b041dce9b2b11f46a8af0ebd2d7087defbf153fc6cd8d6fbcecf",
+      "bytes": 524,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/nominal_model-8f9ce1d068b4/model.json",
+      "sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44",
+      "bytes": 1298,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/nominal_model-8f9ce1d068b4/stage.intent.json",
+      "sha256": "ca34bebe21c36bd9aaa0a7a33783cacc86e96d51e3b0d2cd8d36ead39cf8abb6",
+      "bytes": 1379,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/nominal_model-8f9ce1d068b4/transition_adapter.json",
+      "sha256": "3bef9d85d107a1d07e1b9cbbf16dd33b2da115670a9724fa4dabfc6bb435f998",
+      "bytes": 1100,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/artifact.json",
+      "sha256": "3f79c473181472a72ebe15523322626bd013bffa7a84e3f89f7435a80a40ab0a",
+      "bytes": 3383,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/config.json",
+      "sha256": "634568fcdf92d8a9e99b19c036775dc4efc47c494c5fe05bbb0d75faa2fbeec2",
+      "bytes": 152,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/latest.checkpoint.json",
+      "sha256": "035e7345ef6bb6013a481d6ab7a2cd5f71765ab3660731b9f0b01ba43c12087b",
+      "bytes": 371,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/network.json",
+      "sha256": "520cf2336a2f4afe0233013742d7591fb100d566992be7f07aeedba6f5c98612",
+      "bytes": 450,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/policy.json",
+      "sha256": "979c119bb215bbb1e1febfd27e6e1231d3016b80f92eea4858d682a9814618b7",
+      "bytes": 419,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/report.json",
+      "sha256": "24f269ede16fbfd1f8a52d49d6b54f181424de150f6811cae10ce5c06fe700c7",
+      "bytes": 155988,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/scalers.json",
+      "sha256": "6ee9345e2e31e62d656c2a23be10d335a51bbc81a317173157336d60ff359266",
+      "bytes": 332,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/optimized_policy-296e9cffe7c3/stage.intent.json",
+      "sha256": "c95ddbf136fbc23500c90a10e6b3e626a79bf3f90c9aa0958b498380ade7c5e3",
+      "bytes": 3390,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/reference_model-d3da86a2c955/artifact.json",
+      "sha256": "3b42905d7025acdf94cb4e57a9e407417fe8a8a961a7c298d7cb873d24303080",
+      "bytes": 5304,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/reference_model-d3da86a2c955/config.json",
+      "sha256": "399bd069060abae7c1c2a8404d5d91152489b7ca0748b6fd8a5baba5196799e7",
+      "bytes": 541,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/reference_model-d3da86a2c955/model.json",
+      "sha256": "4d4c94e48540aece5b288c601caaf1f8cacacf34b18c7939e5abb936f5c0eb3e",
+      "bytes": 1364,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/reference_model-d3da86a2c955/stage.intent.json",
+      "sha256": "3b1307e9c9901e69a5ce340819733bb08d6b4ff901056acdeae9e2fdded5f145",
+      "bytes": 1403,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/reference_model-d3da86a2c955/transition_adapter.json",
+      "sha256": "3bef9d85d107a1d07e1b9cbbf16dd33b2da115670a9724fa4dabfc6bb435f998",
+      "bytes": 1100,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/transition_dataset-434065bd90a5/artifact.json",
+      "sha256": "01c6469a14185901da96e7b31447dd922cae42b3cb51213bc03dd260daf16d9d",
+      "bytes": 2531,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/transition_dataset-434065bd90a5/config.json",
+      "sha256": "33d75179686905623cfe42454cbbc81f085cde7187e653f900a565479851482e",
+      "bytes": 223,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/transition_dataset-434065bd90a5/split.json",
+      "sha256": "e79fe13cee6af792cd900bf10b11744851eb36d36abd94f6c67a6d3ab3d8f1d8",
+      "bytes": 288,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/transition_dataset-434065bd90a5/stage.intent.json",
+      "sha256": "12da5c9da4aee542a0d0d26d2b4c257a64058bd4e867bb04b8696d436d474a0d",
+      "bytes": 1382,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/artifacts/transition_dataset-434065bd90a5/transitions.npz",
+      "sha256": "93656bfd3c7011c6fb4331f78d527618b84dec9bec6d685bfe357c70856d6bf7",
+      "bytes": 43704,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/controller.json",
+      "sha256": "bf4e27c287e0b665f7f38be2f405b92979061e3f8c32d22a34d087d29bcef88c",
+      "bytes": 1003,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "cases/spring/controller.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/data.json",
+      "sha256": "7f53adbc32f71107a93fee94b88ed62d5bf2f7304229a2eb28b6af36e92e36fc",
+      "bytes": 55,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/expert.json",
+      "sha256": "c6deabc22a93bd9bd42f118a7b17dee31400617a2f5c158d9b2e04b54c3151e3",
+      "bytes": 2578,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "cases/spring/expert.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/imitation.json",
+      "sha256": "850f957bc25326695871acb28396dfd4f71bb5fcd04032bdf4b71f75247312af",
+      "bytes": 216,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/model-phase-workflow.json",
+      "sha256": "4cda61be94b7d7887181c84dcd70f5414bf62045a73db7f6fa460dd905730f37",
+      "bytes": 1714,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/nominal.json",
+      "sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44",
+      "bytes": 1298,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "cases/spring/nominal.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/optimize.json",
+      "sha256": "634568fcdf92d8a9e99b19c036775dc4efc47c494c5fe05bbb0d75faa2fbeec2",
+      "bytes": 152,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/reference.json",
+      "sha256": "4d4c94e48540aece5b288c601caaf1f8cacacf34b18c7939e5abb936f5c0eb3e",
+      "bytes": 1364,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "cases/spring/reference.json"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/residual.json",
+      "sha256": "14f87488db07f562b2ad45fccea00dc30a31c08916e0136235af7e2ac70ef5e7",
+      "bytes": 200,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/spring-damper-ppt-20261030/presentation/reproduce/case-config/workflow.json",
+      "sha256": "f5d178a44953af61ee96b682982c2dd4735d6085367a7a9afb355118ee7bac91",
+      "bytes": 8177,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/system_test_align_delay.py",
+      "sha256": "5cc3cdd97d91d0f44b0b0a2ea8d7ffc5215af38ebffbc0c9788e5c8a07c1a3bb",
+      "bytes": 9234,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "pgac/thermal-management-model.py",
+      "sha256": "afbca2aecdfb43eb41e4a7317efa24749671776652cd01bba3d278c9c7f11529",
+      "bytes": 29195,
+      "status": "consumed or compared by an executed case",
+      "library_evidence": "runs/linearization/report.json"
+    },
+    {
+      "path": "PID2_2nd_order_Kang_2.slx",
+      "sha256": "ef30941f9cf41fd9211cbeac2d2df021ff8c8df8e5bb951acf896dd6d1deeeef",
+      "bytes": 49364,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "PID_for_2nd_order_sysm.slx",
+      "sha256": "e716a5d8acf5e6d0db4d55e014597e7bbfe3ed388922f5a964b9cb6b2e8d62f6",
+      "bytes": 51162,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Plant_Model.m",
+      "sha256": "2fdc071d0a2d8380e545ae39d4c018ced02ce51d27296ceee7f37457c50e8ec3",
+      "bytes": 2515,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "RLS_ADRC_2nd_order_Kang.slx",
+      "sha256": "1955f78f06682a9236f200feb11ed7ff337f37cea8d9e43debc348aa5fa2de8e",
+      "bytes": 384028,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Run_eTurbo_with_Torque_mode_2018bp.slx",
+      "sha256": "71606fb101b4e126eb61176b83725f6555577d7f09ab8f8e9a78079d8659a9af",
+      "bytes": 105305,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Run_MPC_For_2nd_order_Plant.m",
+      "sha256": "c7b8ebe186f6f80f938c10b5f68d277cc220a498a9a80f6a2fc1dcd59901370d",
+      "bytes": 149,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Run_MPC_For_2nd_order_Plant_auto_tuning.m",
+      "sha256": "df8cdaab185feb20713c7d399ac0efe37c738c702c3faa7b75935d6b8313ba34",
+      "bytes": 1584,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Run_PID_For_2nd_order_Plant_auto_tuning.m",
+      "sha256": "6e24cba2db1cd0d61a74e9bc0d6e617f8119f109a654c7dee3360c69bb306268",
+      "bytes": 1593,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "Run_VGT_Ctrl_using_Spd_and_Torque_Mode_scrpt.m",
+      "sha256": "0794606147d12e5ca37a959d9fb88e35703eff1a72c7260555d031f52f60d0c8",
+      "bytes": 339,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/design-and-tune-mpc/SKILL.md",
+      "sha256": "f4f043205c34c38f6299bd82c5e7a535a50b201ae1cbb06eb84367d882d3345e",
+      "bytes": 3608,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/distill-controller/SKILL.md",
+      "sha256": "214e9e9f400601a0c143b7bd360bca887cb9fe66705df059bec2d24599d857f0",
+      "bytes": 7017,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/references/evaluation.md",
+      "sha256": "c26966cd11322ad21d5937c7feb2484d9838d15d9cd192bb307933cf8ed1bc48",
+      "bytes": 1379,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/references/execution.md",
+      "sha256": "96ae17d49c59c9e17e072232ae83a648bf7964ead5d4aa3c62a8420874610408",
+      "bytes": 8107,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/references/materials.md",
+      "sha256": "9d19083f8b9792aaa3a62349e24d4b77c1526f7c4cc933f3351da9abbc9e0b4f",
+      "bytes": 2083,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/references/sampling.md",
+      "sha256": "cba997e12361d37782a25f38b0bf883ab08fb0119d561184589e568406b2f73e",
+      "bytes": 1619,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/references/training.md",
+      "sha256": "41210f2cac48bbf04f05c8a5a23cf91012603a4cbdce73859dfc94f753cbbf39",
+      "bytes": 4345,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "skills/train-object-model/SKILL.md",
+      "sha256": "d4f8cb08f9c6095c1a47652341bde5c40ecdfa984570cf75f0df4a852a036129",
+      "bytes": 4852,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/DSTdata.mat",
+      "sha256": "1623344d0065447ce2d829fa94cdf665e1eb1233150f74490fae0dffddcded75",
+      "bytes": 303126,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/DSTI.mat",
+      "sha256": "67272d5d4a749217ba469f20a302e00a3c3e4540e04c3e7d80b8db1a4fac21da",
+      "bytes": 335128,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/HPPC.mat",
+      "sha256": "a84e8544c57230d16816e6ac06e632762ef7b21cded427f997d4d46b6841046c",
+      "bytes": 1712,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/HPPCdata.mat",
+      "sha256": "2a0bd6262755d1a8de8fb6d6f76d1a8319eec5bfea1988b7bce4ee18ad2da49f",
+      "bytes": 884615,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/matlab.mat",
+      "sha256": "f20262313372cf58fb9e8b118b5d17288fee55e9c331cc361a7862ecb4b2036f",
+      "bytes": 154848,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/R0R1R2C1C2.mat",
+      "sha256": "10ff207a014447097cc0682297998c00377460db98b3d1af1f4fcc506782ebb5",
+      "bytes": 309144,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_jitprj/sbM7YvRL4exMd9jlHASfYJ.mat",
+      "sha256": "8040079bf8967ca09a30fd049fae47ab2df720cc9f439c7001c4de03e2d58ae4",
+      "bytes": 1207,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_jitprj/sd39rQO8xNEeVyzHJgDh1tD.mat",
+      "sha256": "4822174baaea50a2878735a80b7fd868839022ac967f4e7f14294657279ccb37",
+      "bytes": 1205,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_jitprj/sHAQaqzI8G9X2wigGUn9E2B.mat",
+      "sha256": "070f881d58aacf6d4050d9f3d04c3c56e4f080b0c206e14774fbecadedc6e510",
+      "bytes": 1534,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_jitprj/sWuSSmhCEne3NQBuVqDddUD.mat",
+      "sha256": "dbb6a7d0a9152ac4b274d8241036ac59cfbbb32c6d432c3dd14de22ec018663d",
+      "bytes": 1203,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/EMLReport/sbM7YvRL4exMd9jlHASfYJ.mat",
+      "sha256": "06741806bc3fa00681b489cd0a3e178ac82cd0f961b0d2d5452ca3a386d81a54",
+      "bytes": 21380,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/EMLReport/sd39rQO8xNEeVyzHJgDh1tD.mat",
+      "sha256": "e7e382803c6fa9832de0dfa09219df9fbe4aa1c014e9084c0e5ea6ba121a44b7",
+      "bytes": 47405,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/EMLReport/sHAQaqzI8G9X2wigGUn9E2B.mat",
+      "sha256": "d6f9acec831741b574c2a84b5dfbf94d34081e080814569278c4e00cc46856c5",
+      "bytes": 111241,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/EMLReport/sWuSSmhCEne3NQBuVqDddUD.mat",
+      "sha256": "7b36c7bdecf5e17faf4767e1a9c6a88df844bae8636e867e81fadafd4b7d77b8",
+      "bytes": 21757,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/Improved_EKFSim/_self/sfun/info/binfo.mat",
+      "sha256": "575fde45fa1ba59407d1f2f527686a86c5d29af7e322dac3754d899dccfad20a",
+      "bytes": 870,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/Improved_EKFSim/amsi_serial.mat",
+      "sha256": "c91b43607e34ec9cc9d464d7578cd8030f90451ae313cc635241ad8f22442734",
+      "bytes": 238,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/precompile/4rb3hEWZ93LWtwfnuImL2G.mat",
+      "sha256": "de7985d9e3bf218e87dad87e20819626a3d4fa87239a07a051913cb34f208b5a",
+      "bytes": 684,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/precompile/dbgIOObnAlx4XtEmIVUCuB.mat",
+      "sha256": "0b8082a54d3e2d131a8f8dd08fb03dae02f2a54d5355249deb341a977302988b",
+      "bytes": 719,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/precompile/jRaDKEwHJqclqkHiWnDedD.mat",
+      "sha256": "00e36db5adb9e65f7a5130d60979b561fe3cffcd1ea400f01b5841509c3f0159",
+      "bytes": 724,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/_sfprj/precompile/Usu2nb3gZS8VWhCALAXlWH.mat",
+      "sha256": "328709eb27c0e5580dda1bdeea29461072462fe7a6770edef6a32962ff0d4a8a",
+      "bytes": 719,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/sim/varcache/EKF_SOC/checksumOfCache.mat",
+      "sha256": "aba60c1c656893d4980c95c283095bd3641b4e6e1d4b961064fcac9d01ee4bc1",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/sim/varcache/EKF_SOC/varInfo.mat",
+      "sha256": "bba279cbe748a22ff169747e40afee170a2b077276f7864ca52198fe43445237",
+      "bytes": 2400,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/sim/varcache/two_RC_model/checksumOfCache.mat",
+      "sha256": "c3106fdfde2e991cc24693e0bb6ef978976c7e28c40134d39ef6614eb62655e0",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/slprj/sim/varcache/two_RC_model/varInfo.mat",
+      "sha256": "3a76020438b16ac68c766375df95ab18131ba11b8d1985be55c49077ab8639cc",
+      "bytes": 320,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/SOC90.mat",
+      "sha256": "a35bd1bc7cce0f9d5c7dc731d3aa523f2ff2ea777f053dd1662a63f5c7bdcc44",
+      "bytes": 1854,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/SOCekf.m",
+      "sha256": "2c8405bb5432802f6a98f0869626e162f88d4905d394cf489159acf5aaf1dfe9",
+      "bytes": 3333,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/two_RC_model.slx",
+      "sha256": "25ee85dd817e6a8531a3067e6ac961c01decd877f85e5de56fa7db39afdd9605",
+      "bytes": 53730,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/UDDSdata.mat",
+      "sha256": "7135084b80e23dccc3770f879bb2febb6197e5e83f98176f1a7fe0cdff1ca8a4",
+      "bytes": 901780,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/UDDSI.mat",
+      "sha256": "0f02a5beb4f26cd83454796cb1133b220f7bee1f0352d7bcea5302a076ab1468",
+      "bytes": 161288,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/Untitled.m",
+      "sha256": "63db84f6c9e75cf937dd84121abb8fd2de4294a356a2304bd35d692c178cf867",
+      "bytes": 333,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/VandI.mat",
+      "sha256": "c1c868853fa54348efe9a5b2eca3f16086894fd9890c796eb0cd82ee563cf902",
+      "bytes": 24755,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/LiBatt_PulseDataEVE.mat",
+      "sha256": "8ed83faabf0c9d0269c9bda25e93bf87678ad379d4d2c5fbfabc07174d9f29f1",
+      "bytes": 75467,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/model_copy.m",
+      "sha256": "7133136ecb76a419b30b84672b5cddcf62af9cd984d8c85c720f1b0adbb16961",
+      "bytes": 547,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/ModelTest.m",
+      "sha256": "4810a50f4a1af3ebc4f6c2bcbf1a0adc3065dcf1f4edbc4ed65333903c82b8bd",
+      "bytes": 954,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/RLS_U.m",
+      "sha256": "448d1cdb5cd1babe1b572d887f1abd9c5049cd7bf8b061959518cefdcb55fdcf",
+      "bytes": 4363,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/RLS_Ub.m",
+      "sha256": "522c6416f701200b6456a9c5c1d4d801693df5fc5f4aa60c1bae7bc4d38c9e7f",
+      "bytes": 4461,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/RLS_V1.m",
+      "sha256": "f30e8311b327006572f7fcb746fe5b200bf16bda7dd5cc0a9e6a9950d8a6ed77",
+      "bytes": 4592,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "最小二乘法进行电池等效电路参数辨识/多工况要求/zuix/rls/RLS_V2.m",
+      "sha256": "9d262cfd36cf560ceafbb6620b10200a62ab35ff639f0b850180f31aa530df0f",
+      "bytes": 5668,
+      "status": "historical source or archive; fingerprint only"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/estimate_function.m",
+      "sha256": "004e13671fd3991dd24d78db5553bb99ddc9986ff3438eeeac4966e778fcafbb",
+      "bytes": 732,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/Identification_ThermalModel.m",
+      "sha256": "295ef61536f12141f77c7d69a02a1104bd9956192c59baa671cf1786899bfbb1",
+      "bytes": 9959,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/slprj/sim/varcache/thermalModel_test/checksumOfCache.mat",
+      "sha256": "ea9482406cda8db6625260cf47d89b18da57c3bddc4b19e630484c6ef6824d80",
+      "bytes": 392,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/slprj/sim/varcache/thermalModel_test/varInfo.mat",
+      "sha256": "aa5325654ede09d9c0d85d3b73b2af139e36a5c34c9ce384a0d627d56fb299c6",
+      "bytes": 3440,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/tempParameters.mat",
+      "sha256": "7dc488cedd58edfbd4a7320db3b2a6f51ee30aa2d880768b126bbbd5d1440ff5",
+      "bytes": 332,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/thermalModel_test.slx",
+      "sha256": "ec8a8776e801f5bc2625a445b14f07eaff8c96c5cc3f1e6b9fe46d4f1369f782",
+      "bytes": 424793,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/数据/dUdT.mat",
+      "sha256": "f70de69501c4ac9859273ac2b886120bb33b131bf457dcc35efb069ced3bfd85",
+      "bytes": 411,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/数据/OCV_SOC.mat",
+      "sha256": "4c8c0630f14392c417dea16ee48c54538a7946ae6e75e3ea8ebf43843dcefce1",
+      "bytes": 9906,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/数据/Temperature_data.mat",
+      "sha256": "2e2d650d0426ecb780cd3941884885dc4d55a389cd3e77adfae8f3e96b90d7df",
+      "bytes": 224361,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/数据/Voltage_current_data.mat",
+      "sha256": "5f83c6b4fb7e498e2abb9c508d3839ece049ff84a2895eea44742b2d9c1e44af",
+      "bytes": 132352,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/版权声明.txt",
+      "sha256": "db40af33d2a31bd7aa628b4cd4bab81c605ae08c25fabc6128cb005c13c1e4a3",
+      "bytes": 384,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    },
+    {
+      "path": "遗传算法热模型参数辨识/说明.txt",
+      "sha256": "c548777a9ea48bfa8213525242e5ec7ed8b2ca3a5b7f6b9f94946a6d2994a5ea",
+      "bytes": 203,
+      "status": "historical source or archive; fingerprint only",
+      "redistribution": "third-party notice; inspect original locally, source not included"
+    }
+  ]
+}

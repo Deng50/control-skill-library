@@ -1,0 +1,39 @@
+{
+  "scalers": {
+    "center": [
+      0.0,
+      295.0,
+      4.0
+    ],
+    "scales": [
+      90.0,
+      4.898979485566356,
+      14.966629547095765
+    ],
+    "y_mean": 295.7916616036487,
+    "y_scale": 4.040330019134462,
+    "lower": [
+      0.0,
+      289.0,
+      -12.0
+    ],
+    "upper": [
+      90.0,
+      301.0,
+      24.0
+    ]
+  },
+  "features": [
+    "time_s",
+    "initial_K",
+    "power_W"
+  ],
+  "output": "temperature_K",
+  "hidden": [
+    32,
+    32
+  ],
+  "drive": "constant_per_trajectory",
+  "physics": null,
+  "seed": 3109
+}

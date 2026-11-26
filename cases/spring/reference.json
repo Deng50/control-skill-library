@@ -1,0 +1,94 @@
+{
+  "representation": "continuous_polynomial",
+  "interface": {
+    "schema_version": 1,
+    "name": "spring-damper",
+    "sample_time": 0.2,
+    "time_semantics": "continuous_state_derivative",
+    "states": [
+      {
+        "name": "displacement",
+        "unit": "m",
+        "lower": -1,
+        "upper": 1
+      },
+      {
+        "name": "velocity",
+        "unit": "m/s",
+        "lower": -1.5,
+        "upper": 1.5
+      }
+    ],
+    "controls": [
+      {
+        "name": "force",
+        "unit": "N",
+        "lower": -4,
+        "upper": 4
+      }
+    ],
+    "outputs": [
+      {
+        "name": "displacement",
+        "unit": "m",
+        "lower": -1,
+        "upper": 1
+      }
+    ],
+    "disturbances": [
+      {
+        "name": "disturbance_force",
+        "unit": "N",
+        "lower": -0.2,
+        "upper": 0.2
+      }
+    ]
+  },
+  "time_unit": "s",
+  "derivative_units": [
+    "m/s",
+    "m/s/s"
+  ],
+  "integration": {
+    "method": "zoh",
+    "substeps": 1,
+    "input_hold": "zero_order_hold"
+  },
+  "A": [
+    [
+      0,
+      1
+    ],
+    [
+      -2.0909090909090904,
+      -0.9090909090909091
+    ]
+  ],
+  "B": [
+    [
+      0
+    ],
+    [
+      0.9090909090909091
+    ]
+  ],
+  "E": [
+    [
+      0
+    ],
+    [
+      0.9090909090909091
+    ]
+  ],
+  "C": [
+    [
+      1,
+      0
+    ]
+  ],
+  "bias": [
+    0,
+    0
+  ],
+  "terms": []
+}

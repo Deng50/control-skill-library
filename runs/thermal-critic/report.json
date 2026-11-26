@@ -1,0 +1,34 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": 145,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\thermal_critic_probe.py"
+    ],
+    "evidence": "executed"
+  },
+  "kernel_sha256": "2db9a8af9e240a9fff3230fc268da9f8450ce1258381374028d737c15db946f4",
+  "plant_sha256": "c2cbbc44af5d28fbdbc1dbedc08b25a1191651150a94f8e5a7f1cdc7ed5817f6",
+  "stage": "original heat critic only",
+  "steps": 3,
+  "dt_s": 5,
+  "initial_state": [
+    292.3,
+    300.5,
+    0.57
+  ],
+  "reference_K": 293.15,
+  "speed_mps": 2.7777777777777777,
+  "cost_before": 0.383108526468277,
+  "cost_after": 0.383108526468277,
+  "perception_forward_calls": 0,
+  "sum_actor_gradient_norms": 2.089046509587206,
+  "passed": true
+}

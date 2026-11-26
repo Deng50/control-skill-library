@@ -1,0 +1,53 @@
+{
+  "evidence": "executed",
+  "python": "3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26200-SP0",
+  "numpy": "2.2.6",
+  "torch": "2.7.1+cu128",
+  "scratch": "D:\\projects\\control-skill-library\\runs\\checks\\control_thermal_forward_ad759hxu",
+  "command": "python cases/thermal/independent_check.py",
+  "seed": 3109,
+  "column_permutation_max_abs_change": {
+    "nn": 0.0,
+    "pinn": 0.0
+  },
+  "reload": {
+    "paired/pinn": {
+      "cli_max_error_at_query_K": 0.0,
+      "numpy_bundle_max_error_K": 2.0309615024416416e-05
+    },
+    "paired/nn": {
+      "cli_max_error_at_query_K": 0.0,
+      "numpy_bundle_max_error_K": 1.9940215054248256e-05
+    },
+    "data-only/nn": {
+      "cli_max_error_at_query_K": 0.0,
+      "numpy_bundle_max_error_K": 1.9940215054248256e-05
+    }
+  },
+  "heldout_ode": {
+    "samples": 57,
+    "derivative_step_seconds": 0.001,
+    "difference_W": 1.2234027159663263e-05,
+    "finite_difference_W": 0.7646052392075185,
+    "reported_autograd_W": 0.7645930051803589,
+    "tolerance_W": 0.0001
+  },
+  "mixed_id": {
+    "exit_code": 1,
+    "diagnostic": "ValueError: Invalid partition or trajectory leaks across partitions"
+  },
+  "cloned_trajectory": {
+    "exit_code": 1,
+    "diagnostic": "ValueError: Thermal condition leaks across partitions under different trajectory IDs"
+  },
+  "checks": {
+    "column_order": true,
+    "reload": true,
+    "data_only": true,
+    "ode_units_and_chain": true,
+    "mixed_id": true,
+    "cloned_trajectory": true
+  },
+  "status": "passed"
+}

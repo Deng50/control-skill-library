@@ -1,0 +1,33 @@
+{
+  "source_sha256": "eccd38699efd374704c023d34d6f70d3653db90edc036171ed275e77703386b1",
+  "partitions": {
+    "0": "train",
+    "1": "train",
+    "2": "train",
+    "3": "train",
+    "4": "train",
+    "5": "train",
+    "6": "train",
+    "7": "train",
+    "8": "train",
+    "9": "validation",
+    "10": "validation",
+    "11": "test",
+    "12": "test",
+    "13": "test"
+  },
+  "shapes": {
+    "train": [
+      153,
+      4
+    ],
+    "validation": [
+      34,
+      4
+    ],
+    "test": [
+      51,
+      4
+    ]
+  }
+}

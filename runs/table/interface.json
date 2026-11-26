@@ -1,0 +1,44 @@
+{
+  "schema": {
+    "trajectory": "trajectory",
+    "partition": "partition",
+    "time": "time_s",
+    "dt_s": 5,
+    "features": [
+      {
+        "column": "temperature_K",
+        "unit": "K",
+        "lag": 0
+      },
+      {
+        "column": "power_W",
+        "unit": "W",
+        "lag": 0
+      },
+      {
+        "column": "temperature_K",
+        "unit": "K",
+        "lag": 1
+      }
+    ],
+    "targets": [
+      {
+        "column": "temperature_K",
+        "unit": "K",
+        "ahead": 1
+      }
+    ]
+  },
+  "mean": [
+    295.81463349620043,
+    4.0,
+    295.7455694152802,
+    295.87558233369236
+  ],
+  "scale": [
+    3.9495271379519767,
+    14.966629547095765,
+    3.9852019400196115,
+    3.9554619001684737
+  ]
+}

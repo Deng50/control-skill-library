@@ -1,0 +1,30 @@
+{
+  "trajectory": "trajectory",
+  "partition": "partition",
+  "time": "time_s",
+  "dt_s": 5,
+  "features": [
+    {
+      "column": "temperature_K",
+      "unit": "K",
+      "lag": 0
+    },
+    {
+      "column": "power_W",
+      "unit": "W",
+      "lag": 0
+    },
+    {
+      "column": "temperature_K",
+      "unit": "K",
+      "lag": 1
+    }
+  ],
+  "targets": [
+    {
+      "column": "temperature_K",
+      "unit": "K",
+      "ahead": 1
+    }
+  ]
+}

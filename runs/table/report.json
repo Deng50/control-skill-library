@@ -1,0 +1,49 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": 488,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\table.py",
+      "train",
+      "runs/thermal/data.csv",
+      "cases/thermal/table.json",
+      "--out",
+      "runs/table"
+    ],
+    "evidence": "executed"
+  },
+  "method": "supervised_only",
+  "source_sha256": "eccd38699efd374704c023d34d6f70d3653db90edc036171ed275e77703386b1",
+  "effective_split": {
+    "0": "train",
+    "1": "train",
+    "2": "train",
+    "3": "train",
+    "4": "train",
+    "5": "train",
+    "6": "train",
+    "7": "train",
+    "8": "train",
+    "9": "validation",
+    "10": "validation",
+    "11": "test",
+    "12": "test",
+    "13": "test"
+  },
+  "rows": {
+    "train": 153,
+    "validation": 34,
+    "test": 51
+  },
+  "best_epoch": 300,
+  "heldout_rmse_per_target": [
+    0.28297001477955963
+  ]
+}

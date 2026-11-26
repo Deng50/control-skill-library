@@ -1,0 +1,205 @@
+[
+  {
+    "role": "train-object-model",
+    "skill": "train-object-model",
+    "terms": [
+      "对象模型自动化训练",
+      "对象建模全流程",
+      "对象训练智能体"
+    ],
+    "instructions": ".agents/skills/train-object-model/SKILL.md",
+    "knowledge": "knowledge/physics.md",
+    "case": "cases/thermal/README.md",
+    "code": "replay.py",
+    "evidence": "runs/thermal/paired/report.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "design-and-tune-mpc",
+    "terms": [
+      "控制算法设计与参数调优",
+      "设计调优全流程",
+      "MPC设计调优"
+    ],
+    "instructions": ".agents/skills/design-and-tune-mpc/SKILL.md",
+    "knowledge": "knowledge/mpc.md",
+    "case": "cases/spring/README.md",
+    "code": "replay.py",
+    "evidence": "runs/mpc/report.json"
+  },
+  {
+    "role": "distill-controller",
+    "skill": "distill-controller",
+    "terms": [
+      "控制算法轻量化",
+      "轻量化全流程",
+      "专家模仿到PGAC"
+    ],
+    "instructions": ".agents/skills/distill-controller/SKILL.md",
+    "knowledge": "knowledge/pgac.md",
+    "case": "cases/spring/README.md",
+    "code": "replay.py",
+    "evidence": "runs/pgac/report.json"
+  },
+  {
+    "role": "train-object-model",
+    "skill": "sample-plant-trajectories",
+    "terms": [
+      "模型采数",
+      "采集温度轨迹",
+      "Simulink回放",
+      "模型采集数据",
+      "SLX"
+    ],
+    "instructions": ".agents/skills/sample-plant-trajectories/SKILL.md",
+    "knowledge": "knowledge/signals.md",
+    "case": "cases/matlab/README.md",
+    "code": "cases/matlab/replay_second_order.m",
+    "evidence": "runs/matlab/report.json"
+  },
+  {
+    "role": "train-object-model",
+    "skill": "audit-train-tabular-model",
+    "terms": [
+      "已有数据",
+      "监督基线",
+      "时序窗口",
+      "CSV",
+      "字段映射",
+      "缺少物理",
+      "纯NN"
+    ],
+    "instructions": ".agents/skills/audit-train-tabular-model/SKILL.md",
+    "knowledge": "knowledge/signals.md",
+    "case": "cases/thermal/README.md",
+    "code": "controlkit/table.py",
+    "evidence": "runs/table/report.json"
+  },
+  {
+    "role": "train-object-model",
+    "skill": "fit-conditional-thermal-pinn",
+    "terms": [
+      "PINN",
+      "物理残差",
+      "恒功率",
+      "温度轨迹",
+      "热平衡"
+    ],
+    "instructions": ".agents/skills/fit-conditional-thermal-pinn/SKILL.md",
+    "knowledge": "knowledge/physics.md",
+    "case": "cases/thermal/README.md",
+    "code": "controlkit/thermal.py",
+    "evidence": "runs/thermal/paired/report.json"
+  },
+  {
+    "role": "train-object-model",
+    "skill": "identify-greybox-parameters",
+    "terms": [
+      "灰箱",
+      "参数辨识",
+      "四参数",
+      "系统辨识"
+    ],
+    "instructions": ".agents/skills/identify-greybox-parameters/SKILL.md",
+    "knowledge": "knowledge/estimation.md",
+    "case": "cases/matlab/README.md",
+    "code": "controlkit/identify.py",
+    "evidence": "runs/identification/report.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "verify-mpc-prediction",
+    "terms": [
+      "预测矩阵",
+      "增量核验",
+      "逐步递推",
+      "首个出错",
+      "未来控制增量"
+    ],
+    "instructions": ".agents/skills/verify-mpc-prediction/SKILL.md",
+    "knowledge": "knowledge/mpc.md",
+    "case": "cases/prediction/README.md",
+    "code": "controlkit/prediction.py",
+    "evidence": "runs/prediction/legacy.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "linearize-lookup-plant",
+    "terms": [
+      "雅可比",
+      "查表",
+      "工作点",
+      "线性化"
+    ],
+    "instructions": ".agents/skills/linearize-lookup-plant/SKILL.md",
+    "knowledge": "knowledge/mpc.md",
+    "case": "cases/linearization/README.md",
+    "code": "controlkit/linearize.py",
+    "evidence": "runs/linearization/report.json"
+  },
+  {
+    "role": "design-and-tune-mpc",
+    "skill": "tune-constrained-mpc",
+    "terms": [
+      "调优",
+      "MPC",
+      "约束控制",
+      "权重",
+      "控制周期",
+      "已有控制器"
+    ],
+    "instructions": ".agents/skills/tune-constrained-mpc/SKILL.md",
+    "knowledge": "knowledge/mpc.md",
+    "case": "cases/spring/README.md",
+    "code": "controlkit/spring.py",
+    "evidence": "runs/mpc/report.json"
+  },
+  {
+    "role": "distill-controller",
+    "skill": "collect-expert-trajectories",
+    "terms": [
+      "专家采集",
+      "专家闭环采数",
+      "采集工况",
+      "专家轨迹采集",
+      "边界采样"
+    ],
+    "instructions": ".agents/skills/collect-expert-trajectories/SKILL.md",
+    "knowledge": "knowledge/signals.md",
+    "case": "cases/spring/README.md",
+    "code": "controlkit/policy.py",
+    "evidence": "runs/expert/data.json"
+  },
+  {
+    "role": "distill-controller",
+    "skill": "clone-control-policy",
+    "terms": [
+      "模仿学习",
+      "已有专家数据",
+      "学生策略",
+      "行为克隆",
+      "模仿策略"
+    ],
+    "instructions": ".agents/skills/clone-control-policy/SKILL.md",
+    "knowledge": "knowledge/pgac.md",
+    "case": "cases/spring/README.md",
+    "code": "controlkit/policy.py",
+    "evidence": "runs/imitation/report.json"
+  },
+  {
+    "role": "distill-controller",
+    "skill": "warmstart-pgac",
+    "terms": [
+      "PGAC",
+      "暖启动",
+      "感知残差",
+      "Actor",
+      "Critic"
+    ],
+    "instructions": ".agents/skills/warmstart-pgac/SKILL.md",
+    "knowledge": "knowledge/pgac.md",
+    "case": "cases/spring/README.md",
+    "code": "controlkit/policy.py",
+    "evidence": "runs/pgac/report.json"
+  }
+]

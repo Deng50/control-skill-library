@@ -1,0 +1,13 @@
+{
+  "equation": "C*dT/dt = -G*(T-Ta)+P",
+  "C_J_K": 120,
+  "G_W_K": 3,
+  "Ta_K": 295,
+  "drive": "constant_per_trajectory",
+  "units": {
+    "time_s": "s",
+    "power_W": "W",
+    "initial_K": "K",
+    "temperature_K": "K"
+  }
+}

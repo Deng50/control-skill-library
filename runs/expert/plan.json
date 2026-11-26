@@ -1,0 +1,136 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\sampling_plan.py"
+    ],
+    "evidence": "executed"
+  },
+  "controller_sha256": "5ed5b07bef17d96fd40febf5b93d10667f2648f0e407f3f7657cbabbc830cfe4",
+  "scenario_sha256": "c6deabc22a93bd9bd42f118a7b17dee31400617a2f5c158d9b2e04b54c3151e3",
+  "pilot_steps": 6,
+  "partitions": {
+    "train": [
+      3,
+      10,
+      11,
+      5,
+      8,
+      4,
+      2,
+      9
+    ],
+    "validation": [
+      0,
+      7
+    ],
+    "test": [
+      6,
+      1
+    ]
+  },
+  "training_pilots": [
+    {
+      "id": 3,
+      "name": "spring-expert-04",
+      "rows": 6,
+      "initial_error_m": 0.1,
+      "disturbance_N": 0.12,
+      "force_min_N": -1.4576101089143763,
+      "force_max_N": 1.827461889901965
+    },
+    {
+      "id": 10,
+      "name": "spring-expert-11",
+      "rows": 6,
+      "initial_error_m": 0.30000000000000004,
+      "disturbance_N": 0.12,
+      "force_min_N": -1.3030194297304156,
+      "force_max_N": 4.0
+    },
+    {
+      "id": 11,
+      "name": "spring-expert-12",
+      "rows": 6,
+      "initial_error_m": 0.10000000000000003,
+      "disturbance_N": 0,
+      "force_min_N": 0.08989976960227762,
+      "force_max_N": 2.436353019530087
+    },
+    {
+      "id": 5,
+      "name": "spring-expert-06",
+      "rows": 6,
+      "initial_error_m": -0.44999999999999996,
+      "disturbance_N": 0,
+      "force_min_N": -4.0,
+      "force_max_N": 2.60048441580989
+    },
+    {
+      "id": 8,
+      "name": "spring-expert-09",
+      "rows": 6,
+      "initial_error_m": -0.1,
+      "disturbance_N": 0,
+      "force_min_N": -1.9388491426442376,
+      "force_max_N": 1.3353061319217254
+    },
+    {
+      "id": 4,
+      "name": "spring-expert-05",
+      "rows": 6,
+      "initial_error_m": -0.15,
+      "disturbance_N": -0.08,
+      "force_min_N": -3.373122093135218,
+      "force_max_N": 1.144687728168676
+    },
+    {
+      "id": 2,
+      "name": "spring-expert-03",
+      "rows": 6,
+      "initial_error_m": -0.65,
+      "disturbance_N": 0,
+      "force_min_N": -4.0,
+      "force_max_N": 2.772640132962489
+    },
+    {
+      "id": 9,
+      "name": "spring-expert-10",
+      "rows": 6,
+      "initial_error_m": 0.65,
+      "disturbance_N": -0.08,
+      "force_min_N": -2.6707315432807124,
+      "force_max_N": 4.0
+    }
+  ],
+  "recommendations": [
+    {
+      "direction": 1,
+      "retain_boundary_conditions": [
+        "spring-expert-11",
+        "spring-expert-10"
+      ]
+    },
+    {
+      "direction": -1,
+      "retain_boundary_conditions": [
+        "spring-expert-06",
+        "spring-expert-03"
+      ]
+    }
+  ],
+  "near_limit_N": 3.92,
+  "design_units": {
+    "position": "m",
+    "velocity": "m/s",
+    "force": "N"
+  }
+}

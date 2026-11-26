@@ -1,0 +1,52 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\verify.py"
+    ],
+    "evidence": "executed"
+  },
+  "case_regression_limits_only": true,
+  "passed": true,
+  "checks": {
+    "all_skills_indexed": true,
+    "all_routing_targets_exist": true,
+    "markdown_links": true,
+    "routing_queries": true,
+    "prediction_pass": true,
+    "prediction_first_error": true,
+    "independent_mimo": true,
+    "thermal_paired_and_no_physics": true,
+    "thermal_reference_regression": true,
+    "thermal_permutation_leakage_and_reload": true,
+    "tabular_windows": true,
+    "mpc_three_sets_and_dt": true,
+    "sampling_plan": true,
+    "expert_data_and_imitation": true,
+    "existing_expert_entry": true,
+    "pgac_binding": true,
+    "pgac_warmstart_gradient": true,
+    "pgac_perception": true,
+    "pgac_heldout": true,
+    "archive_heat_critic_probe": true,
+    "slx_replay_and_dimension": true,
+    "greybox_and_linearization": true,
+    "harness_signatures": true
+  },
+  "route_queries": {
+    "用恒功率温度轨迹训练 PINN": "fit-conditional-thermal-pinn",
+    "核验预测矩阵与逐步递推并定位首个出错的预测步": "verify-mpc-prediction",
+    "在二阶对象上设计 MPC 并调优权重": "tune-constrained-mpc",
+    "用同一对象的模仿权重暖启动 PGAC 并检验感知残差": "warmstart-pgac"
+  },
+  "broken_links": [],
+  "skill_count": 13
+}

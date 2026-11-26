@@ -1,0 +1,10 @@
+{
+  "horizon": 6,
+  "q": 1,
+  "r": 0.001,
+  "s": 0.003,
+  "moves": 6,
+  "force_limit": 4.0,
+  "sample_time_s": 0.2,
+  "model_sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44"
+}

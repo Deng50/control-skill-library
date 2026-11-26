@@ -1,0 +1,22 @@
+{
+  "evidence": "executed",
+  "matlab": "24.2.0.2712019 (R2024b)",
+  "model": "Linear_2nd_order_model4DataProduction.slx",
+  "samples": 2001,
+  "sample_time_s": 0.01,
+  "max_errors_time_u_y": [
+    3.5527136788005009E-15,
+    0,
+    4.4408920985006262E-16
+  ],
+  "stored_fit_a_c_b_f0": [
+    -4.16238198246756,
+    -8.8566102760027423,
+    8.8625881234882726,
+    0.98278564483602537
+  ],
+  "six_parameter_layout_rejected": true,
+  "match_tolerance": 1E-8,
+  "matched_archive": true,
+  "work_directory": "C:\\Users\\sk3547969879\\AppData\\Local\\Temp\\tp0124d92f_f639_4afe_9465_5b2ac1cdbcf5"
+}

@@ -1,0 +1,289 @@
+{
+  "features": [
+    "q_m",
+    "v_mps",
+    "reference_m",
+    "disturbance_N"
+  ],
+  "target": "force_N",
+  "force_limit": 4.0,
+  "sample_time_s": 0.2,
+  "dataset_sha256": "16d872c699743c5381bee5ee99d6cda12391bde86cb3e3f885fd6d14e66553d6",
+  "plant_source_sha256": "4d4c94e48540aece5b288c601caaf1f8cacacf34b18c7939e5abb936f5c0eb3e",
+  "controller_sha256": "5ed5b07bef17d96fd40febf5b93d10667f2648f0e407f3f7657cbabbc830cfe4",
+  "initial_previous_N": 0,
+  "design": {
+    "initial_states": [
+      [
+        -0.3,
+        0
+      ],
+      [
+        -0.1,
+        0.1
+      ],
+      [
+        0.25,
+        -0.1
+      ],
+      [
+        -0.25,
+        -0.1
+      ],
+      [
+        0,
+        0.12
+      ],
+      [
+        0.3,
+        0
+      ],
+      [
+        -0.3,
+        0
+      ],
+      [
+        0,
+        -0.12
+      ],
+      [
+        0.25,
+        0.1
+      ],
+      [
+        -0.25,
+        0.1
+      ],
+      [
+        0.1,
+        -0.1
+      ],
+      [
+        0.3,
+        0
+      ]
+    ],
+    "references_m": [
+      -0.4,
+      -0.15,
+      0.15,
+      0.4
+    ],
+    "disturbances_N": [
+      -0.12,
+      -0.08,
+      0,
+      0.08,
+      0.12
+    ]
+  },
+  "rows": 432,
+  "samples_near_limit": 8,
+  "splits": {
+    "train": [
+      3,
+      10,
+      11,
+      5,
+      8,
+      4,
+      2,
+      9
+    ],
+    "validation": [
+      0,
+      7
+    ],
+    "test": [
+      6,
+      1
+    ]
+  },
+  "scenarios": [
+    {
+      "name": "spring-expert-01",
+      "initial_state": [
+        -0.3,
+        0
+      ],
+      "reference": [
+        -0.4
+      ],
+      "disturbance": [
+        -0.12
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-02",
+      "initial_state": [
+        -0.1,
+        0.1
+      ],
+      "reference": [
+        -0.4
+      ],
+      "disturbance": [
+        0.08
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-03",
+      "initial_state": [
+        0.25,
+        -0.1
+      ],
+      "reference": [
+        -0.4
+      ],
+      "disturbance": [
+        0
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-04",
+      "initial_state": [
+        -0.25,
+        -0.1
+      ],
+      "reference": [
+        -0.15
+      ],
+      "disturbance": [
+        0.12
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-05",
+      "initial_state": [
+        0,
+        0.12
+      ],
+      "reference": [
+        -0.15
+      ],
+      "disturbance": [
+        -0.08
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-06",
+      "initial_state": [
+        0.3,
+        0
+      ],
+      "reference": [
+        -0.15
+      ],
+      "disturbance": [
+        0
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-07",
+      "initial_state": [
+        -0.3,
+        0
+      ],
+      "reference": [
+        0.15
+      ],
+      "disturbance": [
+        0.08
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-08",
+      "initial_state": [
+        0,
+        -0.12
+      ],
+      "reference": [
+        0.15
+      ],
+      "disturbance": [
+        -0.12
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-09",
+      "initial_state": [
+        0.25,
+        0.1
+      ],
+      "reference": [
+        0.15
+      ],
+      "disturbance": [
+        0
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-10",
+      "initial_state": [
+        -0.25,
+        0.1
+      ],
+      "reference": [
+        0.4
+      ],
+      "disturbance": [
+        -0.08
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-11",
+      "initial_state": [
+        0.1,
+        -0.1
+      ],
+      "reference": [
+        0.4
+      ],
+      "disturbance": [
+        0.12
+      ],
+      "steps": 36
+    },
+    {
+      "name": "spring-expert-12",
+      "initial_state": [
+        0.3,
+        0
+      ],
+      "reference": [
+        0.4
+      ],
+      "disturbance": [
+        0
+      ],
+      "steps": 36
+    }
+  ],
+  "scenario_sha256": "c6deabc22a93bd9bd42f118a7b17dee31400617a2f5c158d9b2e04b54c3151e3",
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\policy.py",
+      "collect"
+    ],
+    "evidence": "executed"
+  }
+}

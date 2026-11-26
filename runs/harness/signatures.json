@@ -1,0 +1,4597 @@
+{
+  "scope": "source declarations and operationHelp; runtime jobs not invoked",
+  "plugin": "D:\\projects\\control-agent-harness\\harness-plugin\\src",
+  "catalog_sha256": "87e6b5fca64fcf4df7197353cf0ebe52cd3150e62a0d0e59ad227a212c79fb50",
+  "native": {
+    "control_help": {
+      "file": "index.mjs",
+      "line": 350,
+      "source_sha256": "d71b07e3343928dbdf2966a5e0b22d2d8af72d101cd057e480d251fedfc3ad93",
+      "parameters_source": "parameters: {\n      operation: { type: 'string', enum: Object.keys(operations), description: 'Operation to describe in detail; omit for the index.' },\n      agent: { type: 'string', enum: Object.keys(agents), description: 'Optional role filter for the index.' },\n    }"
+    },
+    "control_preflight": {
+      "file": "index.mjs",
+      "line": 342,
+      "source_sha256": "d71b07e3343928dbdf2966a5e0b22d2d8af72d101cd057e480d251fedfc3ad93",
+      "parameters_source": "parameters:{agent:{type:'string',enum:Object.keys(agents),required:true},operation:{type:'string',enum:Object.keys(operations),required:true},\n      workspace:{type:'string',required:true},inputs:{type:'object',additionalProperties:true},config:{type:'object',additionalProperties:true}}"
+    },
+    "control_prepare_review": {
+      "file": "index.mjs",
+      "line": 360,
+      "source_sha256": "d71b07e3343928dbdf2966a5e0b22d2d8af72d101cd057e480d251fedfc3ad93",
+      "parameters_source": "parameters:{\n      agent:{type:'string',enum:Object.keys(agents),required:true}, operation:{type:'string',enum:Object.keys(operations),required:true},\n      workspace:{type:'string',required:true},inputs:{type:'object',additionalProperties:true},config:{type:'object',additionalProperties:true},\n      intent_id:{type:'string',description:'Task label or returned handle. Reuse across revisions of the same task.'},\n      next_training:{type:'object',additionalProperties:false,properties:{config:{type:'object',additionalProperties:true,required:true}},description:'Optional frozen train_supervised settings to review together with dataset preparation'},\n    }"
+    },
+    "control_replay_plant_source": {
+      "file": "plant-replay.mjs",
+      "line": 11,
+      "source_sha256": "ad5e985eacdd30b0b46d4afb7d126a62e3f408f019c05b1ffdfc91274f250a9d",
+      "parameters_source": "parameters:{source:{type:'string',required:true},request:{type:'object',additionalProperties:true},\n      requestFile:{type:'string',description:'Single workspace JSON filename, alternative to inline request'}}"
+    },
+    "control_recheck_plant_workspace": {
+      "file": "plant-workspace.mjs",
+      "line": 263,
+      "source_sha256": "2a448e88f8023fd95399d1ff5cbd66fb1d683b3c8aeeba0d9ca727cb30d23c75",
+      "parameters_source": "parameters:{}"
+    },
+    "control_build_zoh_plant": {
+      "file": "simulink-build.mjs",
+      "line": 131,
+      "source_sha256": "e4a83472180533cf6af54469ff775832bab7db1747a382d99d3d60580ac2f662",
+      "parameters_source": "parameters:{\n      model:{type:'string', required:true, description:'Unique MATLAB model name'},\n      Ac:{...matrix, required:true, description:'Continuous state matrix, n × n'},\n      Bc:{...matrix, required:true, description:'Continuous input matrix, n × m, control then disturbance columns'},\n      initialCondition:{...vector,required:true}, sampleTime:{type:'number',required:true},\n      inputNames:{type:'array',items:{type:'string'},required:true},\n      parameters:{type:'object',additionalProperties:true,description:'Optional named finite scalar physical parameters from the user or case; must agree with Python replay when supplied'},\n      referenceFile:{type:'string',description:'Optional reference JSON filename in the current conversation workspace (up to 2 MiB)'},\n      reference:{type:'object',additionalProperties:false,description:'Alternatively supply trajectories inline',properties:{sampleTime:{type:'number'},absTolerance:{type:'number'},\n        parameters:{type:'object',additionalProperties:true},source_sha256:{type:'string'},\n        trajectories:{type:'array',items:{type:'object',additionalProperties:false,properties:{initialCondition:vector,inputs:matrix,states:matrix}}}}},\n    }"
+    },
+    "control_configure_simulink_plant": {
+      "file": "simulink-plant.mjs",
+      "line": 73,
+      "source_sha256": "81132cb896ab2d2f2885ecc2903656961f4167a35432e8597c5faa383fbda568",
+      "parameters_source": "parameters: {\n      model: {type: 'string', required: true, description: 'Loaded top-level model name without .slx'},\n      block: {type: 'string', required: true, description: 'Block path relative to model, e.g. Dynamics/Plant'},\n      A: matrix('State transition, n by n'), B: matrix('Input matrix, n by m'),\n      C: matrix('Output matrix, r by n'), D: matrix('Feedthrough, r by m'),\n      initialCondition: {...numbers, required: true, description: 'n state values in model order'},\n      sampleTime: {type: 'number', required: true, description: 'Positive discrete sample period in seconds'},\n    }"
+    },
+    "control_wire_simulink": {
+      "file": "simulink-wire.mjs",
+      "line": 65,
+      "source_sha256": "3a73cd9c06228bbd34a6dee43010baf320af2be4c596cc23c505d6e0462ecaf4",
+      "parameters_source": "parameters: {\n      model: {type: 'string', required: true, description: 'Loaded top-level model name without .slx'},\n      connections: {type: 'array', required: true, items: {type: 'object', additionalProperties: false, properties: endpointFields},\n        description: 'Desired connections in order. Each source and destination must share a parent system.'},\n    }"
+    },
+    "control_save_simulink_model": {
+      "file": "index.mjs",
+      "line": 66,
+      "source_sha256": "d71b07e3343928dbdf2966a5e0b22d2d8af72d101cd057e480d251fedfc3ad93",
+      "parameters_source": "parameters:{model:{type:'string',required:true,description:'Loaded model name, without a path or .slx extension'}}"
+    }
+  },
+  "domain": {
+    "convert_plant_predictor": {
+      "agents": [
+        "model",
+        "controller"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "plant": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "equations": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "plant",
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "method": {
+            "type": "string",
+            "enum": [
+              "declared_equations",
+              "sampled_affine"
+            ]
+          },
+          "max_one_step_nrmse": {
+            "type": "number",
+            "description": "按各通道物理跨度归一化的单步 RMSE 上限，默认 0.01",
+            "exclusiveMinimum": 0
+          },
+          "max_rollout_nrmse": {
+            "type": "number",
+            "description": "按各通道物理跨度归一化的整轨滚动 RMSE 上限，默认 0.05",
+            "exclusiveMinimum": 0
+          }
+        },
+        "required": [
+          "method"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "plant": {
+          "kinds": [
+            "plant_model"
+          ],
+          "required": true
+        },
+        "dataset": {
+          "kinds": [
+            "sampled_dataset"
+          ],
+          "required": true
+        },
+        "equations": {
+          "kinds": [
+            "nominal_model",
+            "reference_model"
+          ],
+          "required": false
+        }
+      },
+      "example": {
+        "operation": "convert_plant_predictor",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "verify_design_delivery": {
+      "agents": [
+        "controller"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "design": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "design"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "target": {
+            "type": "string",
+            "enum": [
+              "standalone_python",
+              "workspace_controller"
+            ]
+          },
+          "case": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "reference": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "disturbance": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "previous": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              }
+            },
+            "required": [
+              "x",
+              "reference"
+            ],
+            "additionalProperties": false
+          },
+          "expected_action": {
+            "type": "array",
+            "items": {
+              "type": "number",
+              "description": "Finite value in the declared variable unit"
+            },
+            "description": "Length must match the corresponding model interface"
+          },
+          "action_atol": {
+            "type": "number",
+            "description": "期望控制量的绝对误差上限",
+            "minimum": 0
+          },
+          "required_checks": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "files",
+                "load",
+                "standalone",
+                "single_point",
+                "workspace_controller",
+                "closed_loop",
+                "matlab",
+                "simulink"
+              ]
+            }
+          }
+        },
+        "required": [
+          "target",
+          "case"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "design": {
+          "kinds": [
+            "controller_design"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "verify_design_delivery",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "synthesize_mpc": {
+      "agents": [
+        "controller"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "description": {
+            "type": "string",
+            "description": "Natural-language design description; missing physical values remain parameters"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "prediction": {
+            "type": "object",
+            "properties": {
+              "method": {
+                "type": "string",
+                "enum": [
+                  "direct",
+                  "equations",
+                  "identify_affine",
+                  "linearize"
+                ]
+              },
+              "model_spec": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Explicit supported declarative state-transition/derivative model; overrides a descriptive template"
+              },
+              "C": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "fit": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Supported training-only affine identification settings"
+              },
+              "acceptance": {
+                "type": "object",
+                "properties": {
+                  "atol": {
+                    "type": "number",
+                    "description": "Nonnegative source-equivalence absolute tolerance",
+                    "minimum": 0
+                  },
+                  "rtol": {
+                    "type": "number",
+                    "description": "Nonnegative relative tolerance",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "atol",
+                  "rtol"
+                ],
+                "additionalProperties": false
+              },
+              "operating_point": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  },
+                  "u": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  },
+                  "d": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  }
+                },
+                "required": [
+                  "x",
+                  "u",
+                  "d"
+                ],
+                "additionalProperties": false
+              },
+              "validity_bounds": {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "description": "Finite rectangular matrix; dimensions come from the model interface"
+                  },
+                  "u": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "description": "Finite rectangular matrix; dimensions come from the model interface"
+                  },
+                  "d": {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "description": "Finite rectangular matrix; dimensions come from the model interface"
+                  }
+                },
+                "required": [
+                  "x",
+                  "u",
+                  "d"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "controller": {
+            "type": "object",
+            "properties": {
+              "horizon": {
+                "type": "integer",
+                "description": "Prediction/control horizon, 1–100",
+                "minimum": 1
+              },
+              "max_iterations": {
+                "type": "integer",
+                "description": "SLSQP iteration budget",
+                "minimum": 1
+              },
+              "solver_tolerance": {
+                "type": "number",
+                "description": "Positive solve tolerance",
+                "exclusiveMinimum": 0
+              },
+              "input_rate_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "weights": {
+            "type": "object",
+            "properties": {
+              "q": {
+                "type": "number",
+                "description": "Positive normalized tracking coefficient",
+                "exclusiveMinimum": 0
+              },
+              "r": {
+                "type": "number",
+                "description": "Nonnegative normalized input-effort proxy coefficient",
+                "minimum": 0
+              },
+              "s": {
+                "type": "number",
+                "description": "Nonnegative normalized per-step input-increment coefficient",
+                "minimum": 0
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "template": {
+            "type": "string",
+            "enum": [
+              "spring_damper",
+              "generic"
+            ]
+          },
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "mass": {
+                "type": "number",
+                "description": "Explicit mass"
+              },
+              "damping": {
+                "type": "number",
+                "description": "Explicit damping"
+              },
+              "stiffness": {
+                "type": "number",
+                "description": "Explicit stiffness"
+              },
+              "sample_time": {
+                "type": "number",
+                "description": "Explicit sample time in seconds"
+              },
+              "state_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "input_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "output_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "solver_check": {
+            "oneOf": [
+              {
+                "type": "boolean"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "x": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  },
+                  "reference": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  },
+                  "disturbance": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  },
+                  "previous": {
+                    "type": "array",
+                    "items": {
+                      "type": "number",
+                      "description": "Finite value in the declared variable unit"
+                    },
+                    "description": "Length must match the corresponding model interface"
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Draft requires no fake numeric confirmation. Numeric designs confirm signals; identification additionally confirms its fitting summary."
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": false
+        },
+        "dataset": {
+          "kinds": [
+            "sampled_dataset"
+          ],
+          "required": false
+        }
+      },
+      "example": {
+        "operation": "synthesize_mpc",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "train_predictive_model": {
+      "agents": [
+        "model",
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "S05 supervised numerical settings: hidden_dims,activation,learning_rate,batch_size,epochs,patience,seed,input_dim/output_dim,weight_decay,min_delta,grad_clip,max_test_nrmse. Input width=nx+nu+nd, target width=nx. Resume fields belong at outer config only."
+          },
+          "C": {
+            "type": "array",
+            "items": {
+              "type": "array",
+              "items": {
+                "type": "number",
+                "description": "Finite value in the declared variable unit"
+              },
+              "description": "Length must match the corresponding model interface"
+            },
+            "description": "Finite rectangular matrix; dimensions come from the model interface"
+          },
+          "scaler": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "minmax",
+              "none"
+            ]
+          },
+          "max_test_state_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "State one-step ceiling",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "One per state",
+                  "minimum": 0
+                }
+              }
+            ]
+          },
+          "max_test_output_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Output one-step ceiling",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "One per output",
+                  "minimum": 0
+                }
+              }
+            ]
+          },
+          "max_rollout_state_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Open-loop state ceiling",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "One per state",
+                  "minimum": 0
+                }
+              }
+            ]
+          },
+          "max_rollout_output_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Open-loop output ceiling",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "One per output",
+                  "minimum": 0
+                }
+              }
+            ]
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Expected checkpoint SHA-256"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Exact Session-confirmed physical signals and prediction training summary."
+          }
+        },
+        "required": [
+          "network",
+          "C",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "dataset": {
+          "kinds": [
+            "sampled_dataset"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "train_predictive_model",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "train_supervised": {
+      "agents": [
+        "model"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "epochs": {
+            "type": "integer",
+            "description": "Target total epochs, including epochs already saved in a resumed checkpoint",
+            "minimum": 1
+          },
+          "learning_rate": {
+            "type": "number",
+            "description": "Positive optimizer learning rate",
+            "exclusiveMinimum": 0
+          },
+          "batch_size": {
+            "type": "integer",
+            "description": "Mini-batch size",
+            "minimum": 1
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Optional expected SHA256; the saved checkpoint and sidecar must agree"
+          },
+          "patience": {
+            "type": "integer",
+            "description": "Early-stopping patience in epochs",
+            "minimum": 1
+          },
+          "hidden_dims": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "description": "Hidden layer width",
+              "minimum": 1
+            },
+            "description": "MLP hidden layer widths"
+          },
+          "input_dim": {
+            "type": "integer",
+            "description": "Must equal the prepared DataInterface feature width, not nx",
+            "minimum": 1
+          },
+          "output_dim": {
+            "type": "integer",
+            "description": "Must equal the prepared DataInterface target width, not ny inferred from a model",
+            "minimum": 1
+          },
+          "activation": {
+            "type": "string",
+            "enum": [
+              "tanh",
+              "relu",
+              "silu"
+            ]
+          },
+          "weight_decay": {
+            "type": "number",
+            "description": "Nonnegative Adam weight decay",
+            "minimum": 0
+          },
+          "min_delta": {
+            "type": "number",
+            "description": "Nonnegative validation improvement threshold",
+            "minimum": 0
+          },
+          "grad_clip": {
+            "type": "number",
+            "description": "Positive gradient norm limit",
+            "exclusiveMinimum": 0
+          },
+          "max_test_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Predeclared per-output acceptance ceiling",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Per-output ceiling",
+                  "minimum": 0
+                }
+              }
+            ],
+            "description": "Optional final acceptance threshold, scalar or one per output. Test data never selects the best epoch or hyperparameters."
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "This Session must confirm exact signals and training summaries; a JSON flag cannot authorize."
+          }
+        },
+        "required": [
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "dataset": {
+          "kinds": [
+            "supervised_dataset"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "train_supervised",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "register_plant": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "material": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "adapter": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "schema_version:1; backend python_callable|python_factory|matlab_function|simulink; source_file relative to material artifact root (usually source/name.py); interface explicit ordered ModelInterface; parameters finite JSON; source_semantics transition|derivative. Callable/function f(x,u,d,dt,parameters); exactly one C:[ny,nx] or state-only output_entrypoint. Factory requires factory(parameters), reset_strategy reset|recreate. Derivative requires time_unit:s, derivative_units and integration{method:euler|rk4,substeps,input_hold:zero_order_hold}. Simulink requires declared port/SID/state initial-condition-variable mapping."
+          }
+        },
+        "required": [
+          "adapter"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "material": {
+          "kinds": [
+            "material"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "register_plant",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "recommend_sampling": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "overrides": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Optional overrides for the sampling configuration returned by this operation. Inspect the complete resulting candidate before approval."
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "plant_model"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "recommend_sampling",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "sample_model": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "model"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "sampling": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "mode recommended|expert, seed, dt matching model, duration an integer dt multiple, trajectories[{x0,u0,d0,u_profile,d_profile}], control_rate_limits/disturbance_rate_limits per second, coupled_constraints[{name,x,u,d,lower,upper}]. Profiles step|chirp|bounded_random|timeseries; use recommend_sampling for a complete candidate."
+          },
+          "trial": {
+            "type": "object",
+            "properties": {
+              "trajectories": {
+                "type": "integer",
+                "description": "Number of leading approved trajectories",
+                "minimum": 1
+              },
+              "steps": {
+                "type": "integer",
+                "description": "Number of leading approved intervals",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "trajectories",
+              "steps"
+            ],
+            "additionalProperties": false
+          },
+          "sampling_run": {
+            "type": "string",
+            "enum": [
+              "trial",
+              "full"
+            ],
+            "description": "Select the approved trial prefix or complete plan. This selector reuses the same confirmation while sampling and trial limits remain identical. Default trial when trial is present, otherwise full."
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Exact confirmed signals and sampling versions; refs alone grant no authority."
+          }
+        },
+        "required": [
+          "sampling",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "plant_model"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "sample_model",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "inspect_material": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "local_path": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          }
+        },
+        "required": [
+          "local_path"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "original_name": {
+            "type": "string",
+            "description": "Original uploaded basename; required when the stored upload name has no useful suffix"
+          },
+          "dependency_root": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Absolute local file path readable by the Session sandbox"
+            },
+            "description": "Explicit files/directories confined to dependency_root"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {},
+      "example": {
+        "operation": "inspect_material",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "register_material": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "local_path": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          }
+        },
+        "required": [
+          "local_path"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Descriptive material label"
+          },
+          "source_kind": {
+            "type": "string",
+            "enum": [
+              "path",
+              "upload"
+            ]
+          },
+          "original_name": {
+            "type": "string",
+            "description": "Original portable basename"
+          },
+          "source_metadata": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "dependency_root": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "dependencies": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Absolute local file path readable by the Session sandbox"
+            },
+            "description": "Explicit dependencies within the declared root"
+          },
+          "expected_manifest": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Optional prior inspect_material result; changed source is refused"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {},
+      "example": {
+        "operation": "register_material",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "inspect_table": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "data_path": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          }
+        },
+        "required": [
+          "data_path"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "worksheet": {
+            "type": "string",
+            "description": "Explicit XLSX worksheet"
+          },
+          "header_row": {
+            "type": "integer",
+            "description": "One-based header row",
+            "minimum": 1
+          },
+          "preview_rows": {
+            "type": "integer",
+            "description": "Small preview row count",
+            "minimum": 0
+          },
+          "delimiter": {
+            "type": "string",
+            "description": "Explicit CSV delimiter"
+          },
+          "encoding": {
+            "type": "string",
+            "description": "Explicit CSV encoding; default utf-8-sig"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {},
+      "example": {
+        "operation": "inspect_table",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "prepare_supervised_dataset": {
+      "agents": [
+        "model"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "material": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "interface": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "schema_version:1,interface_kind:tabular_supervised,task:static_regression|dynamic_prediction; signals{name,role,unit,column{index,header,worksheet},delay_steps,observable}; features{signal,window,lag}; targets{signal,offset}; time_column/trip_column; optional state_mapping/input_dim/output_dim. Widths are not nx/nu/ny."
+          },
+          "split": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "trip",
+                  "time"
+                ]
+              },
+              "train": {
+                "type": "number",
+                "description": "Train fraction"
+              },
+              "validation": {
+                "type": "number",
+                "description": "Validation fraction"
+              },
+              "test": {
+                "type": "number",
+                "description": "Test fraction"
+              }
+            },
+            "required": [
+              "mode"
+            ],
+            "additionalProperties": false
+          },
+          "scaler": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "minmax",
+              "none"
+            ]
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "measured",
+                  "synthetic",
+                  "external_expert"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "description": "Who/what produced the model or data and the engineering meaning"
+              }
+            },
+            "required": [
+              "kind",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "signals:{plan_id,version_hash} confirmed by this native Session; flags are not authority"
+          },
+          "worksheet": {
+            "type": "string",
+            "description": "Explicit XLSX worksheet"
+          },
+          "header_row": {
+            "type": "integer",
+            "description": "One-based header row",
+            "minimum": 1
+          },
+          "delimiter": {
+            "type": "string",
+            "description": "CSV delimiter"
+          },
+          "encoding": {
+            "type": "string",
+            "description": "CSV encoding"
+          }
+        },
+        "required": [
+          "interface",
+          "split",
+          "source",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "material": {
+          "kinds": [
+            "material"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "prepare_supervised_dataset",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "prepare_handoff": {
+      "agents": [
+        "model",
+        "controller",
+        "lightweight",
+        "workflow"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "artifact_id": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "artifact_id"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {},
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {},
+      "example": {
+        "operation": "prepare_handoff",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {
+          "artifact_id": "<selected-id>"
+        },
+        "config": {}
+      }
+    },
+    "collect_expert": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "controller": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "evaluation_model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "controller",
+          "evaluation_model"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Unique condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Closed-loop simulation steps",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "name",
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Independent operating conditions; do not reuse held-out controller conditions"
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          }
+        },
+        "required": [
+          "scenarios"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "controller": {
+          "kinds": [
+            "controller"
+          ],
+          "required": true
+        },
+        "evaluation_model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model",
+            "plant_model"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "collect_expert",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {
+          "controller": "<controller-id>",
+          "evaluation_model": "<reference-id>"
+        },
+        "config": {
+          "scenarios": [
+            "<at least five explicit independent scenarios>"
+          ],
+          "seed": 42
+        }
+      }
+    },
+    "train_imitation": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "epochs": {
+            "type": "integer",
+            "description": "Target total epochs, including epochs already saved in a resumed checkpoint",
+            "minimum": 1
+          },
+          "learning_rate": {
+            "type": "number",
+            "description": "Positive optimizer learning rate",
+            "exclusiveMinimum": 0
+          },
+          "batch_size": {
+            "type": "integer",
+            "description": "Mini-batch size",
+            "minimum": 1
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Optional expected SHA256; the saved checkpoint and sidecar must agree"
+          },
+          "patience": {
+            "type": "integer",
+            "description": "Early-stopping patience in epochs",
+            "minimum": 1
+          },
+          "hidden_dims": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "description": "Hidden layer width",
+              "minimum": 1
+            },
+            "description": "MLP hidden layer widths"
+          },
+          "architecture": {
+            "type": "string",
+            "enum": [
+              "mlp",
+              "rnn",
+              "lstm"
+            ]
+          },
+          "dropout": {
+            "type": "number",
+            "description": "Dropout in [0,1)"
+          },
+          "hidden_size": {
+            "type": "integer",
+            "description": "Recurrent hidden width",
+            "minimum": 1
+          },
+          "num_layers": {
+            "type": "integer",
+            "description": "Recurrent layer count",
+            "minimum": 1
+          },
+          "preview_len": {
+            "type": "integer",
+            "description": "Disturbance preview length",
+            "minimum": 1
+          },
+          "disturbance_forecast": {
+            "const": "declared_constant"
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "dataset": {
+          "kinds": [
+            "expert_dataset"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "train_imitation",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {
+          "dataset": "<expert-dataset-id>"
+        },
+        "config": {
+          "architecture": "mlp",
+          "hidden_dims": [
+            48,
+            32
+          ],
+          "epochs": 160,
+          "learning_rate": 0.004,
+          "seed": 42
+        }
+      }
+    },
+    "tune_controller": {
+      "agents": [
+        "controller"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "evaluation_model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "model",
+          "evaluation_model"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "parameters": {
+            "type": "object",
+            "properties": {
+              "horizon": {
+                "type": "integer",
+                "description": "Prediction horizon",
+                "minimum": 1
+              },
+              "q": {
+                "type": "number",
+                "description": "Tracking weight"
+              },
+              "r": {
+                "type": "number",
+                "description": "Control effort weight"
+              },
+              "s": {
+                "type": "number",
+                "description": "Control change weight"
+              },
+              "input_rate_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "max_iterations": {
+                "type": "integer",
+                "description": "Solver iteration budget",
+                "minimum": 1
+              },
+              "solver_tolerance": {
+                "type": "number",
+                "description": "Positive solver tolerance"
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "parameter_space": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "lower": {
+                  "type": "number",
+                  "description": "Lower search bound"
+                },
+                "upper": {
+                  "type": "number",
+                  "description": "Upper search bound"
+                },
+                "integer": {
+                  "type": "boolean"
+                }
+              },
+              "required": [
+                "lower",
+                "upper"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "budget": {
+            "type": "integer",
+            "description": "Candidate simulation budget",
+            "minimum": 1
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          },
+          "minimum_improvement": {
+            "type": "number",
+            "description": "Required validation score reduction fraction, in [0,1]",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "tuning_scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Unique condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Closed-loop simulation steps",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "name",
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Independent operating conditions; do not reuse held-out controller conditions"
+          },
+          "verification_scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Unique condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Closed-loop simulation steps",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "name",
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Independent operating conditions; do not reuse held-out controller conditions"
+          },
+          "test_scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Unique condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Closed-loop simulation steps",
+                  "minimum": 1
+                }
+              },
+              "required": [
+                "name",
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps"
+              ],
+              "additionalProperties": false
+            },
+            "description": "Independent operating conditions; do not reuse held-out controller conditions"
+          },
+          "evaluation": {
+            "type": "object",
+            "properties": {
+              "schema_version": {
+                "const": 1
+              },
+              "recipe": {
+                "type": "string",
+                "enum": [
+                  "tracking",
+                  "energy",
+                  "smoothness"
+                ]
+              },
+              "weights": {
+                "type": "object",
+                "properties": {
+                  "rmse": {
+                    "type": "number",
+                    "description": "Nonnegative external score weight; at least one must be positive",
+                    "minimum": 0
+                  },
+                  "energy": {
+                    "type": "number",
+                    "description": "Nonnegative external score weight; at least one must be positive",
+                    "minimum": 0
+                  },
+                  "tv": {
+                    "type": "number",
+                    "description": "Nonnegative external score weight; at least one must be positive",
+                    "minimum": 0
+                  },
+                  "overshoot": {
+                    "type": "number",
+                    "description": "Nonnegative external score weight; at least one must be positive",
+                    "minimum": 0
+                  }
+                },
+                "required": [
+                  "rmse",
+                  "energy",
+                  "tv",
+                  "overshoot"
+                ],
+                "additionalProperties": false
+              },
+              "scales": {
+                "type": "object",
+                "properties": {
+                  "rmse": {
+                    "type": "number",
+                    "description": "Explicit fixed positive engineering score scale; remains unchanged during the search",
+                    "exclusiveMinimum": 0
+                  },
+                  "energy": {
+                    "type": "number",
+                    "description": "Explicit fixed positive engineering score scale; remains unchanged during the search",
+                    "exclusiveMinimum": 0
+                  },
+                  "tv": {
+                    "type": "number",
+                    "description": "Explicit fixed positive engineering score scale; remains unchanged during the search",
+                    "exclusiveMinimum": 0
+                  },
+                  "overshoot": {
+                    "type": "number",
+                    "description": "Explicit fixed positive engineering score scale; remains unchanged during the search",
+                    "exclusiveMinimum": 0
+                  }
+                },
+                "required": [
+                  "rmse",
+                  "energy",
+                  "tv",
+                  "overshoot"
+                ],
+                "additionalProperties": false
+              },
+              "energy_model": {
+                "const": "action_proxy",
+                "description": "Integral of squared actuator coordinates; no power model or real physical-energy claim"
+              },
+              "hard_gates": {
+                "type": "object",
+                "properties": {
+                  "constraint_tolerance": {
+                    "type": "number",
+                    "description": "Nonnegative feasibility tolerance",
+                    "minimum": 0
+                  },
+                  "max_rmse": {
+                    "oneOf": [
+                      {
+                        "type": "number",
+                        "description": "Aggregate RMSE ceiling",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "max_energy": {
+                    "oneOf": [
+                      {
+                        "type": "number",
+                        "description": "Squared-action integral proxy ceiling",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "max_tv": {
+                    "oneOf": [
+                      {
+                        "type": "number",
+                        "description": "Total variation ceiling",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "max_overshoot": {
+                    "oneOf": [
+                      {
+                        "type": "number",
+                        "description": "Maximum directional overshoot ratio",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "max_settling_time": {
+                    "oneOf": [
+                      {
+                        "type": "number",
+                        "description": "Maximum settling time in seconds",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "max_oscillation_crossings": {
+                    "oneOf": [
+                      {
+                        "type": "integer",
+                        "description": "Maximum error crossings",
+                        "minimum": 0
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "per_output": {
+                    "type": "object",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "max_rmse": {
+                          "oneOf": [
+                            {
+                              "type": "number",
+                              "description": "Per-output RMSE ceiling in that output unit",
+                              "minimum": 0
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "max_overshoot": {
+                          "oneOf": [
+                            {
+                              "type": "number",
+                              "description": "Directional overshoot ratio ceiling; no defined step remains unavailable",
+                              "minimum": 0
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "max_settling_time": {
+                          "oneOf": [
+                            {
+                              "type": "number",
+                              "description": "Settling-time ceiling in seconds; an unsettled trajectory fails this gate",
+                              "minimum": 0
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "max_oscillation_crossings": {
+                          "oneOf": [
+                            {
+                              "type": "integer",
+                              "description": "Deadband-qualified tracking-error sign changes",
+                              "minimum": 0
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      },
+                      "required": [],
+                      "additionalProperties": false
+                    },
+                    "description": "Exact output names from the interface; thresholds retain their channel units"
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "metrics": {
+                "type": "object",
+                "properties": {
+                  "settling_abs_band": {
+                    "type": "number",
+                    "description": "Absolute error band",
+                    "minimum": 0
+                  },
+                  "settling_rel_band": {
+                    "type": "number",
+                    "description": "Step-amplitude-relative error band",
+                    "minimum": 0
+                  },
+                  "settling_hold_steps": {
+                    "type": "integer",
+                    "description": "Minimum in-band hold samples",
+                    "minimum": 1
+                  },
+                  "step_atol": {
+                    "type": "number",
+                    "description": "Reference step amplitude tolerance",
+                    "minimum": 0
+                  },
+                  "oscillation_abs_deadband": {
+                    "type": "number",
+                    "description": "Absolute error sign-change deadband",
+                    "minimum": 0
+                  },
+                  "oscillation_rel_deadband": {
+                    "type": "number",
+                    "description": "Step-relative deadband",
+                    "minimum": 0
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "recipe",
+              "scales"
+            ],
+            "additionalProperties": false
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "This Session must confirm both physical signals and the exact tuning/evaluation/scenario summary."
+          }
+        },
+        "required": [
+          "evaluation",
+          "tuning_scenarios",
+          "verification_scenarios",
+          "test_scenarios"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": true
+        },
+        "evaluation_model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "tune_controller",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "register_expert": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "material": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "adapter": {
+            "type": "object",
+            "properties": {
+              "schema_version": {
+                "const": 1
+              },
+              "backend": {
+                "type": "string",
+                "enum": [
+                  "python_callable",
+                  "matlab_function"
+                ]
+              },
+              "source_file": {
+                "type": "string",
+                "description": "Material-relative primary function source"
+              },
+              "entrypoint": {
+                "type": "string",
+                "description": "Explicit six-input callable/function"
+              },
+              "interface": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Complete physical plant ModelInterface; feature count does not replace state dimensions"
+              },
+              "parameters": {
+                "type": "object",
+                "additionalProperties": true
+              },
+              "time_unit": {
+                "const": "s"
+              },
+              "control_period": {
+                "type": "number",
+                "description": "Positive seconds; integer multiple of the plant sample time",
+                "exclusiveMinimum": 0
+              },
+              "observations": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Unique observed feature name"
+                    },
+                    "source": {
+                      "type": "string",
+                      "enum": [
+                        "state",
+                        "output"
+                      ]
+                    },
+                    "index": {
+                      "type": "integer",
+                      "description": "Zero-based source channel index",
+                      "minimum": 0
+                    },
+                    "plant_name": {
+                      "type": "string",
+                      "description": "Exact source channel name"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": "Exact source channel unit"
+                    },
+                    "availability": {
+                      "type": "string",
+                      "enum": [
+                        "measured",
+                        "estimated",
+                        "simulation_only"
+                      ]
+                    },
+                    "delay_steps": {
+                      "const": 0
+                    }
+                  },
+                  "required": [
+                    "name",
+                    "source",
+                    "index",
+                    "plant_name",
+                    "unit",
+                    "availability",
+                    "delay_steps"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "reference_available": {
+                "type": "boolean"
+              },
+              "disturbance_available": {
+                "type": "boolean"
+              },
+              "previous_action_available": {
+                "type": "boolean"
+              },
+              "initial_memory": {
+                "type": "object",
+                "additionalProperties": true,
+                "description": "Explicit finite JSON state; reset separately for every trajectory"
+              },
+              "action_mapping": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "action_index": {
+                      "type": "integer",
+                      "description": "Zero-based expert output coordinate",
+                      "minimum": 0
+                    },
+                    "plant_control_index": {
+                      "type": "integer",
+                      "description": "Zero-based plant control coordinate",
+                      "minimum": 0
+                    },
+                    "plant_control_name": {
+                      "type": "string",
+                      "description": "Exact actuator channel"
+                    },
+                    "unit": {
+                      "type": "string",
+                      "description": "Exact actuator unit"
+                    }
+                  },
+                  "required": [
+                    "action_index",
+                    "plant_control_index",
+                    "plant_control_name",
+                    "unit"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "failure_policy": {
+                "const": "stop"
+              },
+              "input_rate_bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              }
+            },
+            "required": [
+              "schema_version",
+              "backend",
+              "source_file",
+              "entrypoint",
+              "interface",
+              "parameters",
+              "time_unit",
+              "control_period",
+              "observations",
+              "reference_available",
+              "disturbance_available",
+              "previous_action_available",
+              "initial_memory",
+              "action_mapping",
+              "failure_policy"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "adapter"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "material": {
+          "kinds": [
+            "material"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "register_expert",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "collect_external_expert": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "expert": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "plant": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "expert",
+          "plant"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Operating condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Number of expert control decisions; plant advances by control_period/sample_time subticks per decision",
+                  "minimum": 1
+                },
+                "initial_previous_action": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "split": {
+                  "type": "string",
+                  "enum": [
+                    "train",
+                    "validation",
+                    "test"
+                  ]
+                }
+              },
+              "required": [
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps",
+                "initial_previous_action"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          },
+          "scaler": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "minmax",
+              "none"
+            ]
+          },
+          "student_features": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "description": "Exact available observation::name/reference::name/disturbance::name/previous_action::name signal"
+            }
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "scenarios",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "expert": {
+          "kinds": [
+            "external_expert"
+          ],
+          "required": true
+        },
+        "plant": {
+          "kinds": [
+            "plant_model",
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "collect_external_expert",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "import_expert_data": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "material": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "interface": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "Causal DataInterface; every signal additionally declares expert_role observation/reference/disturbance/previous_action/expert_action/diagnostic_memory"
+          },
+          "split": {
+            "type": "object",
+            "properties": {
+              "mode": {
+                "type": "string",
+                "enum": [
+                  "trip",
+                  "time"
+                ]
+              },
+              "train": {
+                "type": "number",
+                "description": "Training fraction"
+              },
+              "validation": {
+                "type": "number",
+                "description": "Validation fraction"
+              },
+              "test": {
+                "type": "number",
+                "description": "Test fraction"
+              }
+            },
+            "required": [
+              "mode",
+              "train",
+              "validation",
+              "test"
+            ],
+            "additionalProperties": false
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "recorded_external_expert",
+                  "declared_simulation"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "description": "Actual origin, without inventing measurements or controller ancestry"
+              },
+              "previous_action_semantics": {
+                "type": "string",
+                "enum": [
+                  "actual_applied_action_before_current_decision",
+                  "not_recorded"
+                ]
+              }
+            },
+            "required": [
+              "kind",
+              "description",
+              "previous_action_semantics"
+            ],
+            "additionalProperties": false
+          },
+          "action_constraints": {
+            "type": "object",
+            "properties": {
+              "bounds": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "rate_bounds": {
+                "oneOf": [
+                  {
+                    "type": "array",
+                    "items": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "description": "Finite rectangular matrix; dimensions come from the model interface"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "rate_semantics": {
+                "const": "per_control_step"
+              }
+            },
+            "required": [
+              "bounds",
+              "rate_bounds",
+              "rate_semantics"
+            ],
+            "additionalProperties": false
+          },
+          "scaler": {
+            "type": "string",
+            "enum": [
+              "standard",
+              "minmax",
+              "none"
+            ]
+          },
+          "source_mapping": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "physical_interface": {
+            "oneOf": [
+              {
+                "type": "object",
+                "additionalProperties": true
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "physical_mapping": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "worksheet": {
+            "type": "string",
+            "description": "XLSX worksheet"
+          },
+          "header_row": {
+            "type": "integer",
+            "description": "One-based header row",
+            "minimum": 1
+          },
+          "delimiter": {
+            "type": "string",
+            "description": "CSV delimiter"
+          },
+          "encoding": {
+            "type": "string",
+            "description": "Text encoding"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "interface",
+          "split",
+          "source",
+          "action_constraints",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "material": {
+          "kinds": [
+            "material"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "import_expert_data",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "train_external_imitation": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "S05 CPU float64 MLP settings: hidden_dims,activation,learning_rate,batch_size,epochs,patience,seed,weight_decay,min_delta,grad_clip,input_dim,output_dim; outer resume only. max_test_nrmse is not an inner setting."
+          },
+          "max_test_action_nrmse": {
+            "oneOf": [
+              {
+                "type": "number",
+                "description": "Nonnegative per-action deployed NRMSE gate",
+                "minimum": 0
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              }
+            ]
+          },
+          "action_metric_scale": {
+            "oneOf": [
+              {
+                "const": "train_std"
+              },
+              {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              }
+            ]
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Optional verified checkpoint SHA256"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "network",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "dataset": {
+          "kinds": [
+            "external_expert_dataset"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "train_external_imitation",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "prepare_imitation_evaluation": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "policy": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "policy"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Number of control updates",
+                  "minimum": 1
+                },
+                "initial_previous_action": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "split": {
+                  "type": "string",
+                  "enum": [
+                    "validation",
+                    "test"
+                  ]
+                }
+              },
+              "required": [
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps",
+                "initial_previous_action"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "benchmark": {
+            "type": "object",
+            "properties": {
+              "warmup": {
+                "type": "integer",
+                "description": "Untimed warmup calls",
+                "minimum": 1
+              },
+              "repeats": {
+                "type": "integer",
+                "description": "Timed calls per controller",
+                "minimum": 1
+              },
+              "batch_size": {
+                "const": 1
+              },
+              "threads": {
+                "const": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "S08 metric definitions, such as settling band and reference-step thresholds; no preference optimization"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "policy": {
+          "kinds": [
+            "external_imitation_policy"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "prepare_imitation_evaluation",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "evaluate_external_imitation": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "policy": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "policy"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Number of control updates",
+                  "minimum": 1
+                },
+                "initial_previous_action": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "split": {
+                  "type": "string",
+                  "enum": [
+                    "validation",
+                    "test"
+                  ]
+                }
+              },
+              "required": [
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps",
+                "initial_previous_action"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "benchmark": {
+            "type": "object",
+            "properties": {
+              "warmup": {
+                "type": "integer",
+                "description": "Untimed warmup calls",
+                "minimum": 1
+              },
+              "repeats": {
+                "type": "integer",
+                "description": "Timed calls per controller",
+                "minimum": 1
+              },
+              "batch_size": {
+                "const": 1
+              },
+              "threads": {
+                "const": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "metrics": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "S08 metric definitions, such as settling band and reference-step thresholds; no preference optimization"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "scenarios",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "policy": {
+          "kinds": [
+            "external_imitation_policy"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "evaluate_external_imitation",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "prepare_pinn_problem": {
+      "agents": [
+        "model"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "material": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "material"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "const": 1
+          },
+          "equation": {
+            "type": "object",
+            "properties": {
+              "template": {
+                "const": "thermal_first_order"
+              },
+              "parameters": {
+                "type": "object",
+                "properties": {
+                  "C_J_per_K": {
+                    "type": "number",
+                    "description": "Positive thermal capacitance J/K",
+                    "exclusiveMinimum": 0
+                  },
+                  "G_W_per_K": {
+                    "type": "number",
+                    "description": "Positive thermal conductance W/K",
+                    "exclusiveMinimum": 0
+                  },
+                  "Ta_K": {
+                    "type": "number",
+                    "description": "Ambient temperature K"
+                  }
+                },
+                "required": [
+                  "C_J_per_K",
+                  "G_W_per_K",
+                  "Ta_K"
+                ],
+                "additionalProperties": false
+              },
+              "forcing": {
+                "const": "constant_per_condition"
+              }
+            },
+            "required": [
+              "template",
+              "parameters",
+              "forcing"
+            ],
+            "additionalProperties": false
+          },
+          "domain": {
+            "type": "object",
+            "properties": {
+              "time_s": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "initial_temperature_K": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "power_W": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              }
+            },
+            "required": [
+              "time_s",
+              "initial_temperature_K",
+              "power_W"
+            ],
+            "additionalProperties": false
+          },
+          "normalization": {
+            "type": "object",
+            "properties": {
+              "time_origin_s": {
+                "type": "number",
+                "description": "Initial time in seconds"
+              },
+              "time_scale_s": {
+                "type": "number",
+                "description": "Positive time normalization seconds",
+                "exclusiveMinimum": 0
+              },
+              "state_offset_K": {
+                "type": "number",
+                "description": "Ambient-temperature offset K"
+              },
+              "state_scale_K": {
+                "type": "number",
+                "description": "Positive temperature normalization K",
+                "exclusiveMinimum": 0
+              },
+              "power_scale_W": {
+                "type": "number",
+                "description": "Positive input normalization W",
+                "exclusiveMinimum": 0
+              },
+              "physics_scale_W": {
+                "type": "number",
+                "description": "Positive residual normalization W",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "time_origin_s",
+              "time_scale_s",
+              "state_offset_K",
+              "state_scale_K",
+              "power_scale_W",
+              "physics_scale_W"
+            ],
+            "additionalProperties": false
+          },
+          "units": {
+            "type": "object",
+            "properties": {
+              "time_s": {
+                "const": "s"
+              },
+              "initial_temperature_K": {
+                "const": "K"
+              },
+              "power_W": {
+                "const": "W"
+              },
+              "temperature_K": {
+                "const": "K"
+              }
+            },
+            "required": [
+              "time_s",
+              "initial_temperature_K",
+              "power_W",
+              "temperature_K"
+            ],
+            "additionalProperties": false
+          },
+          "conditions": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "description": "Unique physical-condition id"
+                },
+                "split": {
+                  "type": "string",
+                  "enum": [
+                    "train",
+                    "validation",
+                    "test"
+                  ]
+                },
+                "initial_temperature_K": {
+                  "type": "number",
+                  "description": "Temperature at the declared initial time K"
+                },
+                "power_W": {
+                  "type": "number",
+                  "description": "Constant power for this entire trajectory W"
+                }
+              },
+              "required": [
+                "id",
+                "split",
+                "initial_temperature_K",
+                "power_W"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "reference_file": {
+            "type": "string",
+            "description": "Material-relative CSV with physical time, initial condition, drive and temperature reference"
+          },
+          "reference_columns": {
+            "type": "object",
+            "properties": {
+              "condition_id": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "split": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "time_s": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "initial_temperature_K": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "power_W": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "temperature_K": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "condition_id",
+              "split",
+              "time_s",
+              "initial_temperature_K",
+              "power_W",
+              "temperature_K"
+            ],
+            "additionalProperties": false
+          },
+          "collocation_file": {
+            "type": "string",
+            "description": "Material-relative fixed CSV containing training-condition collocation only"
+          },
+          "collocation_columns": {
+            "type": "object",
+            "properties": {
+              "condition_id": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "time_s": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "initial_temperature_K": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              },
+              "power_W": {
+                "type": "object",
+                "properties": {
+                  "index": {
+                    "type": "integer",
+                    "description": "Zero-based physical CSV column index",
+                    "minimum": 0
+                  },
+                  "header": {
+                    "type": "string",
+                    "description": "Exact header at that column; do not silently choose a duplicate header"
+                  }
+                },
+                "required": [
+                  "index",
+                  "header"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "required": [
+              "condition_id",
+              "time_s",
+              "initial_temperature_K",
+              "power_W"
+            ],
+            "additionalProperties": false
+          },
+          "source": {
+            "type": "object",
+            "properties": {
+              "kind": {
+                "type": "string",
+                "enum": [
+                  "synthetic_analytic",
+                  "provided_reference",
+                  "measured"
+                ]
+              },
+              "description": {
+                "type": "string",
+                "description": "Actual reference origin; generated simulation is not vehicle measurement"
+              }
+            },
+            "required": [
+              "kind",
+              "description"
+            ],
+            "additionalProperties": false
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "schema_version",
+          "equation",
+          "domain",
+          "normalization",
+          "units",
+          "conditions",
+          "reference_file",
+          "reference_columns",
+          "collocation_file",
+          "collocation_columns",
+          "source",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "material": {
+          "kinds": [
+            "material"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "prepare_pinn_problem",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "train_pinn": {
+      "agents": [
+        "model"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "problem": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "problem"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "network": {
+            "type": "object",
+            "additionalProperties": true,
+            "description": "CPU float64 smooth MLP: input_dim=3, output_dim=1, hidden_dims, tanh/silu activation, learning_rate,batch_size,epochs,patience,seed,weight_decay,min_delta,grad_clip. Outer checkpoint resume only."
+          },
+          "conditional_parameterization": {
+            "type": "string",
+            "enum": [
+              "free_mlp",
+              "affine_initial_power"
+            ],
+            "description": "Default free_mlp. affine_initial_power uses three actual temporal MLP branches and the known constant-coefficient thermal ODE affine dependence on initial temperature and constant power; no analytic time solution or hard initial condition."
+          },
+          "loss_weights": {
+            "type": "object",
+            "properties": {
+              "data": {
+                "type": "number",
+                "description": "Nonnegative normalized temperature loss weight",
+                "minimum": 0
+              },
+              "physics": {
+                "type": "number",
+                "description": "Nonnegative equation residual loss weight; zero requires explicit ablation",
+                "minimum": 0
+              },
+              "initial": {
+                "type": "number",
+                "description": "Positive normalized initial-condition loss weight",
+                "exclusiveMinimum": 0
+              }
+            },
+            "required": [
+              "data",
+              "physics",
+              "initial"
+            ],
+            "additionalProperties": false
+          },
+          "ablation": {
+            "type": "boolean",
+            "description": "Explicit physics-off comparison; never reported as a true PINN"
+          },
+          "acceptance": {
+            "oneOf": [
+              {
+                "type": "null"
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "max_test_trajectory_nrmse": {
+                    "type": "number",
+                    "description": "Nonnegative per-trajectory reference error gate",
+                    "minimum": 0
+                  },
+                  "max_normalized_physics_rms": {
+                    "type": "number",
+                    "description": "Nonnegative normalized physical residual RMS gate",
+                    "minimum": 0
+                  },
+                  "max_initial_normalized_error": {
+                    "type": "number",
+                    "description": "Nonnegative maximum normalized initial error gate",
+                    "minimum": 0
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Verified checkpoint digest"
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "network",
+          "loss_weights",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "problem": {
+          "kinds": [
+            "conditional_ode_problem"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "train_pinn",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "validate_differentiable_model": {
+      "agents": [
+        "model",
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "evaluation_model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "dataset": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "model",
+          "evaluation_model",
+          "dataset"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "schema_version": {
+            "const": 1
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "exact_rewrite",
+              "existing_torch",
+              "bounded_surrogate"
+            ]
+          },
+          "partition": {
+            "const": "validation"
+          },
+          "trajectory_ids": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "description": "Original validation trajectory id",
+              "minimum": 0
+            }
+          },
+          "steps": {
+            "type": "integer",
+            "description": "Own-state recursive steps per validation trajectory; frozen fixture requires 50",
+            "minimum": 1
+          },
+          "probes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row": {
+                  "type": "integer",
+                  "description": "Original NPZ row within selected validation prefix",
+                  "minimum": 0
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "smooth",
+                    "saturation_interior",
+                    "switch_boundary"
+                  ]
+                },
+                "note": {
+                  "type": "string",
+                  "description": "Physical meaning of the probe"
+                }
+              },
+              "required": [
+                "row",
+                "kind"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "numeric": {
+            "type": "object",
+            "properties": {
+              "atol": {
+                "type": "number",
+                "description": "Absolute physical equivalence tolerance",
+                "minimum": 0
+              },
+              "rtol": {
+                "type": "number",
+                "description": "Relative equivalence tolerance",
+                "minimum": 0
+              }
+            },
+            "required": [
+              "atol",
+              "rtol"
+            ],
+            "additionalProperties": false
+          },
+          "gradient": {
+            "type": "object",
+            "properties": {
+              "atol": {
+                "type": "number",
+                "description": "Absolute Jacobian tolerance",
+                "minimum": 0
+              },
+              "rtol": {
+                "type": "number",
+                "description": "Relative Jacobian tolerance",
+                "minimum": 0
+              },
+              "finite_difference_steps": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Positive physical finite-difference step",
+                  "exclusiveMinimum": 0
+                }
+              }
+            },
+            "required": [
+              "atol",
+              "rtol",
+              "finite_difference_steps"
+            ],
+            "additionalProperties": false
+          },
+          "domain": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "u": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "d": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              }
+            },
+            "required": [
+              "x",
+              "u",
+              "d"
+            ],
+            "additionalProperties": false
+          },
+          "proxy_budget": {
+            "type": "object",
+            "properties": {
+              "one_step_state_rmse": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "one_step_output_rmse": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "rollout_state_rmse": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              },
+              "rollout_output_rmse": {
+                "type": "array",
+                "items": {
+                  "type": "number",
+                  "description": "Finite value in the declared variable unit"
+                },
+                "description": "Length must match the corresponding model interface"
+              }
+            },
+            "required": [
+              "one_step_state_rmse",
+              "one_step_output_rmse",
+              "rollout_state_rmse",
+              "rollout_output_rmse"
+            ],
+            "additionalProperties": false
+          },
+          "switching_planes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Declared physical switch"
+                },
+                "axis": {
+                  "type": "string",
+                  "enum": [
+                    "x",
+                    "u",
+                    "d"
+                  ]
+                },
+                "index": {
+                  "type": "integer",
+                  "description": "Physical axis index",
+                  "minimum": 0
+                },
+                "value": {
+                  "type": "number",
+                  "description": "Physical switching value"
+                },
+                "unit": {
+                  "type": "string",
+                  "description": "Declared axis unit"
+                }
+              },
+              "required": [
+                "name",
+                "axis",
+                "index",
+                "value",
+                "unit"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "mode",
+          "probes",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "evaluation_model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "plant_model"
+          ],
+          "required": true
+        },
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": true
+        },
+        "dataset": {
+          "kinds": [
+            "sampled_dataset"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "validate_differentiable_model",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "optimize_external_policy": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "policy": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "model": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          },
+          "validation": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "policy",
+          "model",
+          "validation"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "epochs": {
+            "type": "integer",
+            "description": "Target total epochs, including epochs already saved in a resumed checkpoint",
+            "minimum": 1
+          },
+          "learning_rate": {
+            "type": "number",
+            "description": "Positive optimizer learning rate",
+            "exclusiveMinimum": 0
+          },
+          "batch_size": {
+            "type": "integer",
+            "description": "Mini-batch size",
+            "minimum": 1
+          },
+          "seed": {
+            "type": "integer",
+            "description": "Deterministic random seed",
+            "minimum": 0
+          },
+          "resume_checkpoint": {
+            "type": "string",
+            "description": "Absolute local file path readable by the Session sandbox"
+          },
+          "resume_checkpoint_sha256": {
+            "type": "string",
+            "description": "Optional expected SHA256; the saved checkpoint and sidecar must agree"
+          },
+          "horizon": {
+            "type": "integer",
+            "description": "Control decisions in the differentiable rollout",
+            "minimum": 1
+          },
+          "q": {
+            "type": "number",
+            "description": "Positive normalized tracking loss weight",
+            "exclusiveMinimum": 0
+          },
+          "r": {
+            "type": "number",
+            "description": "Nonnegative normalized action-effort loss weight",
+            "minimum": 0
+          },
+          "s": {
+            "type": "number",
+            "description": "Nonnegative normalized increment loss weight",
+            "minimum": 0
+          },
+          "imitation_weight": {
+            "type": "number",
+            "description": "Nonnegative first-action imitation anchor",
+            "minimum": 0
+          },
+          "constraint_weight": {
+            "type": "number",
+            "description": "Nonnegative normalized state/output penalty",
+            "minimum": 0
+          },
+          "domain": {
+            "type": "object",
+            "properties": {
+              "x": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "u": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              },
+              "d": {
+                "type": "array",
+                "items": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "description": "Finite rectangular matrix; dimensions come from the model interface"
+              }
+            },
+            "required": [
+              "x",
+              "u",
+              "d"
+            ],
+            "additionalProperties": false
+          },
+          "original_evaluation": {
+            "type": "object",
+            "properties": {
+              "scenarios": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "Condition label"
+                    },
+                    "initial_state": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "reference": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "disturbance": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "steps": {
+                      "type": "integer",
+                      "description": "Control updates",
+                      "minimum": 1
+                    },
+                    "initial_previous_action": {
+                      "type": "array",
+                      "items": {
+                        "type": "number",
+                        "description": "Finite value in the declared variable unit"
+                      },
+                      "description": "Length must match the corresponding model interface"
+                    },
+                    "split": {
+                      "type": "string",
+                      "enum": [
+                        "validation",
+                        "test"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "initial_state",
+                    "reference",
+                    "disturbance",
+                    "steps",
+                    "initial_previous_action",
+                    "split"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "evaluation": {
+                "type": "object",
+                "properties": {
+                  "q": {
+                    "type": "number",
+                    "description": "Positive normalized tracking weight",
+                    "exclusiveMinimum": 0
+                  },
+                  "r": {
+                    "type": "number",
+                    "description": "Nonnegative normalized action-effort weight",
+                    "minimum": 0
+                  },
+                  "s": {
+                    "type": "number",
+                    "description": "Nonnegative normalized action-increment weight",
+                    "minimum": 0
+                  },
+                  "comparison_atol": {
+                    "const": 1e-12
+                  }
+                },
+                "required": [
+                  "q",
+                  "r",
+                  "s"
+                ],
+                "additionalProperties": false
+              },
+              "benchmark": {
+                "type": "object",
+                "properties": {
+                  "warmup": {
+                    "type": "integer",
+                    "description": "Untimed calls",
+                    "minimum": 1
+                  },
+                  "repeats": {
+                    "type": "integer",
+                    "description": "Timed calls",
+                    "minimum": 1
+                  },
+                  "batch_size": {
+                    "const": 1
+                  },
+                  "threads": {
+                    "const": 1
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "plan_refs": {
+                "type": "object",
+                "additionalProperties": true
+              }
+            },
+            "required": [
+              "scenarios",
+              "evaluation"
+            ],
+            "additionalProperties": false
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "horizon",
+          "q",
+          "r",
+          "s",
+          "domain",
+          "original_evaluation",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "policy": {
+          "kinds": [
+            "external_imitation_policy"
+          ],
+          "required": true
+        },
+        "model": {
+          "kinds": [
+            "nominal_model",
+            "reference_model",
+            "identified_model",
+            "corrected_model",
+            "learned_model"
+          ],
+          "required": true
+        },
+        "validation": {
+          "kinds": [
+            "differentiable_validation"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "optimize_external_policy",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    },
+    "evaluate_external_pgac": {
+      "agents": [
+        "lightweight"
+      ],
+      "inputsSchema": {
+        "type": "object",
+        "properties": {
+          "candidate": {
+            "type": "string",
+            "description": "An exact artifact_id in this workspace manifest; use inspect_workspace/inspect_artifact, never a guessed id"
+          }
+        },
+        "required": [
+          "candidate"
+        ],
+        "additionalProperties": false
+      },
+      "configSchema": {
+        "type": "object",
+        "properties": {
+          "scenarios": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "description": "Condition label"
+                },
+                "initial_state": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "reference": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "disturbance": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "steps": {
+                  "type": "integer",
+                  "description": "Control updates",
+                  "minimum": 1
+                },
+                "initial_previous_action": {
+                  "type": "array",
+                  "items": {
+                    "type": "number",
+                    "description": "Finite value in the declared variable unit"
+                  },
+                  "description": "Length must match the corresponding model interface"
+                },
+                "split": {
+                  "type": "string",
+                  "enum": [
+                    "validation",
+                    "test"
+                  ]
+                }
+              },
+              "required": [
+                "initial_state",
+                "reference",
+                "disturbance",
+                "steps",
+                "initial_previous_action",
+                "split"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "evaluation": {
+            "type": "object",
+            "properties": {
+              "q": {
+                "type": "number",
+                "description": "Positive normalized tracking weight",
+                "exclusiveMinimum": 0
+              },
+              "r": {
+                "type": "number",
+                "description": "Nonnegative normalized action-effort weight",
+                "minimum": 0
+              },
+              "s": {
+                "type": "number",
+                "description": "Nonnegative normalized action-increment weight",
+                "minimum": 0
+              },
+              "comparison_atol": {
+                "const": 1e-12
+              }
+            },
+            "required": [
+              "q",
+              "r",
+              "s"
+            ],
+            "additionalProperties": false
+          },
+          "benchmark": {
+            "type": "object",
+            "properties": {
+              "warmup": {
+                "type": "integer",
+                "description": "Untimed calls",
+                "minimum": 1
+              },
+              "repeats": {
+                "type": "integer",
+                "description": "Timed calls",
+                "minimum": 1
+              },
+              "batch_size": {
+                "const": 1
+              },
+              "threads": {
+                "const": 1
+              }
+            },
+            "required": [],
+            "additionalProperties": false
+          },
+          "plan_refs": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "required": [
+          "scenarios",
+          "evaluation",
+          "plan_refs"
+        ],
+        "additionalProperties": false
+      },
+      "artifactInputs": {
+        "candidate": {
+          "kinds": [
+            "external_pgac_candidate"
+          ],
+          "required": true
+        }
+      },
+      "example": {
+        "operation": "evaluate_external_pgac",
+        "workspace": "<absolute-user-selected-workspace>",
+        "inputs": {},
+        "config": {}
+      }
+    }
+  }
+}

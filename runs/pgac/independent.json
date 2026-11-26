@@ -1,0 +1,76 @@
+{
+  "evidence": "executed",
+  "platform": "win32",
+  "python": "3.10.22 | packaged by Anaconda, Inc. | (main, Oct  1 2026, 20:15:38) [MSC v.1942 64 bit (AMD64)]",
+  "numpy": "2.2.6",
+  "torch": "2.7.1+cu128",
+  "seed": 145,
+  "scratch": "D:\\projects\\control-skill-library\\runs\\checks\\pgac_forward_awm7yv6o",
+  "command": "python cases/spring/independent_check.py",
+  "source_actor_sha256": "ed76b63af518f42118a4adb8811d54b13f052cc263f46bc31101efcc1280a59e",
+  "range_rejection": "ValueError: Actuator range conflicts with trained policy",
+  "delay_rejection": {
+    "message": "ValueError: Previous-action alignment failed in trajectory 0",
+    "changed_data_sha256": "16d872c699743c5381bee5ee99d6cda12391bde86cb3e3f885fd6d14e66553d6"
+  },
+  "pre_update_max_error_against_independent_actor_N": [
+    1.3198481330078948e-06,
+    1.3198481330078948e-06
+  ],
+  "independent_initial_critic_J": {
+    "nominal": 0.00010852541912070828,
+    "coupled": 0.00016225426693089557
+  },
+  "heldout": {
+    "imitation": {
+      "spring-expert-07": {
+        "rmse_m": 0.06986441018869227,
+        "max_action_delta_N": 5.807890131603877e-07,
+        "max_state_delta": 6.640158936241369e-08
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.04864574871917885,
+        "max_action_delta_N": 9.561900324861483e-07,
+        "max_state_delta": 1.1835483761102328e-07
+      }
+    },
+    "nominal_only": {
+      "spring-expert-07": {
+        "rmse_m": 0.06968059281634255,
+        "max_action_delta_N": 5.877536048970455e-07,
+        "max_state_delta": 1.2699995288745214e-07
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.0484599922271011,
+        "max_action_delta_N": 1.5461080131728977e-06,
+        "max_state_delta": 1.5369608647938793e-07
+      }
+    },
+    "residual_coupled": {
+      "spring-expert-07": {
+        "rmse_m": 0.06998350932273086,
+        "max_action_delta_N": 5.92134427712665e-07,
+        "max_state_delta": 6.765806011797826e-08
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.04881699595889647,
+        "max_action_delta_N": 1.169412689572269e-06,
+        "max_state_delta": 1.3905875958543368e-07
+      }
+    },
+    "selected": {
+      "spring-expert-07": {
+        "rmse_m": 0.06998350932273086,
+        "max_action_delta_N": 5.92134427712665e-07,
+        "max_state_delta": 6.765806011797826e-08
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.04881699595889647,
+        "max_action_delta_N": 1.169412689572269e-06,
+        "max_state_delta": 1.3905875958543368e-07
+      }
+    }
+  },
+  "status": "passed",
+  "action_tolerance_N": 2e-05
+}

@@ -1,0 +1,60 @@
+{
+  "passed": false,
+  "max_abs_error": 0.1,
+  "first": {
+    "step": 3,
+    "channel": 2,
+    "signed_error": -0.1,
+    "predicted": 0.19208,
+    "recursive": 0.29208
+  },
+  "predicted": [
+    [
+      0.43299999999999994,
+      0.21600000000000003
+    ],
+    [
+      0.394,
+      0.08290000000000004
+    ],
+    [
+      0.45289999999999997,
+      0.19208
+    ]
+  ],
+  "recursive": [
+    [
+      0.433,
+      0.21600000000000003
+    ],
+    [
+      0.394,
+      0.08290000000000003
+    ],
+    [
+      0.45289999999999997,
+      0.29208
+    ]
+  ],
+  "absolute_tolerance": 1e-12,
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\prediction.py",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\perturbed-input.json",
+      "--matrix",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\bad.json",
+      "--out",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\perturbed-result.json"
+    ],
+    "evidence": "executed"
+  }
+}

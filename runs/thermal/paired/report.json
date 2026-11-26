@@ -1,0 +1,75 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": 3109,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\thermal.py",
+      "train",
+      "--csv",
+      "runs/thermal/data.csv",
+      "--physics",
+      "cases/thermal/physics.json",
+      "--out",
+      "runs/thermal/paired"
+    ],
+    "evidence": "executed"
+  },
+  "data_sha256": "eccd38699efd374704c023d34d6f70d3653db90edc036171ed275e77703386b1",
+  "split": {
+    "0": "train",
+    "1": "train",
+    "2": "train",
+    "3": "train",
+    "4": "train",
+    "5": "train",
+    "6": "train",
+    "7": "train",
+    "8": "train",
+    "9": "validation",
+    "10": "validation",
+    "11": "test",
+    "12": "test",
+    "13": "test"
+  },
+  "physics_sha256": "974add93770279454386320559a9edf241f06a1e0b40eb5a656ab46426c6df46",
+  "results": {
+    "nn": {
+      "best_epoch": 500,
+      "test_rmse_K": 0.13749731872124155,
+      "per_condition_rmse_K": {
+        "(291.0, -6.0)": 0.03523484410718628,
+        "(298.0, 15.0)": 0.19184971063574477,
+        "(300.0, 8.0)": 0.13663356928776804
+      },
+      "initial_max_error_K": 0.092193603515625,
+      "ode_rmse_W": null
+    },
+    "pinn": {
+      "best_epoch": 500,
+      "test_rmse_K": 0.1552777969994632,
+      "per_condition_rmse_K": {
+        "(291.0, -6.0)": 0.03493530338911108,
+        "(298.0, 15.0)": 0.22157692700906179,
+        "(300.0, 8.0)": 0.14838049978804882
+      },
+      "initial_max_error_K": 0.0208740234375,
+      "ode_rmse_W": 0.7645930051803589
+    }
+  },
+  "epochs": 500,
+  "physics_status": "active",
+  "optimizer": "Adam",
+  "lr": 0.004,
+  "loss_weights": [
+    1,
+    1,
+    1
+  ]
+}

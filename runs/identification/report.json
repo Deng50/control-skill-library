@@ -1,0 +1,46 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\identify.py",
+      "../素材/55-系统辨识MPC-ADRC-PID"
+    ],
+    "evidence": "executed"
+  },
+  "source_sha256": "a954fa53c95453faf55ba728f77f2ef9e56019de4e478959903f5cf85cb6cbf1",
+  "dt_s": 0.009999999999999787,
+  "names": [
+    "a",
+    "c",
+    "b",
+    "f0"
+  ],
+  "fitted": [
+    -4.199988604122522,
+    -8.999970356814872,
+    8.999970172935052,
+    0.9999968156312506
+  ],
+  "archived": [
+    -4.16238198246756,
+    -8.856610276002742,
+    8.862588123488273,
+    0.9827856448360254
+  ],
+  "train_rows": 1300,
+  "test_rows": 701,
+  "test_kind": "chronological suffix of one simulated trajectory",
+  "heldout_rmse": 8.67148661139631e-08,
+  "sensitivity_rank": 4,
+  "source_model": "zero initial state, piecewise constant input, exact ZOH",
+  "heldout_tolerance": 0.03,
+  "passed": true
+}

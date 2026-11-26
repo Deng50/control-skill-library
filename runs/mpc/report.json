@@ -1,0 +1,224 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\spring.py",
+      "--config",
+      "cases/spring/controller.json",
+      "--controller-factory",
+      "controlkit.spring:Controller",
+      "--out",
+      "runs/mpc"
+    ],
+    "evidence": "executed"
+  },
+  "scenario_file_sha256": "bf4e27c287e0b665f7f38be2f405b92979061e3f8c32d22a34d087d29bcef88c",
+  "controller_factory": "controlkit.spring:Controller",
+  "trials": [
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.18,
+        "s": 0.06,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.11368433744447604,
+        "total_variation_N": 6.712672321023257,
+        "rms_force_N": 0.8047611432548193,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.020305,
+        "p95_ms": 0.02741
+      },
+      "score": 0.11425453482412902,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.05,
+        "s": 0.03,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09963773207639715,
+        "total_variation_N": 10.77030356359634,
+        "rms_force_N": 0.9722704714217018,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.0524425,
+        "p95_ms": 0.043949999999999934
+      },
+      "score": 0.10039312490119791,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.015,
+        "s": 0.015,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09723046627734712,
+        "total_variation_N": 12.276602836888015,
+        "rms_force_N": 1.0522009391548264,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.063605,
+        "p95_ms": 0.02453499999999996
+      },
+      "score": 0.09806348181784674,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.005,
+        "s": 0.01,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09554247651761119,
+        "total_variation_N": 13.575592919440965,
+        "rms_force_N": 1.1385094654199848,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.066245,
+        "p95_ms": 0.05490999999999991
+      },
+      "score": 0.09645112107330721,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.002,
+        "s": 0.005,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09420397888542209,
+        "total_variation_N": 14.895692532687846,
+        "rms_force_N": 1.2270731205091079,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.094245,
+        "p95_ms": 0.09244999999999678
+      },
+      "score": 0.09518990775899383,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.001,
+        "s": 0.003,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09406933145967038,
+        "total_variation_N": 15.41069034723669,
+        "rms_force_N": 1.239693771473606,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.11716250000000002,
+        "p95_ms": 0.1648049999999949
+      },
+      "score": 0.09507444560408809,
+      "feasible": true
+    }
+  ],
+  "validation": {
+    "baseline": {
+      "rmse_m": 0.1072545479732308,
+      "total_variation_N": 6.183037351855115,
+      "rms_force_N": 0.6757848050393405,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.025102500000000007,
+      "p95_ms": 0.03707999999999996
+    },
+    "candidate": {
+      "rmse_m": 0.08641589304979483,
+      "total_variation_N": 15.35216090152678,
+      "rms_force_N": 1.2111575753288226,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.13391750000000002,
+      "p95_ms": 0.16679499999999597
+    }
+  },
+  "selected": {
+    "horizon": 6,
+    "q": 1,
+    "r": 0.001,
+    "s": 0.003,
+    "moves": 6,
+    "force_limit": 4.0,
+    "sample_time_s": 0.2,
+    "model_sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44"
+  },
+  "test": {
+    "baseline": {
+      "rmse_m": 0.10137565156343196,
+      "total_variation_N": 5.9797229104288245,
+      "rms_force_N": 0.9338774270082029,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.0235275,
+      "p95_ms": 0.031014999999999966
+    },
+    "selected": {
+      "rmse_m": 0.08171475240600087,
+      "total_variation_N": 14.540303272330917,
+      "rms_force_N": 1.3310448941536381,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.1415325,
+      "p95_ms": 0.19533499999999399
+    }
+  },
+  "period_mismatch_rejected": true,
+  "rediscretized_double_dt": {
+    "rmse_m": 0.03950215493877608,
+    "total_variation_N": 13.946781586023437,
+    "rms_force_N": 1.119696324314805,
+    "max_force_violation_N": 0.0,
+    "max_position_violation_m": 0.0,
+    "max_speed_violation_mps": 0.0,
+    "mean_ms": 0.11175500000000001,
+    "p95_ms": 0.05520999999999999
+  }
+}

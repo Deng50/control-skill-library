@@ -1,0 +1,161 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": 145,
+    "argv": [
+      "cases/spring/independent_check.py",
+      "--scratch-parent",
+      "."
+    ],
+    "evidence": "executed"
+  },
+  "controller_sha256": "5ed5b07bef17d96fd40febf5b93d10667f2648f0e407f3f7657cbabbc830cfe4",
+  "source_actor_sha256": "ed76b63af518f42118a4adb8811d54b13f052cc263f46bc31101efcc1280a59e",
+  "critic": "finite-horizon physical cost",
+  "perception": "linear supervised residual; frozen during actor training",
+  "val_nominal_next_rmse": [
+    0.001880082122287168,
+    0.018330550281279858
+  ],
+  "val_corrected_next_rmse": [
+    2.616041886518239e-17,
+    1.7671275919141873e-17
+  ],
+  "critic_at_same_actor": {
+    "nominal": 0.00010852529521798715,
+    "coupled": 0.0001622539130039513
+  },
+  "epochs": 1,
+  "branches": {
+    "nominal_only": {
+      "feasible": true,
+      "best_epoch": 1,
+      "updates": [
+        {
+          "epoch": 1,
+          "critic_J": 0.0009120416943915188,
+          "gradient_norm": 0.00039786804700270295,
+          "validation_score": 0.019302619374466992
+        }
+      ],
+      "warmstart_max_action_error_N": 0.0
+    },
+    "residual_coupled": {
+      "feasible": true,
+      "best_epoch": 1,
+      "updates": [
+        {
+          "epoch": 1,
+          "critic_J": 0.0009941923199221492,
+          "gradient_norm": 0.0029841195791959763,
+          "validation_score": 0.018683309659866018
+        }
+      ],
+      "warmstart_max_action_error_N": 0.0
+    }
+  },
+  "selected": "residual_coupled",
+  "accepted_on_test": true,
+  "validation_scores": {
+    "imitation": 0.01951561887090883,
+    "nominal_only": 0.019302619374466992,
+    "residual_coupled": 0.018683309659866018
+  },
+  "test": {
+    "expert": {
+      "spring-expert-07": {
+        "rmse_m": 0.06828434984472685,
+        "total_variation_N": 14.614470637917945,
+        "rms_force_N": 1.0378584410426415,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.0533388888888889,
+        "p95_ms": 0.0232
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.047699839801972635,
+        "total_variation_N": 11.747277370838296,
+        "rms_force_N": 1.2516575410300659,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.05561944444444446,
+        "p95_ms": 0.02665
+      }
+    },
+    "imitation": {
+      "spring-expert-07": {
+        "rmse_m": 0.06986441070903433,
+        "total_variation_N": 13.421284645795822,
+        "rms_force_N": 0.9670746430755978,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.05296111111111111,
+        "p95_ms": 0.059625000000000004
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.04864574873839293,
+        "total_variation_N": 10.733963906764984,
+        "rms_force_N": 1.2325340895980688,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.07920833333333333,
+        "p95_ms": 0.16344999999999998
+      }
+    },
+    "nominal_only": {
+      "spring-expert-07": {
+        "rmse_m": 0.06980704537517216,
+        "total_variation_N": 13.23278433084488,
+        "rms_force_N": 0.9598713792246433,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.06401944444444445,
+        "p95_ms": 0.081025
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.048822632367020995,
+        "total_variation_N": 10.747636795043945,
+        "rms_force_N": 1.2429220852142442,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.07126944444444444,
+        "p95_ms": 0.14550000000000002
+      }
+    },
+    "residual_coupled": {
+      "spring-expert-07": {
+        "rmse_m": 0.07002273228208343,
+        "total_variation_N": 13.327534854412079,
+        "rms_force_N": 0.964463369407044,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.05796388888888888,
+        "p95_ms": 0.07114999999999999
+      },
+      "spring-expert-02": {
+        "rmse_m": 0.048757962622745066,
+        "total_variation_N": 10.717112421989441,
+        "rms_force_N": 1.2408134357829135,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.06485555555555556,
+        "p95_ms": 0.10897499999999999
+      }
+    }
+  }
+}

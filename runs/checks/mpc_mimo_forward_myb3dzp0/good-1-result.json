@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "max_abs_error": 1.1102230246251565e-16,
+  "first": null,
+  "predicted": [
+    [
+      0.2915,
+      0.6285000000000001
+    ],
+    [
+      -0.03624999999999998,
+      0.8833000000000001
+    ],
+    [
+      -0.076825,
+      1.00096
+    ]
+  ],
+  "recursive": [
+    [
+      0.2915,
+      0.6285
+    ],
+    [
+      -0.03625000000000006,
+      0.8833
+    ],
+    [
+      -0.07682500000000003,
+      1.00096
+    ]
+  ],
+  "absolute_tolerance": 1e-12,
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\prediction.py",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\good-1-input.json",
+      "--matrix",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\good.json",
+      "--out",
+      "D:\\projects\\control-skill-library\\runs\\checks\\mpc_mimo_forward_myb3dzp0\\good-1-result.json"
+    ],
+    "evidence": "executed"
+  }
+}

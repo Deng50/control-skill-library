@@ -1,0 +1,52 @@
+{
+  "passed": true,
+  "max_abs_error": 1.3877787807814457e-17,
+  "first": null,
+  "predicted": [
+    [
+      0.0995,
+      -0.0109
+    ],
+    [
+      0.09939100000000001,
+      0.0956028
+    ],
+    [
+      0.100347028,
+      0.1846422924
+    ]
+  ],
+  "recursive": [
+    [
+      0.0995,
+      -0.0109
+    ],
+    [
+      0.09939100000000001,
+      0.09560279999999999
+    ],
+    [
+      0.100347028,
+      0.1846422924
+    ]
+  ],
+  "absolute_tolerance": 1e-12,
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "D:\\projects\\control-skill-library\\controlkit\\prediction.py",
+      "cases/prediction/input.json",
+      "--out",
+      "runs/prediction/pass.json"
+    ],
+    "evidence": "executed"
+  }
+}

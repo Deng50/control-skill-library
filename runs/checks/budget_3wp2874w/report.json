@@ -1,0 +1,130 @@
+{
+  "runtime": {
+    "python": "3.10.22",
+    "executable": "D:\\projects\\control-agent-harness\\.venv\\Scripts\\python.exe",
+    "platform": "Windows-10-10.0.26200-SP0",
+    "packages": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.7.1+cu128"
+    },
+    "seed": null,
+    "argv": [
+      "-c"
+    ],
+    "evidence": "executed"
+  },
+  "scenario_file_sha256": "c40fa5a0fb1b96e006e8c1287fd23b0e2a149cd7f62b044a3168cf619c6054e1",
+  "controller_factory": "controlkit.spring:Controller",
+  "trials": [
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.18,
+        "s": 0.06,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.11368433744447604,
+        "total_variation_N": 6.712672321023257,
+        "rms_force_N": 0.8047611432548193,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.0226825,
+        "p95_ms": 0.05607999999999997
+      },
+      "score": 0.11425453482412902,
+      "feasible": true
+    },
+    {
+      "config": {
+        "horizon": 6,
+        "q": 1,
+        "r": 0.05,
+        "s": 0.03,
+        "moves": 6,
+        "force_limit": 4.0
+      },
+      "metrics": {
+        "rmse_m": 0.09963773207639715,
+        "total_variation_N": 10.77030356359634,
+        "rms_force_N": 0.9722704714217018,
+        "max_force_violation_N": 0.0,
+        "max_position_violation_m": 0.0,
+        "max_speed_violation_mps": 0.0,
+        "mean_ms": 0.051682500000000006,
+        "p95_ms": 0.027889999999999974
+      },
+      "score": 0.10039312490119791,
+      "feasible": true
+    }
+  ],
+  "validation": {
+    "baseline": {
+      "rmse_m": 0.1072545479732308,
+      "total_variation_N": 6.183037351855115,
+      "rms_force_N": 0.6757848050393405,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.018080000000000002,
+      "p95_ms": 0.02162
+    },
+    "candidate": {
+      "rmse_m": 0.09347901262574647,
+      "total_variation_N": 10.357656759481962,
+      "rms_force_N": 0.8579569108824662,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.0180375,
+      "p95_ms": 0.020439999999999986
+    }
+  },
+  "selected": {
+    "horizon": 6,
+    "q": 1,
+    "r": 0.05,
+    "s": 0.03,
+    "moves": 6,
+    "force_limit": 4.0,
+    "sample_time_s": 0.2,
+    "model_sha256": "314c624195c99e9be15c70527e5875fa19928fa688020b56083329ccaea9bd44"
+  },
+  "test": {
+    "baseline": {
+      "rmse_m": 0.10137565156343196,
+      "total_variation_N": 5.9797229104288245,
+      "rms_force_N": 0.9338774270082029,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.018925,
+      "p95_ms": 0.024884999999999994
+    },
+    "selected": {
+      "rmse_m": 0.08837998938709533,
+      "total_variation_N": 9.881245596746403,
+      "rms_force_N": 1.061653770370115,
+      "max_force_violation_N": 0.0,
+      "max_position_violation_m": 0.0,
+      "max_speed_violation_mps": 0.0,
+      "mean_ms": 0.020609999999999996,
+      "p95_ms": 0.026534999999999954
+    }
+  },
+  "period_mismatch_rejected": true,
+  "rediscretized_double_dt": {
+    "rmse_m": 0.05870036901747343,
+    "total_variation_N": 6.310332596704744,
+    "rms_force_N": 0.9113190727955761,
+    "max_force_violation_N": 0.0,
+    "max_position_violation_m": 0.0,
+    "max_speed_violation_mps": 0.0,
+    "mean_ms": 0.0194775,
+    "p95_ms": 0.022439999999999967
+  }
+}
